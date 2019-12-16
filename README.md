@@ -74,5 +74,6 @@ The *root* directory of your developed application must contain
 * Link to working app (In case the app in an extension ,add On etc.)
 * If Possible, Deploy the code onto a hosting platform.
 
+Note: Please Add Author's name in Readme.md of application. 
 
 
