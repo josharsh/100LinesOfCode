@@ -5,7 +5,7 @@ This repository contains all the applications, extensions, add-ons, designs, the
 Purpose of this repository is to promote development of productive applications and utilities which seem so common yet might not be into use. Trigger your brain, take the challenge of developing something in less than #100LinesofCode. 
 
 # Contributing
-For Contrubuting norms and guidelines, go to CONTRIBUTING.MD
+For Contributing norms and guidelines, go to CONTRIBUTING.MD
 
 
 ## Adding Your Code:
