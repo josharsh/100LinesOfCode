@@ -1,6 +1,13 @@
 # 100LinesOfCode
 This repository contains all the applications, extensions, add-ons, designs, themes and anything else which is productive developed in less than #100LinesOfCode.
 
+### Here's What It Is:
+Does #100DaysOfCode get too recursive for you? Are you fed up of #coding just for a #streak? Do you want to change the #trend?
+Here's something fresh. This  #season let's challenge our brains to develop something productive in less than #100LinesOfCode 
+Often in places close and far, we come across those little things which can really be coded to easen the process. You want to watch a youtube video at 10X?, make a browser #extension for it. If you want to add custom design themes to sites you visit, do it by designing an#extension theme. 
+#100LinesOfCode is a #challenge to get your neurons together to develop anything and everything productive using less than #100LinesOfCode. It can be an android code snippet, Javascript function, a python Library usage and anything else you can think of. So run the horses, pull up the socks, grab a cup of coffee and start to code to develop something productive in #100LinesOfCode.  I have created a Github repository https://github.com/josharsh/100LinesOfCode. Navigate and contribute to #OpenSource in the process. 
+
+
 # Purpose
 Purpose of this repository is to promote development of productive applications and utilities which seem so common yet might not be into use. Trigger your brain, take the challenge of developing something in less than #100LinesofCode. 
 
