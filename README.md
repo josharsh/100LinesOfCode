@@ -1,4 +1,6 @@
 # 100LinesOfCode
+![](https://www.codetriage.com/josharsh/100linesofcode/badges/users.svg)
+### About
 This repository contains all the applications, extensions, add-ons, designs, themes and anything else which is productive developed in less than #100LinesOfCode.
 
 ### Here's What It Is:
