@@ -23,7 +23,7 @@ Here are the steps:
 2: Fork this repository
 3: Clone this repository 
 ```
-$ git clone "https://www.github.com/{Username}/Minor-1-Swarm-Intelligence.git"
+$ git clone "https://www.github.com/{Username}/100LinesOfCode.git"
 ```
 where username is your GitHub account username.
 
@@ -53,7 +53,7 @@ $ git push -u origin branchname
 
 1. Create upstream as our repository
 ```
-$ git remote add upstream "https://www.github.com/NishkarshRaj/Minor-1-Swarm-Intelligence"
+$ git remote add upstream "https://github.com/josharsh/100LinesOfCode"
 ```
 
 2. Fetch upstream changes in local machine
