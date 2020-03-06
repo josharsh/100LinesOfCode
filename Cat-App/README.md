@@ -1,2 +1,7 @@
 # CAT-APP
-Click on the button to randomly generate cat images from ascii codes.
+Randomly generate cat images from ascii codes.
+
+## How to run
+* Navigate to the project folder
+* Install Node (if not already)
+* run node app.js
