@@ -5,7 +5,7 @@ This application is an Add On To Mozilla Firefox Web Browser which serves to hig
 Harsh Joshi
 
 # Link
-https://addons.mozilla.org/en-US/firefox/user/15502917/
+[Search Highlighter](https://addons.mozilla.org/en-US/firefox/addon/search-highlighter-2/ "Search Highlighter – Get this Extension for 🦊 Firefox (en-US)")
 
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
