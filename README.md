@@ -1,5 +1,15 @@
 # 100LinesOfCode
 ![](https://www.codetriage.com/josharsh/100linesofcode/badges/users.svg)
+
+### Contents:
+- [About](#about)
+- [What it is](#heres-what-it-is)
+- [Purpose](#purpose)
+- [Contributing](#contributing)
+- [Adding your code](#adding-your-code)
+- [Structure of your code](#structure-of-your-code)
+
+
 ### About
 This repository contains all the applications, extensions, add-ons, designs, themes and anything else which is productive developed in less than #100LinesOfCode.
 
@@ -10,10 +20,10 @@ Often in places close and far, we come across those little things which can real
 #100LinesOfCode is a #challenge to get your neurons together to develop anything and everything productive using less than #100LinesOfCode. It can be an android code snippet, Javascript function, a python Library usage and anything else you can think of. So run the horses, pull up the socks, grab a cup of coffee and start to code to develop something productive in #100LinesOfCode.  I have created a Github repository https://github.com/josharsh/100LinesOfCode. Navigate and contribute to #OpenSource in the process. 
 
 
-# Purpose
+## Purpose
 Purpose of this repository is to promote development of productive applications and utilities which seem so common yet might not be into use. Trigger your brain, take the challenge of developing something in less than #100LinesofCode. 
 
-# Contributing
+## Contributing
 For Contributing norms and guidelines, go to CONTRIBUTING.MD
 
 
@@ -80,7 +90,7 @@ $ git push -f origin master
 The *root* directory of your developed application must contain
 * A README.md describing your project, idea and Implementation
 * Source code for your app
-* Link to working app (In case the app in an extension ,add On etc.)
+* Link to working app (In case the app in an extension, add-ons, etc.)
 * If Possible, Deploy the code onto a hosting platform.
 
 Note: Please Add Author's name in Readme.md of application. 
