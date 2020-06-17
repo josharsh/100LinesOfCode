@@ -5,6 +5,6 @@ A simple javascript game that you can make yourself. It's similar to the google 
 # Author
 Jannat Patel
 
-![Demo](./assets/The Dinosaur Game.gif)
+![Demo](assets/TheDinosaurGame.gif)
 
 
