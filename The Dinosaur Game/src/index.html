@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>The Dinosaur Game</title>
     <style>
@@ -51,11 +50,13 @@
         <img id="block" src="../assets/cactus.png"></img>
     </div>
     <div id="score"></div>
+    <div id="message"></div>
 </body>
 <script>
     var score = 0;
     var character = document.getElementById('character');
     var block = document.getElementById('block');
+    //Event to add animation to the character when the up arrow key is pressed.
     document.addEventListener('keydown', () => {
         if (event.keyCode != 38 || character.classList == "animate") {
             return;
@@ -65,6 +66,7 @@
             character.classList.remove("animate");
         }, 500);
     })
+    //Check for collision after every 10ms
     var checkCollision = setInterval(() => {
         var topOfCharacter = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
         var leftOfBlock = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
@@ -74,8 +76,10 @@
             alert(`Your score ${score}`);
             clearInterval(checkCollision);
             clearInterval(checkScore);
+            document.getElementById("message").innerHTML = "Reload to start the game again!!!"
         }
     }, 10);
+    //Score calculation
     var checkScore = setInterval(() => {
         score += 1;
         document.getElementById("score").innerHTML = `Score: ${score}`;
