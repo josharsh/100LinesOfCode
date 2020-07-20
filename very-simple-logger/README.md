@@ -1,3 +1,5 @@
+# Author
+Rahmanu Hermawan
 # About
 In the beginning, this app is intended to be my wife's pregnancy log. She
 measures her body weight and abdominal circuference every week. I got an idea
