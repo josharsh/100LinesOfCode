@@ -4,12 +4,12 @@ if [ ! -f "$FILE" ]
 then
 touch .settings
 echo "Enter IP address of server: "
-read ipadd
+read IPADD
 echo "Enter Username: "
-read username
+read USERNAME
 echo "Enter Password: "
-read password
-echo -e "ipadd=$ipadd\nusername=$username\npassword=$password" >> .settings
+read PASSWORD
+echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nPASSWORD=$PASSWORD" >> .settings
 else
 source $FILE
 fi
