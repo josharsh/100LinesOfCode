@@ -2,5 +2,12 @@
 FILE=.settings
 if [ ! -f "$FILE" ]
 then
-echo "File Does Not Exist"
+touch .settings
+echo "Enter IP address of server: "
+read ipadd
+echo "Enter Username: "
+read username
+echo "Enter Password: "
+read password
+echo -e "\$ipadd=$ipadd\n\$username=$username\n\$password=$password" >> .settings
 fi
