@@ -7,9 +7,12 @@ echo "Enter IP address of server: "
 read IPADD
 echo "Enter Username: "
 read USERNAME
-echo "Enter Password: "
-read PASSWORD
-echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nPASSWORD=$PASSWORD" >> .settings
+echo "Enter Remote Directory to Watch (Default ~/home/watch): "
+read WATCHDIR
+echo "Enter Custom SSH Key Name (Default id_rsa): "
+read KEYNAME
+echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR=$WATCHDIR\nKEYNAME=$KEYNAME" >> .settings
 else
 source $FILE
 fi
+ssh -i ~/.ssh/test-key $USERNAME@$IPADD
