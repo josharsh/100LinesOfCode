@@ -1,0 +1,6 @@
+#!/bin/bash
+FILE=.settings
+if [ ! -f "$FILE" ]
+then
+echo "File Does Not Exist"
+fi
