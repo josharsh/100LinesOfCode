@@ -9,5 +9,7 @@ echo "Enter Username: "
 read username
 echo "Enter Password: "
 read password
-echo -e "\$ipadd=$ipadd\n\$username=$username\n\$password=$password" >> .settings
+echo -e "ipadd=$ipadd\nusername=$username\npassword=$password" >> .settings
+else
+source $FILE
 fi
