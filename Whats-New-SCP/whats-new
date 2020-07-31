@@ -7,12 +7,12 @@ echo "Enter IP address of server: "
 read IPADD
 echo "Enter Username: "
 read USERNAME
-echo "Enter Remote Directory to Watch (Default ~/home/watch): "
+echo "Enter Remote Directory to Watch (Default ~/watch): "
 read WATCHDIR
 echo "Enter Custom SSH Key Name (Default id_rsa): "
 read KEYNAME
-echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR=$WATCHDIR\nKEYNAME=$KEYNAME" >> .settings
+echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR="$WATCHDIR"\nKEYNAME=$KEYNAME" >> .settings
 else
 source $FILE
 fi
-ssh -i ~/.ssh/test-key $USERNAME@$IPADD
+ssh -i ~/.ssh/test-key $USERNAME@$IPADD "for f in $WATCHDIR/*; do echo \$f; done"
