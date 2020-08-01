@@ -16,5 +16,5 @@ ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
 else
 source $FILE
 fi
-ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -newercm $WATCHDIR/.lastcheck;"
+ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newercm $WATCHDIR/.lastcheck;"
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
