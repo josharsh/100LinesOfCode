@@ -11,7 +11,7 @@ echo "Enter Remote Directory to Watch (Default ~/watch): "
 read WATCHDIR
 echo "Enter Custom SSH Key Name (Default id_rsa): "
 read KEYNAME
-echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR="$WATCHDIR"\nKEYNAME=$KEYNAME" >> .settings
+echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR=\"$WATCHDIR\"\nKEYNAME=$KEYNAME" >> .settings
 else
 source $FILE
 fi
