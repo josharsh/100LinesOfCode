@@ -1,7 +1,6 @@
 #!/bin/bash
 FILE=.settings
-if [ ! -f "$FILE" ]
-then
+if [ ! -f "$FILE" ]; then
 touch .settings
 echo "Enter IP address of server: "
 read IPADD
@@ -16,5 +15,9 @@ ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
 else
 source $FILE
 fi
-ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newercm $WATCHDIR/.lastcheck;"
+
+for f in $(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newercm $WATCHDIR/.lastcheck")
+do
+scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$f ./
+done
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
