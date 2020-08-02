@@ -1,37 +1,50 @@
 #!/bin/bash
+
+# Create settings file and fill in information for ssh and download/watch locations
 FILE=.settings
-if [ ! -f "$FILE" ]; then
+if [ ! -f "$FILE" ]; then # If .settings is not an existing file
 echo "Enter IP address of server: "
 read IPADD
 echo "Enter Username: "
 read USERNAME
 echo "Enter Download Directory Excluding Final '/' (Default to Current Directory): "
 read DOWNDIR
-if [ "$DOWNDIR" = "" ]; then
+if [ "$DOWNDIR" = "" ]; then # Default value
 DOWNDIR="."
 fi
 echo "Enter Remote Directory to Watch (Default ~/watch): "
 read WATCHDIR
-if [ "$WATCHDIR" = "" ]; then
+if [ "$WATCHDIR" = "" ]; then # Default value
 WATCHDIR="~/watch"
 fi
 echo "Enter Custom SSH Key Name (Default id_rsa): "
 read KEYNAME
-if [ "$KEYNAME" = "" ]; then
+if [ "$KEYNAME" = "" ]; then # Default value
 KEYNAME="id_rsa"
 fi
+
+# Write variables to .settings file to save them when the script it run again
 echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nDOWNDIR=\"$DOWNDIR\"\nWATCHDIR=\"$WATCHDIR\"\nKEYNAME=$KEYNAME" >> .settings
+
+# Create an empty file that will be used in a comparison for finding new files. Idea is from
+# Michael Sacchi at the following discussion:
+# https://unix.stackexchange.com/questions/24952/script-to-monitor-folder-for-new-files
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
 else
-source $FILE
+source $FILE # Read variables from the .settings file
 fi
 
-REMROOT=$(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "echo $WATCHDIR")
+# This code loops over all new files in the watch directory, determines the relative path
+# of the files from the watch directory root, then copies those files to the local machine
+# and creates any necessary directories that those files were nested in.
+REMROOT=$(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "echo $WATCHDIR") # Full watch dir path
+# The find command will check if any files in the watch folder have a changed timestamp that is
+# newer than the last time that .lastcheck was modified (touched in this script)
 for F in $(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newercm $WATCHDIR/.lastcheck")
 do
-FULLDIR=$(dirname $F)
-RELDIR=${FULLDIR#"$REMROOT"}/
-mkdir -p $DOWNDIR$RELDIR
-scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$F $DOWNDIR$RELDIR
+FULLDIR=$(dirname $F) # Directory structure of new file without the file name included
+RELDIR=${FULLDIR#"$REMROOT"}/ # Directory structure to create on local machine
+mkdir -p $DOWNDIR$RELDIR # Create the nested directories that the file is located in
+scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$F $DOWNDIR$RELDIR # Copy the file to the directory
 done
-ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
+ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck" # Update .lastcheck for future
