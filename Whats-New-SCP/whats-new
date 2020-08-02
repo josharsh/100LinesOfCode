@@ -16,8 +16,12 @@ else
 source $FILE
 fi
 
-for f in $(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newercm $WATCHDIR/.lastcheck")
+REMROOT=$(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "echo $WATCHDIR")
+for F in $(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newercm $WATCHDIR/.lastcheck")
 do
-scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$f ./
+FULLDIR=$(dirname $F)
+RELDIR=${FULLDIR#"$REMROOT"}/
+mkdir -p .$RELDIR
+scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$F .$RELDIR
 done
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
