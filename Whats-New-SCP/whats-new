@@ -1,15 +1,20 @@
 #!/bin/bash
 FILE=.settings
 if [ ! -f "$FILE" ]; then
-touch .settings
 echo "Enter IP address of server: "
 read IPADD
 echo "Enter Username: "
 read USERNAME
 echo "Enter Remote Directory to Watch (Default ~/watch): "
 read WATCHDIR
+if [ "$WATCHDIR" = "" ]; then
+WATCHDIR="~/watch"
+fi
 echo "Enter Custom SSH Key Name (Default id_rsa): "
 read KEYNAME
+if [ "$KEYNAME" = "" ]; then
+KEYNAME="id_rsa"
+fi
 echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR=\"$WATCHDIR\"\nKEYNAME=$KEYNAME" >> .settings
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
 else
