@@ -5,6 +5,11 @@ echo "Enter IP address of server: "
 read IPADD
 echo "Enter Username: "
 read USERNAME
+echo "Enter Download Directory Excluding Final '/' (Default to Current Directory): "
+read DOWNDIR
+if [ "$DOWNDIR" = "" ]; then
+DOWNDIR="."
+fi
 echo "Enter Remote Directory to Watch (Default ~/watch): "
 read WATCHDIR
 if [ "$WATCHDIR" = "" ]; then
@@ -15,7 +20,7 @@ read KEYNAME
 if [ "$KEYNAME" = "" ]; then
 KEYNAME="id_rsa"
 fi
-echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nWATCHDIR=\"$WATCHDIR\"\nKEYNAME=$KEYNAME" >> .settings
+echo -e "IPADD=$IPADD\nUSERNAME=$USERNAME\nDOWNDIR=\"$DOWNDIR\"\nWATCHDIR=\"$WATCHDIR\"\nKEYNAME=$KEYNAME" >> .settings
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
 else
 source $FILE
@@ -26,7 +31,7 @@ for F in $(ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "find $WATCHDIR -type f -newe
 do
 FULLDIR=$(dirname $F)
 RELDIR=${FULLDIR#"$REMROOT"}/
-mkdir -p .$RELDIR
-scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$F .$RELDIR
+mkdir -p $DOWNDIR$RELDIR
+scp -i ~/.ssh/$KEYNAME $USERNAME@$IPADD:$F $DOWNDIR$RELDIR
 done
 ssh -i ~/.ssh/$KEYNAME $USERNAME@$IPADD "touch $WATCHDIR/.lastcheck"
