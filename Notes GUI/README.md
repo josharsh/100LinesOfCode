@@ -2,7 +2,7 @@
 
 # HOW TO USE
 
-Run in terminal.
-'''
+Run the following command in terminal.
+```
 python notes.py
-'''
+```
