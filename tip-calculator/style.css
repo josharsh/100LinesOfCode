@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    width: 100%;
+    background: linear-gradient(-45deg, coral, crimson,cyan,darkslateblue);
+    animation: gradient 15s ease infinite;
+    background-size:  200% 900%;
+    position: relative;
+    top: 20vh;
+}
+
+h1 {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+
+
+@keyframes gradient {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#calculator {
+
+    background-color:white;
+    border-radius: 1rem;
+    opacity: .5;
+    width: 50%;
+    justify-items: center;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 5vh ;
+}
+#result{
+    text-align: center;
+    width: 100%;
+    justify-items: center;
+    transition: 2s ease 0s;
+}
+#bill, #tip{
+    text-align: center;
+    width: 80%;
+}
+
+#result {
+    transition: all 1s;
+    max-height: 300px;
+}
+
+#result.pre-animation {
+    opacity: 0;
+    max-height: 0;
+}
+
+#placeholdertext {
+    margin-bottom: 0;
+}
+
