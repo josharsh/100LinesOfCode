@@ -1,5 +1,5 @@
 ## Motivation
-A spify bash app to feed you with motivation from your command line!
+A spiffy bash app to feed you with motivation from your command line!
 With over 300 quotes chosen at random.
 
 ## Installation
