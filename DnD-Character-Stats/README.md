@@ -2,3 +2,5 @@ This is a Dungeons and Dragons character stat generator based on the "Roll 4, ke
 
 To run this generator, simply navigate to the DnD-Character-Stats directory of this repo through a command line window and run:
 python DnDCharStats.py
+
+Author: Eva Kioseoglou
