@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+
+.colorButton {
+  padding: 20pt 20pt;
+  border-radius: 50%;
+  border: 1px solid whitesmoke;
+  background: lightcoral;
+}
+
+.colorButton:active {
+  text-decoration: none;
+}
+
+.resetButton {
+  padding: 10pt 20pt;
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
+  cursor: pointer;
+}
