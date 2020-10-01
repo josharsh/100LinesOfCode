@@ -1,0 +1,63 @@
+<!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+<style >
+
+body{
+background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm33-chim-18-c-brick_0.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=450005ef27fb558303505681d731cdb8');
+
+}
+
+.ql-container{
+    height: 40%;
+    width:60%;
+    
+    
+}
+.ql-toolbar.ql-snow{
+ width: 60%;
+ background-color: #85adad;
+}
+#display{
+  
+  height: 34%;
+  width:52%;
+  border: 1px solid  gray ;
+  padding: 50px;
+  margin: 20px;
+  position: center;
+  background-color: white;
+  align-content:center;
+
+
+}
+#editor{
+	background-color: white;
+}
+
+</style>
+
+<!-- Create the editor container -->
+<div id="editor">
+  <p>HERE GOES UR EDITOR</p>
+  
+</div>
+
+<input  id="01" type="submit" onclick="showInput();"></br>
+<p style="color: white;">THE PREVIEW IS AS FOLLOWS</p><br>
+<p id='display'></p>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+  var textread = quill.getText();
+        function showInput() {
+        document.getElementById('display').innerHTML = quill.getText();
+        
+    }
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm33-chim-18-c-brick_0.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=450005ef27fb558303505681d731cdb8');
+text-align: center;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+input[type=submit]:hover {
+  background-color: blue;
+}
+
+label, input {
+    display: block;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+.container {
+  width: 700px;
+  padding: 30px;
+  margin:0 auto;
+  text-align: center;
+  overflow-y: auto;
+  color: solid black;
+  border:5px solid black;
+  border-radius: 10px;
+  background-color: #1f1f14;
+}
+
+#editor-div{
+  height: 200px;
+  width: 100%;
+  margin-right: 18%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+  font-size: 30px;
+  background-color: white;
+  }
+
+  .ql-toolbar.ql-snow{
+    border:3px solid white;
+  }
+</style>
+</head>
+<body>
+
+<h3 style="text-align: center; color: white">CUSTOM EMAIL FORM</h3>
+
+<div class="container">
+  <form action="/sendMail" method="POST">
+    <label for="fname" style="color: white"><b>Sender email<b></label>
+    <input type="text" id="fname" name="senderEmail" placeholder="Your email in the format @gmail.com">
+    <label for="lname" style="color: white"><b>Sender password<b></label><br>
+    <input type="password" id="lname" name="password" placeholder="Your password"><br>
+    <label for="lname" style="color: white"><b>Receiver email<b></label>
+    <input type="text" id="lname" name="recerverEmail" placeholder="Receiver email in the format @gmail.com ">
+     <label for="subject" style="color: white"><b>Subject<b></label>
+    <input type="text" name="subject" placeholder="Write the subject for the mail" ></input>
+
+    <!--<label for="subject" style="color: white"><b>Body<b></label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>-->
+    <label for="subject" style="color: white"><b>Body<b></label>
+    <!-- <input type="text" style="height: 4cm;" name="body" > -->
+      <textarea style="height: 4cm;" name="body">
+
+      </textarea>
+    <input  type="submit" value="Submit" onclick="PostRequest()">
+  </form>
+</div>
+<script>
+
+</script>
+
+</body>
+</html>
