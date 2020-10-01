@@ -1,0 +1,16 @@
+{
+  "name": "higher_or_lower",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "game": "node app.js"
+  },
+  "author": "Jason Karlavige",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "inquirer": "^7.3.3"
+  }
+}
