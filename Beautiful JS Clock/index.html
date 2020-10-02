@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="centerPoint"></div>
+        <div class="hourHand"></div>
+        <div class="minuteHand"></div>
+        <div class="secondHand"></div>
+    </div>
+    <script>
+        function runClock() {
+            let currentTime = new Date();
+            let secondRotate = (currentTime.getSeconds() / 60) * 360;
+            let minuteRotate = (currentTime.getMinutes() / 60) * 360;
+            let hourRotate = ((currentTime.getHours() + (currentTime.getMinutes() / 60)) / 12) * 360;
+
+            let secondHand = document.querySelector(".secondHand");
+            let minuteHand = document.querySelector(".minuteHand");
+            let hourHand = document.querySelector(".hourHand");
+            secondHand.style.transform = `rotate(${secondRotate}deg) translateY(-30%)`;
+            minuteHand.style.transform = `rotate(${minuteRotate}deg) translateY(-50%)`;
+            hourHand.style.transform = `rotate(${hourRotate}deg) translateY(-50%)`;
+        }
+
+        setInterval(runClock, 1000);
+    </script>
+</body>
+
+</html>
