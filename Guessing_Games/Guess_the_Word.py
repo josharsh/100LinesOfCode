@@ -2,7 +2,7 @@ import time
 
 name = input("What is your name? ")
 
-print("Hello, " + name, "Time to play hangman!")
+print("Hello, " + name, "Time to play!")
 
 #wait for 1 second
 time.sleep(1)
