@@ -18,10 +18,10 @@ Enjoy!
 
 ### Screenshots of the simulation
 
-![First-Screenshot](/images/1.JPG)
+![First-Screenshot](https://github.com/aceking007/100LinesOfCode/blob/GameOfLife/GameOfLife/images/1.JPG)
 
-![Second-Screenshot](/images/2.JPG)
+![Second-Screenshot](https://github.com/aceking007/100LinesOfCode/blob/GameOfLife/GameOfLife/images/2.JPG)
 
-![Third-Screenshot](/images/3.JPG)
+![Third-Screenshot](https://github.com/aceking007/100LinesOfCode/blob/GameOfLife/GameOfLife/images/3.JPG)
 
-![Fourth-Screenshot](/images/4.JPG)
+![Fourth-Screenshot](https://github.com/aceking007/100LinesOfCode/blob/GameOfLife/GameOfLife/images/4.JPG)
