@@ -3,7 +3,17 @@ turtle is a pre-installed Python library that enables users to create pictures a
 
 The turtle module provides turtle graphics primitives, in both object-oriented and procedure-oriented ways.
 
-Its a fun program in 26 lines using turtle library.
+This folder contains designs using Turtle module.
 
-The program uses random colors to make the art more attractive.
+The programs uses random colors to make the art more attractive.
+
+The programs have used different shapes for the pen.
+
+-Arrow
+
+-Turtle
+
+-Classic
+
+
 
