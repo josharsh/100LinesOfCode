@@ -1,5 +1,8 @@
 #Greeting Program
 
+##Author
+[Manas Sharma](https://github.com/Manas-E)
+
 ##Description
 This is a program that greets you according to the time.
 
