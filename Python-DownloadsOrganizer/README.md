@@ -1,0 +1,1 @@
+Simple project to organize your downloads folder. All stray files and folders will be automatically arranged in a neat way. To support a new file extension simply add the extensions to file_extensions.py
