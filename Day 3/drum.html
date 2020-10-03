@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="keys">
+        <div class="key" id="key1" data-key ="65">A</div>
+        <div class="key" id="key2" data-key="83">S</div>
+        <div class="key" id="key3" data-key="68">D</div>
+        <div class="key" id="key4" data-key="70">F</div>
+        <div class="key" id="key5" data-key="71">G</div>
+        <div class="key" id="key6" data-key="72">H</div>
+        <div class="key" id="key7" data-key="74">J</div>
+        <div class="key" id="key9" data-key="75">K</div>
+        <div class="key" id="key8" data-key="76">L</div>
+    </div>
+    <audio data-key = "65" src="sounds\boom.wav"></audio>
+    <audio data-key = "83" src="sounds\clap.wav"></audio>
+    <audio data-key = "68" src="sounds\hihat.wav"></audio>
+    <audio data-key = "70" src="sounds\kick.wav"></audio>
+    <audio data-key = "71" src="sounds\openhat.wav"></audio>
+    <audio data-key = "72" src="sounds\ride.wav"></audio>
+    <audio data-key = "74" src="sounds\snare.wav"></audio>
+    <audio data-key = "75" src="sounds\tink.wav"></audio>
+    <audio data-key = "76" src="sounds\tom.wav"></audio>
+
+<script>
+    function animate(keycode){
+       var key = document.querySelector(`.key[data-key="${keycode}"]`);
+       key.classList.add('play');
+       key.addEventListener('transitionend',function(e){
+        key.classList.remove('play')
+;       });
+    }
+    
+    document.addEventListener('keydown',function(e){
+        let keycode = e.keyCode;
+        var audio = document.querySelector(`audio[data-key="${keycode}"]`);
+        if(audio==null)
+        return;
+        audio.currentTime = 0; 
+        audio.play();
+        animate(keycode);
+    })
+</script>
+
+</body>
+</html>
