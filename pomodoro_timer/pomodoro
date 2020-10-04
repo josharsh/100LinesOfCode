@@ -1,0 +1,38 @@
+#!/bin/bash 
+
+trap "printf '\nExiting..\n' ; exit 0" SIGHUP SIGINT SIGTERM
+
+printer(){
+	printf "\r%02d:%02d:%02d  " \
+			$((timeremaining/3600)) $(((timeremaining/60)%60)) $((timeremaining%60))
+}
+
+timer(){
+    timeremaining=($(( ($1)*60 )))	
+
+	while [ $timeremaining -ne 0 ];do
+		printer
+		sleep 1
+		timeremaining=$((timeremaining-1))
+	done
+}
+
+alarm(){
+	while [ true ]; do
+		printf "\r%02d:%02d:%02d\a   " "0" "0" "0"
+		sleep 0.5
+		printf "\r  :  :  \a   "
+		sleep 0.5
+	done
+}
+
+if [ $# -gt 0 ]; then
+	timer $1
+	alarm
+else
+	echo "Usage: pomodoro <#ofminutes>"
+fi
+
+
+
+
