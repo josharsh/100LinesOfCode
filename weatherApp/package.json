@@ -1,0 +1,15 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Weather App giving the weather of any city through API calls",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js -C Redmond"
+  },
+  "author": "Preethi",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2",
+    "yargs": "^16.0.3"
+  }
+}
