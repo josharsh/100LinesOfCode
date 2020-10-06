@@ -4,7 +4,7 @@ This is a simple movie recommedation using `cosine_similarity` and `CountVectori
 
 You can use the google colab to run the program if you dont have jupyter notebook installed.
 
-### Also if you are using juypter notebook make sure you have:
+### Also if you are using juypter notebook make sure you have installed:
 - `pandas`
 - `numpy`
 - `rake_ntlk`
