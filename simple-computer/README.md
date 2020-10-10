@@ -16,3 +16,5 @@ The project and the content of it can be used under the aim of [Attribution 4.0 
 
 ## Contributing
 Contributors are welcome, follow the general guide-lines to fork, code, push and open a pull request
+
+##  Author Valerian Ardelean
