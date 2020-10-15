@@ -1,4 +1,5 @@
 ## Easy Countdown timer generator!
+[View demo](https://countdownbanner.vercel.app/web.html)
 Imagine you're about to launch a project in a few weeks or months. How do you build anticipation? Well, you could download/purchase one of those WordPress themes that count down to a date you specified, or you can just copy one of these easy-to-customize banners and set your date to the date you expect to go live!
 
 Once set up, it will countdown *to the second* until your product launch, website activation, event date -- anything you want!
@@ -10,4 +11,11 @@ Once set up, it will countdown *to the second* until your product launch, websit
 
 Good luck with your launch, and I wish you a lot of good fortune!
 
--- Vunderkind
+## Created by:
+Justin Irabor (or Vunderkind) 
+[GitHub](https://github.com/vunderkind)
+[Portfolio](https://justinirabor.com)
+[Twitter](https://twitter.com/lifeofmogwai)
+[Email](mailto:justin.irabor@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/justinirabor/)
+[DEV](https://dev.to/vunderkind)
