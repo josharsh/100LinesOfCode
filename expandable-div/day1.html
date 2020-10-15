@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="day1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="maintab">
+        <div class="heading">
+
+            <h3>Lorem ipsum lit.</h3>
+            <div class="btn">✚</div>
+        </div>
+
+        <div class="btmdiv">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos tempora ab, nobis totam numquam accusamus
+            debitis quod omnis voluptatum magnam veritatis aliquam expedita, quaerat est?
+        </div>
+
+    </div>
+<script>
+   let btn = document.querySelector('.btn');
+   let para = document.querySelector('.btmdiv');
+    btn.addEventListener("click",function(e)
+    {
+        if(para.style.display != "none"){
+            para.style.display="none";
+        }
+        else{
+            para.style.display="block";
+        }
+    }
+    );
+    
+
+
+
+</script>
+
+
+</body>
+
+</html>
