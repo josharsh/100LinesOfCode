@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background: linear-gradient(-30deg,rgb(10, 178, 245),blue);
+}
+body::before{
+    
+}
+.clock{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 10px solid rgb(253, 252, 252);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock::before{
+    content: '';
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 10;
+}
+.clock .hh{
+    position: absolute;
+    height: 100px;
+    width: 8px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: black;
+    transform: translateY(-50%) rotate(45deg);  
+}
+.clock .mh{
+    position: absolute;
+    height: 110px;
+    width: 5px;
+    border-top-left-radius: 2.5px;
+    border-top-right-radius: 2.5px;
+    background-color: red;
+    transform: translateY(-50%) rotate(180deg);   
+}
+.clock .sh{
+    position: absolute;
+    height: 125px;
+    width: 3px;
+     border-top-left-radius: 1.5px;
+    border-top-right-radius: 1.5px;
+    background-color: white;
+    transform: translateY(-50%) rotate(30deg);  
+}
+</style>
+<body>
+     <div class="clock">
+         <div class="hh"></div>
+
+         <div class="mh"></div>
+
+         <div class="sh"></div>
+
+     </div>
+
+<script>
+    function runClock(){
+        const deg=6
+        const date = new Date();
+        var hh = document.querySelector('.hh');
+        var mh = document.querySelector('.mh');
+        var sh = document.querySelector('.sh');
+       
+        var SH = date.getSeconds() * deg;
+        var MH =  (date.getSeconds()/60 + date.getMinutes()) * deg;
+        var HH =(date.getMinutes()/60 + date.getHours())*30;
+      
+        sh.style.transform=`rotate(${SH}deg) translateY(-50%)`;
+        mh.style.transform=`rotate(${MH}deg) translateY(-50%)`;
+        hh.style.transform=`rotate(${HH}deg) translateY(-50%)`;
+    }
+
+    setInterval(runClock,1000);
+
+</script>
+
+</body>
+</html>
