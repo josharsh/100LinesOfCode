@@ -1,0 +1,44 @@
+body {
+    margin:0;
+    padding:0;
+  }
+  .rating {
+      top:50%;
+      left:50%;
+      transform: translate(-50px,-50px) rotateY(180deg);
+      position: absolute;
+      display: flex;
+  }
+  .rating input {
+    display: none;
+  }
+  
+  .rating label:before {
+    content: '\f005';
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    position:relative;
+    display:block;
+    font-size:3rem;
+    opacity:1;
+  }
+  
+  .rating label:after {
+    content: '\f005';
+    position: absolute;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;  
+    font-size:3rem;
+    color: gold;
+    opacity: 0;
+    
+    top: 0;
+  }
+  
+  .rating label:hover:after,
+  .rating label:hover ~ label:after,
+  .rating input:checked ~ label:after {
+    transition: .25s;
+    opacity:1;
+  }
+  
