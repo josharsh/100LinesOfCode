@@ -1,0 +1,17 @@
+{
+  "name": "imtost",
+  "version": "1.0.0",
+  "description": "Automatically convert images to stickers",
+  "main": "index.js",
+  "scripts": {"test": "node index.js"},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donno2048/imtost.git"
+  },
+  "keywords": ["WhatsApp"],
+  "author": "Elisha Hollander",
+  "license": "ISC",
+  "bugs": {"url": "https://github.com/donno2048/imtost/issues"},
+  "homepage": "https://github.com/donno2048/imtost#readme",
+  "dependencies": {"venom-bot": "^2.2.3"}
+}
