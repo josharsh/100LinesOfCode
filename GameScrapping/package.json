@@ -1,0 +1,24 @@
+{
+  "name": "hltbmetacriticscrape",
+  "version": "1.0.0",
+  "description": "Module to get time to beat and metacritic score of a game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irscin/hltbmetacriticscrape.git"
+  },
+  "author": "Italo Soares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/irscin/hltbmetacriticscrape/issues"
+  },
+  "homepage": "https://github.com/irscin/hltbmetacriticscrape#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "howlongtobeat": "^1.2.1"
+  }
+}
