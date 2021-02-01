@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Countdown Timer</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Raleway:wght@700&display=swap');
+
+* {
+    margin: 0; padding: 0; color: white; box-sizing: border-box; font-size: 25px; line-height: 1; font-family: 'Raleway', sans-serif;
+}
+.ad {
+    width: 100vw; min-height: 100vh; margin: 0 auto; background: black; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 10px;
+}
+
+
+#explosion {
+    text-align: center;
+}
+
+h1 {font-size: 2em; letter-spacing: 1.5px; line-height:2; text-align: center;
+}
+span {text-align: center;
+}
+h2 {font-size: 1.3em;
+}
+
+p {font-size: 0.4em;
+}
+
+a {text-decoration: none;
+}
+
+#timer {display: flex;justify-content: center; flex-wrap: wrap;
+}
+span>h2{padding-bottom: 15px; color: rgb(255, 173, 106);
+}
+span {
+    margin: 1em;
+    color: yellow;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      span {
+          margin: 0.4em;
+      }
+
+}
+        </style>
+        <!-- Optional a href, in case you want the banner to link to something else -->
+    <a href="#"> 
+        <div class="ad">
+        <h1>WELCOME.</h1>
+        <div id="explosion">
+        <h2>WE GO LIVE IN:</h2>
+        <div id="timer">
+            <span><h2 id="days"></h2><p id="daysText"></p></span>
+            <span><h2 id="hours"></h2><p id="hoursText"></p></span>
+            <span><h2 id="minutes"></h2><p id="minutesText"></p></span>
+            <span><h2 id="seconds"></h2><p id="secondsText"></p></span>
+        </div>
+    </div>
+    </div>
+</a>
+    <script defer>
+        let timerText = document.getElementById('clock');
+// Change the launch date here and you'll be fine!
+let endDate = 'September 25 2052 13:59:59 GMT+0100';
+let hours = document.getElementById('hours')
+let days = document.getElementById('days')
+let minutes = document.getElementById('minutes')
+let seconds = document.getElementById('seconds')
+
+let hoursText = document.getElementById('hoursText');
+let minutesText = document.getElementById('minutesText');
+let daysText = document.getElementById('daysText');
+let secondsText = document.getElementById('secondsText');
+
+hoursText.innerHTML = 'HOUR'
+daysText.innerHTML = 'DAY'
+minutesText.innerHTML = 'MINUTE'
+secondsText.innerHTML = 'SECOND'
+
+function timeChecker(timeElement, time){
+    const t = getTimeDifference(endDate)[time];
+    if(t>1 || t<=0){
+        if(timeElement.innerHTML[timeElement.innerHTML.length-1]!='S'){
+      timeElement.innerHTML = timeElement.innerHTML + 'S';
+    }
+  }
+  else if (t==1) {
+      if(timeElement.innerHTML[timeElement.innerHTML.length-1]!='S') return;
+    timeElement.innerHTML = timeElement.innerHTML.slice(0,-1);
+
+  }
+}
+
+function getTimeDifference(endtime){
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor( (total/1000) % 60 );
+  const minutes = Math.floor( (total/1000/60) % 60 );
+  const hours = Math.floor( (total/(1000*60*60)) % 24 );
+  const days = Math.floor( total/(1000*60*60*24) );
+
+  return {total,days,hours,minutes,seconds};
+}
+
+function startClock(timerText, endtime){
+  function updateClock(){
+  const t = getTimeDifference(endtime);
+  t.hours>0? hours.innerHTML = t.hours: hours.innerHTML = 0;
+  t.days>0? days.innerHTML = t.days: days.innerHTML = 0;
+  t.seconds>0? seconds.innerHTML = t.seconds: seconds.innerHTML = 0;
+  t.minutes>0? minutes.innerHTML = t.minutes: minutes.innerHTML = 0;
+
+timeChecker(hoursText, 'hours');
+timeChecker(minutesText, 'minutes');
+timeChecker(secondsText, 'seconds');
+timeChecker(daysText, 'days');
+  if (t.total <= 0) {
+    clearInterval(timeinterval);
+  }
+};
+updateClock();
+let timeinterval = setInterval(updateClock, 1000);
+}
+
+startClock(timerText,endDate);
+    </script>
+</body>
+</html>
