@@ -1,0 +1,1 @@
+I game where the player survives being taken by playing a game of russian Roulette.
