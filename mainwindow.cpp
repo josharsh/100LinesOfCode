@@ -9,7 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //read from file upon start
-    QFile file("C:/Users/Brian/Documents/Spring2021/Classes/CSPC362/ShoppingList-CPSC362/data.txt");
+    this->setWindowTitle("Brian's List Program!");
+
+    //change to your directory
+    QFile file("C:/Users/Brian/Documents/Spring 2021/100LinesOfCode/data.txt");
+
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
         QMessageBox::warning(this, "Error", "Error - The file is not open!");
@@ -26,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     file.close();
 }
 
+//default destructor
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -51,6 +56,7 @@ void MainWindow::on_pushButton_edit_clicked()
     QString item = ui->lineEdit_itemName->text();
     QString itemQuantity = ui->lineEdit_itemQuantity->text();
     ui->listWidget_shoppingList->item(currentRow)->setText(item + ", " + itemQuantity);
+    QMessageBox::information(this, "Success", "Item successfully edited!");
 }
 
 //deletes an entry
@@ -62,7 +68,7 @@ void MainWindow::on_pushButton_delete_clicked()
 //saves data to file
 void MainWindow::on_pushButton_save_clicked()
 {
-    QFile file("C:/Users/Brian/Documents/Spring2021/Classes/CSPC362/ShoppingList-CPSC362/data.txt");
+    QFile file("C:/Users/Brian/Documents/Spring 2021/100LinesOfCode/data.txt");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
         QMessageBox::warning(this, "Title", "Error - The file is not open!");
