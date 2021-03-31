@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> simple computer </title>
+    <style>
+      #calculator {
+        width: 358px;
+        margin:auto;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 19px;
+      }
+      #button {
+        width: 72px;
+        background-color: red;
+        color: white;
+        font-size: 17px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id='calculator'>
+      <h1>a very basic computer</h2>
+      <p> This computer can operate mathematical, grade I and II operations with two members. </p>
+      <p> In order to proceed click on the start button. </P>
+      <p> A dialog box will open, wich will ask you to insert the first element of the mathematical operation,
+          then the second element folllowed by the mathematical operation sign desired for the operation to hapened:
+          For addition, use the +; for substracting use -, for multiply use * and for dividing use / .</p>
+      <button id='button'><b>START</b></button>
+    </div>
+    <script>
+      var button = document.getElementById('button')
+      button.onclick = function (e) {
+        var first = parseFloat(prompt('insert the first elem of u math opp'))
+        var second = parseFloat(prompt('insert the second elem of u math opp'))
+        var sign = prompt('insert the mathemathical sign')
+        if (sign=='+') {
+          alert(first+second)
+        } else if (sign == '-') {
+          alert(first-second)
+        } else if (sign == '*') {
+          alert(first*second)
+        } else if (sign == '/') {
+          alert(first/second)
+        }
+      }
+    </script>
+  </body>
+</html>
