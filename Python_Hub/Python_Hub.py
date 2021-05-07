@@ -80,6 +80,8 @@ def main():
             os.chdir("LANComm")
             os.system('python bleh2.py')
             continue
+        if user_input == "-1": {}
+        if user_input == "exit": {}
         else:
             print("non-valid entry, please try again with a valid numeric input: ")
             continue
