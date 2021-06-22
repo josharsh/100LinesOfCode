@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+
+#clear {
+    margin-top: 15px;
+}
+
+.form-group,
+button {
+    margin: 15px;
+}
