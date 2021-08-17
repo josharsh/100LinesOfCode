@@ -18,7 +18,7 @@ init_notebook_mode(connected=True)
 
 
 # Read Data
-df = pd.read_csv("/home/aman/Documents/Covid19 Project/covid_19_data.csv")
+df = pd.read_csv("covid_19_data.csv")
 
 
 # Rename columns
