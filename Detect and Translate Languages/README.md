@@ -40,4 +40,5 @@ Note: google_trans_new may cause some error like "JSONDecodeError: Extra data", 
 You can also refer the git issue for more reference on this topic: https://github.com/lushan88a/google_trans_new/issues/36
 
 Author: Tejaswi Kumar
+
 LinkedIn: https://www.linkedin.com/in/tejaswi24/
