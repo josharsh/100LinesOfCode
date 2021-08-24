@@ -34,7 +34,7 @@ Refer the link below to import the python notebook into the jupyter notebook env
 https://jupyter-notebook.readthedocs.io/en/4.x/examples/Notebook/rstversions/Importing%20Notebooks.html 
 
 ## Alternative Solution
-A python notebook (.py extension) can be opened using vscode. For this necessary libraries must be installed. 
+A python notebook (.ipynb extension) can be opened using vscode. For this necessary libraries must be installed. 
 
 Refer the link below:
 https://code.visualstudio.com/docs/datascience/jupyter-notebooks
