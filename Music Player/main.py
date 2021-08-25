@@ -37,7 +37,7 @@ songstatus.set("choosing")
 playlist=Listbox(root,selectmode=SINGLE,bg="aqua",fg="black",font=('arial',25),width=35)
 playlist.grid(columnspan=5)
 
-os.chdir(r'C:\Users\saich\OneDrive\Desktop\songs') #add location of the files when you are using it in local computer
+os.chdir(r'C:\Users\saich\OneDrive\Desktop\songs') #add correct location of files
 songs=os.listdir()
 for s in songs:
     playlist.insert(END,s)
