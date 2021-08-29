@@ -5,16 +5,12 @@ import numpy as np
 from pygame import mixer
 import time
 
-
 mixer.init()
 sound = mixer.Sound('alarm.wav')
 
 face = cv2.CascadeClassifier('haar cascade files\haarcascade_frontalface_alt.xml')
 leye = cv2.CascadeClassifier('haar cascade files\haarcascade_lefteye_2splits.xml')
 reye = cv2.CascadeClassifier('haar cascade files\haarcascade_righteye_2splits.xml')
-
-
-
 lbl=['Close','Open']
 
 model = load_model('models/cnncat2.h5')
@@ -36,7 +32,6 @@ while(True):
     faces = face.detectMultiScale(gray,minNeighbors=5,scaleFactor=1.1,minSize=(25,25))
     left_eye = leye.detectMultiScale(gray)
     right_eye =  reye.detectMultiScale(gray)
-
     cv2.rectangle(frame, (0,height-50) , (200,height) , (0,0,0) , thickness=cv2.FILLED )
 
     for (x,y,w,h) in faces:
@@ -79,8 +74,6 @@ while(True):
     else:
         score=score-1
         cv2.putText(frame,"Open",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
-    
-        
     if(score<0):
         score=0   
     cv2.putText(frame,'Score:'+str(score),(100,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
