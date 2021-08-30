@@ -35,7 +35,7 @@ def get_quotes():
   return quote
 
 #Token of Bot - Copy from Developer Discord Portal
-token = "ODgxOTA1MzQ4OTEzNTQ1MjY3.YSzoXA.ZRUmSI6PDnm3ESd9abQDAEBdW7o"
+token = <bot_token>
 
 #2. Making Bot Object with prefix as $(prefix symbol can be changed)
 client = commands.Bot(command_prefix="$")
