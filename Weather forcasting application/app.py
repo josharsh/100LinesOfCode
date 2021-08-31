@@ -4,7 +4,7 @@ import streamlit as st
 from matplotlib import dates
 from datetime import datetime
 from matplotlib import pyplot as plt
-owm = pyowm.OWM('55635f0edc2fbe3e3ada8d7bf0f8c0e9')
+owm = pyowm.OWM('your api key from weather map api')
 mgr = owm.weather_manager()
 st.title("5 Day Weather Forecast")
 st.write("### Write the name of a City and select the Temperature Unit and Graph Type from the sidebar")
