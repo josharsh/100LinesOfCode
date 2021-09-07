@@ -5,6 +5,7 @@ const faker = require('faker')
 const WORDS = 2
 const CHARACTERS = 1
 const NUMBERS = 4
+const SEPARATOR = '-'
 
 // Check if the inputs are positive, at least one word is selected and all are integers
 if (WORDS < 1 || CHARACTERS < 0 || NUMBERS < 0 || !Number.isInteger(WORDS) || !Number.isInteger(CHARACTERS) || !Number.isInteger(NUMBERS)) {
@@ -13,7 +14,7 @@ console.log("Invalid Input")
     // Generate words separated by a hyphen (-)
     var pass = faker.random.word()
     for (let i = 0; i < WORDS - 1; i++) {
-        pass += '-' + faker.random.word()
+        pass += SEPARATOR + faker.random.word()
     }
     
     // Some non-alphanumeric characters to append and a function to get one random
