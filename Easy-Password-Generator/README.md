@@ -6,6 +6,12 @@ Password generator that uses a wordlist in combination with numbers and symbols 
 
 You must have [NodeJS](https://nodejs.org/es/) installed.
 
+## Customizing the password
+
+In order to edit the password parameters, open App.js and change the lines 5 to 8 as prefered.
+
+![Parameters Image](images/parameters.png)
+
 ## Running the script
 
 To run the script, clone the repository and open this folder. Then run the following command to install the dependencies:
