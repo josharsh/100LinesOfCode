@@ -17,32 +17,32 @@ pip install -r .\requirements.txt
 ## Usage
 **STEP 1:** Make a Discord Server and open the [Discord's Developers Portal](https://discord.com/developers/docs/intro) and navigate to [Applications](https://discord.com/developers/applications)
 
-![Application Portal](pictures\application-portal.png)
+![Application Portal](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/application-portal.png)
 
 **STEP 2:** Click on [New Application]() and create a new application
-![New Application](pictures\create-app.png)
+![New Application](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/create-app.png)
 
 **STEP 3:** Add a Bot to your Application
-![Add Bot](pictures\add-bot.png)
+![Add Bot](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/add-bot.png)
 
 **STEP 4:** Copy the Bot Token and Paste it in the [discordbot.py](discordbot.py) file in the "token" variable.
-![Copy Token](pictures\token.png)
+![Copy Token](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/token.png)
 
 **STEP 5:** Go to OAuth2 and in **SCOPES** select _BOT_
-![Scope-Bot](pictures\scope-bot.png)
+![Scope-Bot](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/scope-bot.png)
 
 **STEP 6:** Then set **BOT PERMISSIONS** 
-![Bot-Permission](pictures\bot-permissions.png)
+![Bot-Permission](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/bot-permissions.png)
 _NOTE:You can choose "Administrator" but it's not advisable_
 
 **STEP 7:** Copy the URL given after Scopes
-![Copy-URL](pictures\copy-oAuth-url.png)
+![Copy-URL](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/copy-oAuth-url.png)
 
 **STEP 8:** The URL will redirect you to the following page. Select your Server Name.
-![Server-Select](pictures\select-server.png)
+![Server-Select](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/select-server.png)
 
 **STEP 9:** After successful Authorization this page will occur. Close the tab and open your Discord Server. The bot will have joined it.
-![Authorized](pictures\authorized.png)
+![Authorized](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/authorized.png)
 
 **STEP 10:** On you local machine, run the [discordbot.py](discordbot.py) file in the commandline as follows
 ```bash
@@ -53,9 +53,9 @@ _NOTE: You can also run it using Spyder IDE_
 _**YOUR BOT WILL BE UP AND RUNNING**_
 
 ## Sample Screenshots of Bot in Action
-![Bot-Test1](pictures\bot-test-1.png)
-![Bot-Test2](pictures\bot-test-2.png)
-![Bot-Test3](pictures\bot-test-3.png)
+![Bot-Test1](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/bot-test-1.png)
+![Bot-Test2](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/bot-test-2.png)
+![Bot-Test3](https://github.com/SrishtiSinghD/100LinesOfCode/blob/DiscordBot/Space%20Enthusiast%20Discord%20Bot/pictures/bot-test-3.png)
 
 ## Author<br>
 _**Srishti Singh**_<br>
