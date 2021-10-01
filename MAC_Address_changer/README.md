@@ -1,4 +1,2 @@
 # MAC_Address-Changer
-Ratanshi
-Puri 
-123
+MAC Address Changer allows you to change (spoof) Media Access Control (MAC) Address of your Network Interface Card (NIC) instantly. It has a very simple user interface and provides ample information regarding each NIC in the machine. Every NIC has a MAC address hard coded in its circuit by the manufacturer. This hard coded MAC address is used by drivers to access Ethernet Network (LAN). This tool can set a new MAC address to your NIC, bypassing the original hard coded MAC address.
