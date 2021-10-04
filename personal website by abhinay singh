@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>▶Abhinay's Personal Website◀</title>
+</head>
+
+<body style="background-color:#eaf6f6" >
+  <table cellspacing="20px">
+    <tr>
+<td><img src="abhi.jpg"  height="200" width="180" ></img></td>
+   <td> <h1>Abhinay Singh</h1>
+    <p><em>Student at<strong><a href="https://www.srms.ac.in/"> Sri Ram Murti College of Engineering Technology and research,Bareilly</a></strong>.</em>.</p>
+    <p>Pursuing B.tech from computer science and engineering(CSE) branch.</p>
+    <p>I have learnt C language and now i am learning Web development course from Angela Yu.I have completed my schooling
+      from<a href="http://marwahmodernschool.in/"> Marwah Modern School</a> in Powayan.I am very happy to doing this course.</p>
+    </td>     
+</tr>
+  </table>
+ 
+  <hr>
+  <h3>Education</h3>
+  <ul>
+    <li>Web development</li>
+    <ul>
+      <li>course-Angela Yu, help- w3schools,mnd,etc</li>
+    </ul>
+    <li>Competitive Programming</li>
+    <ul>
+      <li>with c++ ,course- Abdul Bari.</li>
+    </ul>
+    <li>Machine Learning</li>
+    <ul>
+      <li>with python</li>
+    </ul>
+  </ul>
+  <hr>
+  <h1>Work Experience</h1>
+  <p>Yet not doing any work right now.</p>
+ <table border="1px">
+   <thead>
+     <tr>
+       <th>YEAR</th>
+       <th>schooling/college</th>
+       <th>college/school name</th>
+     </tr>
+   </thead>
+   <tbody>
+   <tr>
+     <td>2005-2019</td>
+     <td>schooling</td>
+     <td>MARWAH MODERN SCHOOL</td>
+   </tr>
+   <tr>
+     <td>2019-2023</td>
+     <td>college</td>
+     <td>SRMSCET&R</td>
+   </tr>
+   </tbody>
+ </table>
+ <br>
+ <hr>
+ <H3>Skills</H3>
+
+ <table cellspacing="10">
+
+  <tr>
+    <td>
+ <table cellspacing="10">
+   <tr>
+     <td>c language</td>
+     <td>⭐⭐⭐⭐</td>
+   </tr>
+   <tr>
+    <td>c++ language</td>
+    <td>⭐⭐⭐</td>
+  </tr>
+  </table>
+  </td>
+    <td>
+    <table>
+  <tr>
+    <td>CSS</td>
+    <td>⭐⭐⭐</td>
+  </tr>  
+<tr>
+  <td>HTML5</td>
+     <td>⭐⭐⭐⭐</td>
+</tr>
+</table>
+</td>
+<div>
+<div>
+<p>Task completed
+</p>
+</div>
+</div>
+</table>
+ <br><hr>
+<a href="hobbies.html">My Hobbies</a>
+<p><strong><a href="contact.html">Contact me</strong></a></p>
+<div>
+<span>
+<p>
+love to contribute in open source
+</p>
+</span>
+</div>
+</body>
+
+</html>
