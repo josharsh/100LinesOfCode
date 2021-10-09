@@ -1,0 +1,7 @@
+ {
+	"Login":"admin",
+	"Password":"P@s$w0rD",
+	"Server":"127.0.0.1",
+	"DB":"YourDB",
+	"OutputFolder":"E:/backups/db/"
+}
