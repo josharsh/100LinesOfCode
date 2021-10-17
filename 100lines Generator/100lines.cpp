@@ -7,6 +7,7 @@ int main() {
     std::srand(time(nullptr));
     int instructions;
     int bits;
+    string information;
     std::cout << "How many bits each instruction should have?" << std::endl;
     std::cin >> bits;
     std::cout << "How many instruction you want to generate per line?" << std::endl;
@@ -21,4 +22,6 @@ int main() {
         std::cout << std::endl;
     }
     std::cout << "I hope it doesn't have any bugs!";
+    std::cout << "Would you like to add any other additional information?" << std::endl;
+    std::cin >> information;
 }
