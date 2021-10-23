@@ -1,0 +1,11 @@
+{
+    "name": "node-ex-website",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}

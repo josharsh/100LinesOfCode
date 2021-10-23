@@ -1,6 +1,9 @@
 # 100LinesOfCode
 ![](https://www.codetriage.com/josharsh/100linesofcode/badges/users.svg)
 
+## Important Notice:
+This project is actively looking for new project maintainers. Please contact at harsh.joshi.pth@gmail.com to know more.
+
 ### Contents:
 - [About](#about)
 - [What it is](#heres-what-it-is)

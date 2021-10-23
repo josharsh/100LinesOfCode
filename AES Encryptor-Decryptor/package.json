@@ -1,0 +1,16 @@
+{
+  "name": "aes-encryptor-decryptor",
+  "version": "1.0.0",
+  "description": "AES Encryption/Decryption tool built in NodeJS",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tanmay Vij",
+  "license": "ISC",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}

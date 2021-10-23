@@ -1,0 +1,40 @@
+{   
+    "questions": [
+        {
+            "text":"What is the capital of India?",
+            "options":["New Delhi", "Mumbai", "Kolkata", "Ahmedabad"],
+            "correct":"New Delhi"
+        },
+        {
+            "text":"What is the capital of Italy?",
+            "options":["Rome", "Venice", "Ravenna", "Brundisium"],
+            "correct":"Rome"
+        },
+        {
+            "text":"What is the capital of the US?",
+            "options":["Washington D.C.", "New York", "Florida", "Detroit"],
+            "correct":"Washington D.C."
+        },
+        {
+            "text":"What is the answer to life, the universe and everything?",
+            "options":["42", "Love", "The Void", "Skyrim"],
+            "correct":"42"
+        },
+        {
+            "text":"Whick of the following is NOT a programming language?",
+            "options":["Pen", "D", "Rust", "C--"],
+            "correct":"Pen"
+        },
+        {
+            "text":"Who was the inventor of dynamite?",
+            "options":["Alfred Nobel", "Sir Hiram Maxim", "Josiah Willard Gibbs", "John Dalton"],
+            "correct":"Alfred Nobel"
+        },
+        {
+            "text":"What title did Julius Caesar NEVER officialy hold?",
+            "options":["Consul", "Emperor", "Dictator", "Greatest Priest"],
+            "correct":"Emperor"
+        }
+        
+    ]   
+}
