@@ -18,21 +18,21 @@ This repository contains all the applications, extensions, add-ons, designs, the
 
 ### Here's What It Is:
 Does #100DaysOfCode get too recursive for you? Are you fed up of #coding just for a #streak? Do you want to change the #trend?
-Here's something fresh. This  #season let's challenge our brains to develop something productive in less than #100LinesOfCode 
-Often in places close and far, we come across those little things which can really be coded to easen the process. You want to watch a youtube video at 10X?, make a browser #extension for it. If you want to add custom design themes to sites you visit, do it by designing an#extension theme. 
-#100LinesOfCode is a #challenge to get your neurons together to develop anything and everything productive using less than #100LinesOfCode. It can be an android code snippet, Javascript function, a python Library usage and anything else you can think of. So run the horses, pull up the socks, grab a cup of coffee and start to code to develop something productive in #100LinesOfCode.  I have created a Github repository https://github.com/josharsh/100LinesOfCode. Navigate and contribute to #OpenSource in the process. 
+Here's something fresh. This #season let's challenge our brains to develop something productive in less than #100LinesOfCode. 
+Often, in places near and far, we come across those little tasks which can actually be coded to ease the process. You want to watch a youtube video at 10X? Make a browser #extension for it. If you want to add custom design themes to sites you visit? Do it by designing an #extension theme. 
+#100LinesOfCode is a #challenge to get your neurons together to develop anything and everything productive using less than #100LinesOfCode. It can be an android code snippet, Javascript function, a python Library usage, or anything else you can think of. So run the horses, pull up your socks, grab a cup of coffee, and start coding to develop something productive in #100LinesOfCode. I have created a Github repository https://github.com/josharsh/100LinesOfCode. Navigate and contribute to #OpenSource in the process. 
 
 
 ## Purpose
-Purpose of this repository is to promote development of productive applications and utilities which seem so common yet might not be into use. Trigger your brain, take the challenge of developing something in less than #100LinesofCode. 
+The purpose of this repository is to promote the development of productive applications and utilities which may seem obvious but might not yet be in use. Trigger your brain, take the challenge of developing something in less than #100LinesofCode. 
 
 ## Contributing
-For Contributing norms and guidelines, go to CONTRIBUTING.MD
+For Contributing norms and guidelines, go to CONTRIBUTING.MD.
 
 
 ## Adding Your Code:
 Here are the steps:
-1: Develop something in the programming language of your choice for any platform in less than #100LinesOfCode
+1: Develop something in the programming language of your choice, for any platform in less than #100LinesOfCode
 2: Fork this repository
 3: Clone this repository 
 ```
@@ -52,7 +52,7 @@ $ git checkout branchname
 $ git add <filename>
 ```
 
-6. Commit you changes with a commit message containing your name, file(s) worked upon, changes added.
+6. Commit your changes with a commit message containing your name, file(s) worked upon, and changes added.
 ```
 $ git commit -m "Name| files| Changes"
 ```
@@ -91,10 +91,10 @@ $ git push -f origin master
 
 ## Structure of Your Code:
 The *root* directory of your developed application must contain
-* A README.md describing your project, idea and Implementation
+* A README.md describing your project, idea and implementation
 * Source code for your app
-* Link to working app (In case the app in an extension, add-ons, etc.)
-* If Possible, Deploy the code onto a hosting platform.
+* Link to working app (in case the app is an extension, add-on, etc.)
+* If possible, deploy the code onto a hosting platform
 
 Note: Please Add Author's name in Readme.md of application. 
 
