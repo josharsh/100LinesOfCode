@@ -12,3 +12,4 @@ then
  ```
  $ ruby main.rb
  ```
+# Author ``https://github.com/ochiengotieno304``
