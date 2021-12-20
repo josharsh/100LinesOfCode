@@ -74,7 +74,7 @@ class Anagrams:
 
     def accept_input(self):
         '''Takes input and calls anagram_driver'''
-        print("ENTER WORDS TO BE ANAGRAMMED IN THE FOLLOWING FORMAT:\
+        print("ENTER WORDS TO BE ANAGRAMMED IN THE FOLLOWING FORMAT:\n\
         ``WORD'' ``MIN_LENGTH_OF_ANAGRAM''(OPTIONAL)")
         print("ENTER ``QUIT'' TO QUIT\n")
         while True:
