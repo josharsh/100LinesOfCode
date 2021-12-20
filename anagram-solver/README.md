@@ -14,9 +14,9 @@ pip3 install english-words
 ```
 Optional arguments:
 
---no_proper_nouns : If you would like to avoid proper nouns in the anagram list. If correct_spelling is set, proper nouns will also not be considered as corrections.
+`--no_proper_nouns` : If you would like to avoid proper nouns in the anagram list. If `correct_spelling` is set, proper nouns will also not be considered as corrections.
 
---correct_spelling : Will correct spelling errors in input words
+`--correct_spelling` : Will correct spelling errors in input words
 
 Running the above will prompt the user for input words until they choose to quit.
 
