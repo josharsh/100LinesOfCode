@@ -8,7 +8,7 @@ pip3 install editdistance
 pip3 install english-words
 ```
 #### Usage
-#####Run
+##### Run
 ```
 ./anagrams.py --no_proper_nouns --correct_spelling
 ```
@@ -20,7 +20,7 @@ Optional arguments:
 
 Running the above will prompt the user for input words until they choose to quit.
 
-#####Example Usage
+##### Example Usage
 ```
 ENTER WORDS TO BE ANAGRAMMED IN THE FOLLOWING FORMAT:
         ``WORD'' ``MIN_LENGTH_OF_ANAGRAM''(OPTIONAL)
