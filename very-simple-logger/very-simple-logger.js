@@ -6,23 +6,14 @@ var file = "log.txt";
 let date_ob = new Date();
 
 function getFullDate() {
-    // current date
     // adjust 0 before single digit date
-    let date = ("0" + date_ob.getDate()).slice(-2);
-
-    // current month
-    let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-
-    // current year
-    let year = date_ob.getFullYear();
+    let currentDate = ("0" + date_ob.getDate()).slice(-2);
+    let currentMonth = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+    let currentYear = date_ob.getFullYear();
+    let currentHour = date_ob.getHours();
+    let currentMinute = date_ob.getMinutes();
     
-    // current hour
-    let hour = date_ob.getHours();
-
-    // current minute
-    let minute = date_ob.getMinutes();
-
-    var fullDate = year + "-" + month + "-" + date + " " + hour + ":" + minute;
+    var fullDate = `${currentYear}-${currentMonth}-${currentDate} ${currentHour}:${currentMinute}`;
 
     return fullDate;
 }
