@@ -1,0 +1,35 @@
+{
+  "name": "@citoyasha/yt-search",
+  "version": "1.0.1",
+  "description": "Youtube Crawler with no API that returns 3 first videos.",
+  "main": "yt_search.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Citoyasha/yt-search.git"
+  },
+  "keywords": [
+    "youtube",
+    "yt",
+    "youtube video",
+    "youtube scraper",
+    "youtube crawler",
+    "scraper",
+    "crawler",
+    "fetch",
+    "no api",
+    "youtube search"
+  ],
+  "author": "Citoyasha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Citoyasha/yt-search/issues"
+  },
+  "homepage": "https://github.com/Citoyasha/yt-search#readme"
+}
