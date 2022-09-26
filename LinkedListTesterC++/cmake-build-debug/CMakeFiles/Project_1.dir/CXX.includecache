@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Raymond/Documents/Old CLionProjects/Project#1/LinkedList.h
+iostream
+-
+string
+-
+sstream
+-
+vector
+-
+exception
+-
+
+C:/Users/Raymond/Documents/Old CLionProjects/Project#1/main.cpp
+iostream
+-
+string
+-
+sstream
+-
+LinkedList.h
+C:/Users/Raymond/Documents/Old CLionProjects/Project#1/LinkedList.h
+
