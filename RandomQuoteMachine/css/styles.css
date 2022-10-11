@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Kalam&family=Mali&family=Nothing+You+Could+Do&family=Pacifico&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 2.5s;
+}
+
+body {
+  background-color: #333;
+  color: #333;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#quote-box {
+  border-radius: 10px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+  background-color: #fff;
+}
+
+.quote-text {
+  text-align: center;
+  width: 450px;
+  height: auto;
+  clear: both;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+
+.quote-text i {
+  font-size: 1em;
+  margin-right: 0.4em;
+}
+.quote-author {
+  width: 450px;
+  height: auto;
+  clear: both;
+  padding-top: 20px;
+  font-size: 1em;
+  text-align: right;
+}
+.buttons {
+  width: 450px;
+  margin: auto;
+  display: block;
+}
+.buttons .button {
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #333;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  margin-top: 30px;
+  opacity: 1;
+  cursor: pointer;
+}
+.buttons .button:hover {
+  opacity: 0.9;
+}
+.buttons .button#tweet-quote {
+  float: left;
+  padding: 0px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 5px;
+  height: 30px;
+  width: 40px;
+}
+.buttons .button#new-quote {
+  float: right;
+}
+
+.footer {
+  width: 450px;
+  text-align: center;
+  display: block;
+  margin: 15px auto 30px auto;
+  font-size: 1em;
+  color: #fff;
+}
+.footer a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+}
