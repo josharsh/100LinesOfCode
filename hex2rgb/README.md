@@ -22,4 +22,5 @@ To run the program users can:
 
 If using vscode you should download the [Color Highlight][extension] extension to visualize the color in the editor.
 
+Made by 0hundred0
 [extension]: https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight
