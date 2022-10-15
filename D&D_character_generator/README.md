@@ -9,9 +9,7 @@ Available Classes:
 - Cleric
 - Druid
 - Fighter
-- Homebrew
 - Monk
-- Multi-Classing
 - Paladin
 - Ranger
 - Rogue
@@ -31,9 +29,7 @@ Available Races:
 - Half-Orc
 - Human
 - Kobold
-- Lizardfolk
 - Orc
-- Tabaxi
 - Tiefling
 
 Randomized Ability Scores:

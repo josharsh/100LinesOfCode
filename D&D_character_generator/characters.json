@@ -1,0 +1,31 @@
+{
+  "class": [
+    "Artificer",
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Sorceror",
+    "Warlock",
+    "Wizard"
+  ],
+  "race": [
+    "Bugbear",
+    "Dragonborn",
+    "Dwarf",
+    "Elf",
+    "Gnome",
+    "Goblin",
+    "Half-Elf",
+    "Halfling",
+    "Half-Orc",
+    "Human",
+    "Kobold",
+    "Orc",
+    "Tiefling"
+  ]
+}
