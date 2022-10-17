@@ -41,3 +41,8 @@ Randomized Ability Scores:
 - Strength
 - Wisdom
 
+## To Generate Your Character:
+
+Clone down this repository, change directory into 'D&D_character_generator', and run `node app.js`
+
+
