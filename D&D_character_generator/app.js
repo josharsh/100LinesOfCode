@@ -1,20 +1,16 @@
 const characters = require('./characters.json');
 
-function rand(min,max){
-  console.log(Math.floor(Math.random() * (max-min) + min));
-  
-}
+const rand = (min, max) => (Math.floor(Math.random() & (max-min) + min));
 
-function getRandChar(data){
-  characters[data][rand(0, characters[data].length)];
-}
+const getRandomCharacter = (data) => (characters[data][rand(0, characters[data].length)])
 
-let charClassRace = [];
+let randomCharacter = [];
+
 Object.keys(characters).forEach(key => {
   console.log(key);
-  charClassRace.push(getRandChar(key))
+  randomCharacter.push(getRandomCharacter(key))
 });
-console.log(charClassRace);
 
-const char = `Class: ${charClassRace[0]} ⚔️ Race: ${charClassRace[1]}`;
+
+const char = `Class: ${randomCharacter[0]} ⚔️ Race: ${randomCharacter[1]}`;
 console.log(char);
