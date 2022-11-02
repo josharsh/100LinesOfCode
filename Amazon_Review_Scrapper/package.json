@@ -5,7 +5,7 @@
   "main": "script.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "got": "^11.7.0"
+    "got": "^11.8.5"
   },
   "devDependencies": {},
   "scripts": {
