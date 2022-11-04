@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[7]:
-
-
-# Import libraries
 import numpy as np 
 import pandas as pd 
 import plotly as py
