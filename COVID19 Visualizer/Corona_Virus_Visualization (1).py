@@ -47,18 +47,11 @@ fig.update_layout(
     )
 )
 
-
-# In[6]:
-
-
 # Manipulating the original dataframe
 df_countrydate = df[df['Confirmed']>0]
 df_countrydate = df_countrydate.groupby(['Date','Country']).sum().reset_index()
 df_countrydate
 
-
-
-# Creating the visualization
 fig = px.choropleth(df_countrydate, 
                     locations="Country", 
                     locationmode = "country names",
