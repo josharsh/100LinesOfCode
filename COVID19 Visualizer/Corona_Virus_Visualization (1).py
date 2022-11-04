@@ -10,8 +10,6 @@ from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 init_notebook_mode(connected=True)
 
 
-
-
 # Read Data
 df = pd.read_csv("/home/aman/Documents/Covid19 Project/covid_19_data.csv")
 
@@ -66,12 +64,4 @@ fig.update_layout(
         showframe = False,
         showcoastlines = False,
     ))
-    
 fig.show()
-
-
-# In[ ]:
-
-
-
-
