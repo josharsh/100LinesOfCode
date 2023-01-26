@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css"/>
+    <title>Calculator</title>
+</head>
+<body>    
+    <div class="frame">
+        <div class="display-scr">
+            <div class="output-win"></div>
+        </div>
+        <form class="btns-body">
+            <div class="btn-nums">
+                <input type="button" value="1" class="nums" onclick='getkey("1")' id="num-1">
+                <input type="button" value="2" class="nums" onclick='getkey("2")' id="num-2">
+                <input type="button" value="3" class="nums" onclick='getkey("3")' id="num-3">
+                <input type="button" value="4" class="nums" onclick='getkey("4")' id="num-4">
+                <input type="button" value="5" class="nums" onclick='getkey("5")' id="num-5">
+                <input type="button" value="6" class="nums" onclick='getkey("6")' id="num-6">
+                <input type="button" value="7" class="nums" onclick='getkey("7")' id="num-7">
+                <input type="button" value="8" class="nums" onclick='getkey("8")' id="num-8">
+                <input type="button" value="9" class="nums" onclick='getkey("9")' id="num-9">
+                <input type="button" value="0" class="nums" onclick='getkey("0")' id="num-0">
+
+            </div>
+            <div class="btn-oprs">
+                <input type="button" value="+" class="oprs" onclick='getkey("+")'id="btn-plus">
+                <input type="button" value="-" class="oprs" onclick='getkey("-")'id="btn-minus">
+                <input type="button" value="*" class="oprs" onclick='getkey("*")'id="btn-mul">
+                <input type="button" value="/" class="oprs" onclick='getkey("/")'id="btn-div">
+                <input type="button" value="(" class="oprs" onclick='leftPar()' id="btn-leftPar">
+                <input type="button" value=")" class="oprs" onclick='rightPar()' id="btn-rightPar">
+                <input type="button" value="clr" class="oprs" onclick='getClr()' id="btn-clr">
+                <input type="button" value="=" class="oprs" onclick='getkey("=")' id="btn-res">
+            </div>
+        </form>
+    </div>
+    <script type = "text/javascript" src="/script.js"></script>
+</body>
+</html>

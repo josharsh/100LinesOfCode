@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.frame{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    background-color: grey;
+    height: 400px;
+    width: 400px;    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+
+.display-scr{
+    position: relative;
+    height: 20%;
+    width: 80%;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.output-win{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:80%;
+    width: 80%;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background-color:black;
+    color: lime;
+    text-align: center;
+    font-size: x-large;
+    font-weight:bold;
+    border-radius:10px;
+}
+
+.btns-body{
+    height: 70%;
+    width: 80%;
+    display:flex;
+    border-radius: 10px;
+}
+
+.btn-nums{
+    height: 100%;
+    width: 50%;
+    background-color:azure;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    place-items:center;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+}
+
+.btn-oprs{
+    height: 100%;
+    width: 50%;
+    background-color:bisque;
+    display:grid;
+    grid-template-columns:50% 50%;
+    place-items: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.nums{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:100%;
+    width:100%;
+    border: 2px solid black;
+    text-align: center;
+    font-size:x-large;
+    font-weight:bold;
+    border-radius: 10px;
+}
+
+.oprs{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid brown;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.nums:hover {
+    background-color:black;
+    color: yellow;
+}
+
+.oprs:hover{
+    border-color:black;
+    background-color: lime;
+    color:black;
+}
+
+#btn-clr:hover {
+    border-color: black;
+    background-color: orange;
+    color: white;;
+}
+
+#btn-res:hover {
+    border-color: black;
+    background-color: green;
+    color: white;
+}
