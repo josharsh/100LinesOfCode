@@ -1,6 +1,95 @@
-//var kjoke=require('knock-knock-jokes');
-//console.log(kjoke());
-var joke=require('give-me-a-joke');
-joke.getRandomDadJoke (function(joke) {
-    console.log(joke);
-});
+jokes = [
+    "Why did the tomato turn red? Because it saw the salad dressing!",
+    "What did the janitor say when he jumped out of the closet? 'Supplies!'",
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "Why did the banana go to the doctor? Because it wasn't peeling well!",
+    "What's the difference between a poorly dressed man on a unicycle and a well-dressed man on a tricycle? Attire!",
+    "Why don't oysters give to charity? Because they're shellfish!",
+    "What do you call a fake noodle? An impasta!",
+    "What do you call a person who is always in the book store? A bookworm!",
+    "Why did the chicken cross the playground? To get to the other slide!",
+    "Why was the math book sad? Because it had too many problems!",
+    "What's the difference between a poorly dressed man on a unicycle and a well-dressed man on a tricycle? Attire!",
+    "Why did the coffee file a police report? Because it was mugged!",
+    "What do you call a sleeping bull? A bulldozer!",
+    "Why did the banana go to the doctor? Because it wasn't peeling well!",
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "What did the big flower say to the little flower? 'Hey, bud!'",
+    "What do you call a group of cows playing instruments? A moo-sical!",
+    "What's the difference between a hippo and a zippo? One is heavy, the other is a little lighter!",
+    "Why did the bike fall over? Because it was two-tired!",
+    "Why was the belt arrested? For holding up the pants!",
+    "What did the grape say when it got stepped on? 'Nothing, but it let out a little wine.'",
+    "Why don't they play poker in the jungle? Too many cheetahs!",
+    "Why do we tell actors to 'break a leg'? Because every play has a cast!",
+    "What do you call a camel with three humps? Pregnant!",
+    "What do you get when you cross a snowman and a shark? Frostbite!",
+    "What do you get when you cross a vampire and a snowman? Frostbite!",
+    "What do you call an alligator in a vest? An investi-gator!",
+    "What did the grape say when it got stepped on? 'Nothing, but it let out a little wine.'",
+    "Why couldn't the bicycle stand up by itself? Because it was two tired!",
+    "What do you call a fish wearing a bowtie? Sofishticated!",
+    "Why don't ghosts go on elevators? Because they lift their spirits by themselves!",
+    "Why did the tomato turn red? Because it saw the salad dressing!",
+    "What do you call a fake noodle? An impasta!",
+    "Why did the banana go to the doctor? Because it wasn't peeling well!",
+    "Why did the chicken cross the playground? To get to the other slide!",
+    "Why was the math book sad? Because it had too many problems!",
+    "Why did the coffee file a police report? Because it was mugged!",
+    "What do you call a sleeping bull? A bulldozer!",
+    "What did the big flower say to the little flower? 'Hey, bud!'",
+    "What's the difference between a hippo and a zippo? One is heavy, the other is a little lighter!",
+    "Why did the bike fall over? Because it was two-tired!",
+    "Why was the belt arrested? For holding up the pants!",
+    "What did the grape say when it got stepped on? 'Nothing, but it let out a little wine.'",
+    "Why don't they play poker in the jungle? Too many cheetahs!",
+    "Why do we tell actors to 'break a leg'? Because every play has a cast!",
+    "What do you call a camel with three humps? Pregnant!",
+    "What do you get when you cross a snowman and a shark? Frostbite!",
+    "What do you get when you cross a vampire and a snowman? Frostbite!",
+    "What do you call an alligator in a vest? An investi-gator!",
+    "Why couldn't the bicycle stand up by itself? Because it was two tired!",
+    "What do you call a fish wearing a bowtie? Sofishticated!",
+    "Why don't ghosts go on elevators? Because they lift their spirits by themselves!",
+    "Why do seagulls fly over the sea? Because if they flew over the bay, they'd be bagels!",
+    "What do you call a boomerang that doesn't work? A stick!",
+    "Why did the frog call his insurance company? He had a jump in his car!",
+    "What do you get when you cross a rabbit with a spider? A hare net!",
+    "Why did the banana go to the doctor? Because it wasn't peeling well!",
+    "What do you call a group of cows playing instruments? A moo-sical!",
+    "What do you call a pile of cats? A meowtain!",
+    "Why did the cookie go to the doctor? It was feeling crumbly!",
+    "Why don't skeletons fight each other? They don't have the guts!",
+    "Why did the bicycle fall over? Because it was two-tired!",
+    "Why do birds fly south for the winter? Because it's too far to walk!",
+    "What do you get when you cross a snowman and a vampire? Frostbite!",
+    "Why did the tomato turn red? Because it saw the salad dressing!",
+    "What do you call a fake noodle? An impasta!",
+    "What did the big flower say to the little flower? 'Hey, bud!'",
+    "Why don't they play poker in the jungle? Too many cheetahs!",
+    "Why was the math book sad? Because it had too many problems!",
+    "What do you call a sleeping bull? A bulldozer!",
+    "What did one wall say to the other? I'll meet you at the corner!",
+    "What do you call a lazy kangaroo? A pouch potato!",
+    "Why did the coffee file a police report? Because it was mugged!",
+    "Why couldn't the bicycle stand up by itself? Because it was two tired!",
+    "Why don't ghosts go on elevators? Because they lift their spirits by themselves!",
+    "Why did the frog call his insurance company? He had a jump in his car!",
+    "What do you call a boomerang that doesn't work? A stick!",
+    "Why did the chicken cross the playground? To get to the other slide!",
+    "Why did the tomato turn red? Because it saw the salad dressing!",
+    "What do you get when you cross a vampire and a snowman? Frostbite!",
+    "What do you call an alligator in a vest? An investi-gator!",
+    "What do you call a fake noodle? An impasta!",
+]
+
+h1 = document.querySelector('h1');
+
+function getJoke() {
+    h1.innerHTML = jokes[Math.floor(Math.random() * jokes.length)];
+}
+
+
+
+
+    
