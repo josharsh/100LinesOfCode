@@ -13,7 +13,7 @@ int romanCharToValue(char roman_char) {
   }
 }
 
-bool isValidRomanNumeral(const std::string& roman_numeral) {
+bool isValidRomanNumeral(const std::char& roman_numeral) {
   if (roman_numeral.empty()) return false;
   for (char c : roman_numeral) {
     if (romanCharToValue(c) == 0) return false;
@@ -21,7 +21,7 @@ bool isValidRomanNumeral(const std::string& roman_numeral) {
   return true;
 }
 
-int romanToArabic(const std::string& roman_numeral) {
+int romanToArabic(const std::char& roman_numeral) {
   if (!isValidRomanNumeral(roman_numeral)) {
     return -1;
   }
@@ -44,7 +44,7 @@ int romanToArabic(const std::string& roman_numeral) {
 }
 
 int main() {
-  std::string roman_numeral;
+  std::char roman_numeral;
   std::cout << "Enter a Roman numeral: ";
   std::cin >> roman_numeral;
 
