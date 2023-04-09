@@ -1,59 +1,49 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 
-int romanCharToValue(char roman_char) {
-  switch (roman_char) {
-    case 'I': return 1;
-    case 'V': return 5;
-    case 'X': return 10;
-    case 'L': return 50;
-    case 'C': return 100;
-    case 'D': return 500;
-    case 'M': return 1000;
-    default: return 0;
-  }
-}
+using namespace std;
 
-bool isValidRomanNumeral(const std::string& roman_numeral) {
-  if (roman_numeral.empty()) return false;
-  for (char c : roman_numeral) {
-    if (romanCharToValue(c) == 0) return false;
-  }
-  return true;
-}
+int fromBaseAtoDecimal(const char& number, int b1) {
+    int result = 0;
+    int power = 1;
 
-int romanToArabic(const std::string& roman_numeral) {
-  if (!isValidRomanNumeral(roman_numeral)) {
-    return -1;
-  }
-
-  int arabic_number = 0;
-  int prev_value = 0;
-
-  for (char c : roman_numeral) {
-    int current_value = romanCharToValue(c);
-    arabic_number += current_value;
-
-    if (prev_value < current_value) {
-      arabic_number -= 2 * prev_value;
+    for (int i = number.size() - 1; i >= 0; --i) {
+        int digit = number[i] >= 'A' ? (number[i] - 'A' + 10) : (number[i] - '0');
+        result += digit * power;
+        power *= b1;
     }
 
-    prev_value = current_value;
-  }
+    return result;
+}
 
-  return arabic_number;
+char fromDecimalToBaseB(int decimal, int b2) {
+    char result;
+
+    while (decimal > 0) {
+        int r = decimal % b2;
+        char digit = r >= 10 ? (r - 10 + 'A') : (r + '0');
+        result.push_back(digit);
+        decimal /= b2;
+    }
+
+    reverse(result.begin(), result.end());
+    return result;
 }
 
 int main() {
-  std::string roman_numeral;
-  std::cout << "Enter a Roman numeral: ";
-  std::cin >> roman_numeral;
+    int base1, base2;
+    char num;
 
-  int arabic_number = romanToArabic(roman_numeral);
-  if (arabic_number == -1) {
-    std::cerr << "Invalid Roman numeral" << std::endl;
-    return 1;
-  }
+    cout << "Enter the source base (2-36): ";
+    cin >> base1;
+    cout << "Enter the target base (2-36): ";
+    cin >> base2;
+    cout << "Enter the number in source base: ";
+    cin >> num;
 
-  std::cout << "The Arabic number is: " << arabic_number << std::endl;
-  return 0;
+    int decimal = fromBaseAtoDecimal(num, base1);
+    char res = fromDecimalToBaseB(decimal, base2);
+
+    cout << "The number " << num << " in base " << base1 << " is " << res << " in base " << base2 << "." << endl;
 }
