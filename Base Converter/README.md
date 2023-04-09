@@ -8,5 +8,5 @@ Run the C++ source file in your perferred code editor or run the .exe file in th
 
 ## Input
 
-Source base - The base of the number you would like to be converted  
-Target base - The base that you want your number to be converted into
+- Source base: The base of the number you would like to be converted  
+- Target base: The base that you want your number to be converted into
