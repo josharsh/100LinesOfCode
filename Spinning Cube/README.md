@@ -1,6 +1,6 @@
 # Spinning Cube
 
-Prints a spinning cube
+Prints a spinning cube.
 
 ## Customization
 

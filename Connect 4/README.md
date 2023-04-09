@@ -2,7 +2,7 @@
 
 A simple game of Connect 4 that is played in the terminal.
 
-The players are "X" and "O", and each move is inputted as the column the current player's token would like to be placed in.
+The players are represented as "X" and "O", and each move is inputted as the column where the current player's token will be placed.
 
 ## Running
 
