@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/100LinesOfCode.iml" filepath="$PROJECT_DIR$/100LinesOfCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlackJackGame/BlackJackGame.iml" filepath="$PROJECT_DIR$/BlackJackGame/BlackJackGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TCP-Socket/TCP/TCP-Client/TCP-Client.iml" filepath="$PROJECT_DIR$/TCP-Socket/TCP/TCP-Client/TCP-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TCP-Socket/TCP/TCP-Server/TCP-Server.iml" filepath="$PROJECT_DIR$/TCP-Socket/TCP/TCP-Server/TCP-Server.iml" />
+    </modules>
+  </component>
+</project>
