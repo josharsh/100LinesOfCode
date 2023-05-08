@@ -98,4 +98,20 @@ The *root* directory of your developed application must contain
 
 Note: Please Add Author's name in Readme.md of application. 
 
+### README.md template
+
+<Project Name , Author's name>
+
+Project Description:
+
+Project Idea:
+
+Project Implementation:
+
+Source code:
+
+Link to app (Optional) :
+
+
+
 
