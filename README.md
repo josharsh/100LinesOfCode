@@ -110,7 +110,7 @@ Project Implementation:
 
 Source code:
 
-Link to app (Optional) :
+Link to app:
 
 
 
