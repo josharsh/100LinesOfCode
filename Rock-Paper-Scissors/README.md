@@ -4,7 +4,7 @@
 <Rock-Paper-Scissors>
 
 Project Description:
-An extension of the traditional game of rock-paper-scissors with more options the user can choose from. User will play against the computer that will randomly generate a move. The results of who won or lost or if the result was a draw will be printed for the user to see. 
+An extension of the traditional game of rock-paper-scissors with more options the user can choose from. User will play against the computer that will randomly generate a move. The results of who won or lost or if the result was a draw will be printed. The user's score will be saved, updated, and printed at the beginning of each round. 
 
 Project Idea: An extension of the traditional game of rock-paper-scissors with more options while playing against a random generator.
 
