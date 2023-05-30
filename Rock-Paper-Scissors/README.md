@@ -1,10 +1,10 @@
 # Rock Paper Scissors #
 
 ## Description ##
-<Rock-Paper-Scissors>
+<Rock-Paper-Scissors, Swarag-N>
 
 Project Description:
-An extension of the traditional game of rock-paper-scissors with more options the user can choose from. User will play against the computer that will randomly generate a move. The results of who won or lost or if the result was a draw will be printed. The user's score will be saved, updated, and printed at the beginning of each round. 
+An extension of the traditional game of rock-paper-scissors with more options the user can choose from. User will play against the computer that will randomly generate a move. The results of who won or lost or if the result was a draw will be printed. The user's score will be saved and updated after each round, and the user can access the score anytime. 
 
 Project Idea: An extension of the traditional game of rock-paper-scissors with more options while playing against a random generator.
 
