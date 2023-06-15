@@ -44,7 +44,7 @@ where username is your GitHub account username.
 Never work on **master** branch as we do not allow master commits except by admins.
 ```
 $ git branch {branchname}
-$ git checkout branchname
+$ git checkout {branchname}
 ```
 
 5. Do your work and stage your changes.
