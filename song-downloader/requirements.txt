@@ -1,0 +1,16 @@
+anyio==3.6.2
+Brotli==1.0.9
+certifi==2023.5.7
+h11==0.14.0
+httpcore==0.16.3
+httpx==0.23.3
+idna==3.4
+innertube==2.1.3
+mediate==0.1.8
+mutagen==1.46.0
+pycryptodomex==3.17
+rfc3986==1.5.0
+roster==0.1.11
+sniffio==1.3.0
+websockets==11.0.3
+yt-dlp==2023.3.4
