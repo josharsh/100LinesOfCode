@@ -23,3 +23,5 @@ If the program doesn't work, make sure to install these-
   * ``pip install requests``
 * BeautifulSoup
   * ``pip install bs4``
+ 
+  Author: Sai Dhanush V
