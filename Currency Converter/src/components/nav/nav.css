@@ -1,0 +1,18 @@
+
+
+.sidebar {
+    display: flex;
+    padding:10px;
+}
+
+.aline-link {
+    display: flex;
+    align-items: center;
+}
+
+.new-amount {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+}

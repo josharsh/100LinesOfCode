@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+ul>li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width:1030px) {
+    .main {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:422px) {
+    * {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    }
+
+    .sidebar {
+        display: block;
+        margin-left: 12%;
+        width: 100%; 
+    }
+    .center-box {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+    }
+    .box {
+        width: 300px;
+        margin: 60px;
+        height: 300px;
+        padding: 20px;
+        border: 5px solid rgb(174, 241, 168);
+        border-radius: 10px;
+        background-color: rgb(149, 220, 187);
+    }
+
+    .input-area > select ,input {
+        border-radius: 6px;
+        margin-top: 10px;
+        width: 42%;
+        height: 40px;
+        background-color: rgba(233, 249, 242, 0.717);
+        border-color: transparent;
+        padding-left: 6px;
+      }
+}
