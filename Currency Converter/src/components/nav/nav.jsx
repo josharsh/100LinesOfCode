@@ -8,7 +8,7 @@ export default function nav() {
       <div className='sidebar'>
         <ul>
             <li>
-                <h1>Abhinab Choudury</h1>
+                <h1>Abhinab Choudhury</h1>
             </li>
             <li>
             <a className='aline-link' href="https://www.instagram.com/_abhinab_choudhury_/" target="_blank" rel="noopener noreferrer"> 
