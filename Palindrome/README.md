@@ -1,0 +1,1 @@
+Esse código verifica se uma palavra é um palíndromo.
