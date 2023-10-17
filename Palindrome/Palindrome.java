@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Palindromo{
-
+	// testenado o merge
 	public static void checkPalindromo(int num){
 		int novonumero = 0;
 		int temp = num;
