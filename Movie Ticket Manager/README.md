@@ -14,3 +14,4 @@ Movie Ticket Manager is a simple console-based application written in Java that 
 
 Before running the program, make sure you have Java installed on your system.
 
+
