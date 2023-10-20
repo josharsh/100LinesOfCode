@@ -1,0 +1,58 @@
+
+
+.center-box {
+  display: grid;
+  place-content: center;
+}
+
+.box {
+  width: 400px;
+  margin: 100px;
+  height: 400px;
+  padding: 24px;
+  border: 8px solid rgb(174, 241, 168);
+  border-radius: 10px;
+  background-color: rgb(149, 220, 187);
+}
+
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px;
+}
+
+.input-area > select ,input {
+  border-radius: 6px;
+  height: 40px;
+  background-color: rgba(233  , 249, 242, 0.717);
+  border-color: transparent;
+  padding-left: 6px;
+  width: 42%;
+}
+
+.amount-input {
+  display: flex;
+  width: 96%;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.convert-btn {
+  display: flex;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.6px solid white;
+  padding: 13px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+@media screen and  (max-width:821px) {
+  .box {
+    margin: 39px;
+  }
+}
+

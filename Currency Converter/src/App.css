@@ -1,0 +1,16 @@
+.main{
+    background-color: rgb(211, 246, 246);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+@media screen and  (max-width:821px) {
+    .main {
+        display: grid;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
