@@ -1,9 +1,6 @@
 <div style="display:flex;">
   <img style="margin-right:20px;" width="100" height="100" src="https://img.icons8.com/windows/100/12B886/nodejs.png" alt="nodejs"/>
   <img style="margin-right:20px;" width="100" height="100" src="https://img.icons8.com/color/100/sass.png" alt="sass"/>
-  <img style="margin-right:20px;" width="100" height="100" src="https://playwright.dev/img/playwright-logo.svg">
-  <img style="margin-right:20px;" width="100" height="100" src="./public/vite.svg">
-  <img style="margin-right:20px;" width="100" height="100" src="./src/assets/react.svg">
 </div>
 
 # Currency Converter
