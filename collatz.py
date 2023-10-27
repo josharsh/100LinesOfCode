@@ -22,7 +22,6 @@ def collatz(num):
 if __name__=='__main__':
     a=int(input("Enter Number you want to test:"))
     print(collatz(a))
-
     plt.scatter(collatz(a)[1],collatz(a)[0],s=2.5)
     plt.grid()
     plt.show()
