@@ -1,4 +1,5 @@
 """ This is a project on a famous mathematical collatz conjecture"""
+"""You can run this application by running command /"streamlit runcollatz.py/" """
 import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
