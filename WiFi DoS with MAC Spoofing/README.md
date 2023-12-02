@@ -32,3 +32,7 @@ apt-get install aircrack-ng macchanger
 2.2- Send 3 deauthentication packets 
 
 2.3- 3 seconds sleep
+
+# Author
+
+HCuri1 - Henrique Curi
