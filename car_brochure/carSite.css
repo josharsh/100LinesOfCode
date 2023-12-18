@@ -1,0 +1,96 @@
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #66DA43;
+    color: #66DA43;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#left {
+    border-bottom-left-radius: 3em;
+    border-top-left-radius: 3em;
+}
+
+#right {
+    border-bottom-right-radius: 3em;
+    border-top-right-radius: 3em;
+}
+
+button:hover{
+    background-color:#66DA43;
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: black;
+}
+
+button:active {
+    background-color: #66DA43;
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: black;
+}
+
+body {
+    background-color: #171717;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90px;
+    color: #66DA43;
+}
+
+.subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    color: white;
+}
+
+.accordion {
+    background-color: #27551928;
+    color: #66DA43;
+    border: 2px solid #66DA43;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border-radius: 2em;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border: 2px solid #66DA43;
+}
+
+.accordion:hover {
+    background-color: #66DA43;
+    color: black;
+}
+
+.active {
+    background-color: #66DA43;
+    color: black;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.panel {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 18px;
+    display: none;
+    background-color: #27551928;
+    color: white;
+    border: 2px solid #66DA43;
+    border-top: #27551928;
+    overflow: hidden;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    line-height: 2em;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #66DA43;
+}
