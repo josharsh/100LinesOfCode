@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>InteractiveTerminalHub</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"  />
+    <style>
+      .content {
+        height: 90vh;
+        width: 70%;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 10px 20px rgb(96, 94, 94);
+      }
+      :root {
+        --size:2.1;
+        --color:rgb(0, 255, 0);
+    }
+    @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .content {
+    height: 90vh;
+        width: 95vw;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 10px 20px rgb(96, 94, 94);
+      }
+      :root {
+        --size:1.22;
+        --color:rgb(0, 255, 0);
+    }
+}
+    </style>
+  </head>
+  <body>
+    <div class="content" ></div>
+    <template id="who">
+                                    _______
+      _____    _                    |      |
+        |     / \   |\_/|           | img: |
+        |    /___\  |   |           | NULL |
+      __|__ /     \ |   | "RONAK"   |______|
+      
+  ' student ' at ____ institute.
+  being ready...
+    </template>
+    
+    <script>
+        // $('.content').terminal('service.php', {login: true});
+             $('.content').terminal({
+          hello: function()
+          {
+              this.echo('hi,iam ronak (admin).',{ typing: true,delay: 100}).then(read=>
+              this.read("you ? ").then(name=>
+              this.echo("hello,"+name,{typing:true,delay:60}))).then(reply=>
+              this.echo("im 20 and teen",{ typing: true,delay: 100}).then(read1=>
+              this.read("what about you ?").then(reply1=>
+              this.echo("wow its amazing nice meeting you :)",{typing:true,delay:100}))))
+          },
+          whoami:function()
+              {
+          this.echo('/root/home')
+             },
+             "img(cat)":function(width,height)
+             {
+                var image=$('<img src="https://placekitten.com/'+width+'/'+height+'">')
+                this.echo(image)
+             },
+             add:function(a,b){
+                this.echo(a+b)
+             },
+             whoareyou:function(){
+              var wau=who.innerHTML
+              this.echo(wau)
+              this.echo(". . . .",{typing:true,delay:210})
+             },
+             follow:function(){
+              var h=document.createElement('h4');
+                var foll=document.createElement("a");
+                foll.href="https://www.instagram.com/ronak._.2002/";
+                var email=document.createElement("a");
+                email.href="mailto:ronakronu02@gmail.com"
+                this.echo(foll.href+"\t<-- FOLLOW"+"\n"+email.href+"\t <-- EMAIL ME") },
+             generate:function(query){
+              var rnmd_image=$('<img style="width:500px; height:600px;" src="https://image.pollinations.ai/prompt/'+query+'">')
+                this.echo(rnmd_image);
+             },
+             echo:function(text){
+            const cmd = $.terminal.parse_command(text);
+            this.echo('[[bi;#fff;]' + JSON.stringify(text) + ']')
+              }   },
+          {
+          greetings: '\t\t\t\t\t| HELLO WORLD |\n-----------------------------------------------------try:\n-hello\t\t-whoami\t\t-img(cat) width height\n-add 10 20 \t-whoareyou\t-follow\t\n-generate <query>\n-----------------------------------------------------',prompt:'$ '
+          },);
+    </script></body></html>
