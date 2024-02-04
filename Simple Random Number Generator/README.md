@@ -15,6 +15,6 @@ as a seed for the random number generation.
 
 On Linux (or WSL for Windows): Simply open the Terminal in the Folder of the program and type:
 
-To run the program: **./srng**\
+To run the program: `./srng`\
 or\
-To compile & run with the clang++ compiler: **clang++ rng.cpp -o srng && ./srng**
+To compile & run with the clang++ compiler: `clang++ rng.cpp -o srng && ./srng`
