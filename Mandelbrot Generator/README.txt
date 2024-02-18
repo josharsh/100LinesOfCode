@@ -1,0 +1,1 @@
+This is a mandelbrot generator using pillow in python. I started the project using matplotlib but encountered some issues with floating point percision. The project now works as expected and pretty quickly if I do say so myself. It was a lot of fun.
