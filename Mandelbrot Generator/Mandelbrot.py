@@ -1,7 +1,5 @@
 from PIL import Image
-import colorsys
 import numpy as np
-import matplotlib.pyplot as plt
 
 def mandelbrot(c : complex, max_iter : int) -> int:      
     """
@@ -30,8 +28,8 @@ def mandelbrot(c : complex, max_iter : int) -> int:
         z = z*z + c
     return max_iter
 
-def _mandelbrot_set(xmin : float, xmax : float, ymin : float, ymax : float, width : int, height : int, max_iter : int) -> np.ndarray:
-    
+def _mandelbrot_set(xmin : float, xmax : float, ymin : float, ymax : float, width : int, height : int, max_iter : int) -> np.ndarray:  
+     
     x_space = np.linspace(xmin, xmax, width)
     y_space = np.linspace(ymin, ymax, height)
     return (np.array([[mandelbrot(complex(x, y),max_iter) for x in x_space] for y in y_space]))
@@ -59,38 +57,42 @@ def plot_mandelbrot(xmin : float, xmax : float, ymin : float, ymax : float, widt
         Raises
         ------
         TypeError
-            If number is not complex type or if max iter is not integer.
+            If ranges are not floats or integers, or if sizes are not integers or if max_iter is not int
     """
+    if not isinstance(xmin, (float, int)):
+        raise TypeError("All ranges must be of type float or int.")
+    if not isinstance(xmax, (float, int)):
+        raise TypeError("All ranges must be of type float or int.")
+    if not isinstance(ymin, (float, int)):
+        raise TypeError("All ranges must be of type float or int.")
+    if not isinstance(ymax, (float, int)):
+        raise TypeError("All ranges must be of type float or int.")
+    if not isinstance(width,  int):
+        raise TypeError("Sizes of image must be of type int.")
+    if not isinstance(height, int):
+        raise TypeError("Sizes of image must be of type int.")
+    if not isinstance(max_iter, int):
+        raise TypeError("Max iterations must be of size int.")
+    
     set = _mandelbrot_set(xmin,xmax,ymin,ymax,width,height,max_iter)
     image = Image.new("RGB", (width, height))
-    normalized_iterations = set / max_iter * 255
+    normalized_iterations = set / max_iter
 
-# Iterate over each pixel and set its color based on the iteration count
+    # Here I iterate over each pixel to a cooler color scheme than without it.
     for y in range(height):
         for x in range(width):
-        # Get the iteration count at this pixel
             iter_count = normalized_iterations[y, x]
-        # Convert the iteration count to a color
-            r, g, b = colorsys.hsv_to_rgb(0.7 + 10 * iter_count, 0.6, 0.8)
-        # Convert RGB values to the range [0, 255] and set the pixel color
+            if iter_count == 1:
+                r, g, b = (0, 0, 0)
+            else: r, g, b = (iter_count, 0.2 * iter_count, 0.3)
+            
             image.putpixel((x, y), (int(r * 255), int(g * 255), int(b * 255)))
 
-# Display the image
     image.show()
-    #plt.imshow(set, extent=(xmin, xmax, ymin, ymax))
-    #plt.colorbar()
-    #plt.title("Mandelbrot Set")
-    #plt.xlabel("Real")
-    #plt.ylabel("Imaginary")
-    #plt.show()
-
-#def _typecheck():
     
-# Set the range and resolution for the plot
-xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
-#xmin, xmax, ymin, ymax = 0.6, 0.8, 0.05, 0.25
-width, height = 1000, 1000
-max_iter = 1000
-
 if __name__ == "__main__":
+    # Set the range and resolution for the plot
+    xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
+    width, height = 1000, 1000
+    max_iter = 80
     plot_mandelbrot(xmin, xmax, ymin, ymax, width, height, max_iter)
