@@ -93,6 +93,7 @@ def plot_mandelbrot(xmin : float, xmax : float, ymin : float, ymax : float, widt
 if __name__ == "__main__":
     # Set the range and resolution for the plot
     xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
+
     width, height = 1000, 1000
     max_iter = 80
     plot_mandelbrot(xmin, xmax, ymin, ymax, width, height, max_iter)
