@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  ul {
+    padding-left: 16px;
+  }
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #results {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    text-align: left;
+  }
+  .recipee {
+    box-shadow: 2px 0 7px 0px #dedcdc;
+    border-radius: 10px;
+    width: 300px;
+  }
+  .recipee .top img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .recipee .bottom {
+    padding: 10px 20px;
+  }
+  
+  .recipee .bottom .recipee-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .likes {
+    width: 35%;
+    align-self: flex-end;
+  }
+  
+  .recipee-ing li {
+    font-weight: 500;
+  }
+  
+  .recipee-ing li ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .recipee-ing li ul img {
+    width: 50px;
+  }
+  
