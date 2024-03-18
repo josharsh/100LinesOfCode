@@ -7,11 +7,14 @@ def decompress(ifile, codes,ofile):
                 symbol = line[:last_space_index]
                 code = line[last_space_index + 1:].strip()
                 symbol_codes[code] = symbol
-    with open(ifile, 'r') as f:
-        compressed = f.readline()
+    with open(ifile, 'rb') as f:  # Open the compressed file in binary mode
+        compressed = f.read()
+    
+    # Convert binary data to a binary string
+    compressed_bits = ''.join(format(byte, '08b') for byte in compressed)
     decompressed = ''
     current = ''
-    for bit in compressed:
+    for bit in compressed_bits:
         current += bit
         if current in symbol_codes.keys():
             decompressed += symbol_codes[current]
