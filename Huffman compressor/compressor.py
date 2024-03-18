@@ -12,7 +12,7 @@ def compress(ifile, codes, ofile):
         itext = f.read().strip()
     compressed = ''
     for c in itext:
-        if c.isalpha() :
+        if c.isalpha() or c.isspace():
             c=c.upper()
             if c in symbol_codes:
                 compressed += symbol_codes[c]
