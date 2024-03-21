@@ -9,7 +9,7 @@ msg.text = document.querySelector('[name="text"]').value;
 
 function populateVoices() {
     voices = window.speechSynthesis.getVoices();
-    voicesDropdown.innerHTML = voices
+    voicesDropdown.innerText = voices
         .filter(voice => voice.lang.includes('en'))
         .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
 }
