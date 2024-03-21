@@ -1,9 +1,19 @@
 # Rock Paper Scissors #
 
 ## Description ##
+<Rock-Paper-Scissors, Swarag-N>
 
-Play more options than simple rock-paper-scissor, this script includes other options for
-you to try.
+Project Description:
+An extension of the traditional game of rock-paper-scissors with more options the user can choose from. User will play against the computer that will randomly generate a move. The results of who won or lost or if the result was a draw will be printed. The user's score will be saved and updated after each round, and the user can access the score anytime. 
+
+Project Idea: An extension of the traditional game of rock-paper-scissors with more options while playing against a random generator.
+
+Project Implementation: This project is written in Python and is played in the console.
+
+Source code: N/A
+
+Link to app: N/A
+
 
 ## Author ##
 

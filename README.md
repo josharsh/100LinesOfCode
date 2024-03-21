@@ -44,7 +44,7 @@ where username is your GitHub account username.
 Never work on **master** branch as we do not allow master commits except by admins.
 ```
 $ git branch {branchname}
-$ git checkout branchname
+$ git checkout {branchname}
 ```
 
 5. Do your work and stage your changes.
@@ -97,5 +97,21 @@ The *root* directory of your developed application must contain
 * If Possible, Deploy the code onto a hosting platform.
 
 Note: Please Add Author's name in Readme.md of application. 
+
+### README.md template
+
+<Project Name , Author's name>
+
+Project Description:
+
+Project Idea:
+
+Project Implementation:
+
+Source code:
+
+Link to app:
+
+
 
 
