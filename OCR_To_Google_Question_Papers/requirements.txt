@@ -8,7 +8,7 @@ feedparser==5.2.1
 google-search==1.0.2
 idna==2.10
 jieba3k==0.35.1
-joblib==0.16.0
+joblib==1.2.0
 lxml==4.6.3
 newspaper3k==0.2.8
 nltk==3.5
