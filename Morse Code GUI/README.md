@@ -2,7 +2,7 @@
 
 ## How to Use
 
-Run the .py fie or run the following command
+Run the .py file or run the following command
 
 > Windows
 
