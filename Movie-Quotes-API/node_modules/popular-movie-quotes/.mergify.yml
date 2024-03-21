@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: automatic merge when CI passes and 2 reviews
+    conditions:
+      - status-success=Travis CI - Pull Request
+      - base=master
+      - files=data/data.json
+      - "#files=1"
+    actions:
+      merge:
+        method: merge
