@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Bad Quotes</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        height: 300px;
+        background-color: royalblue;
+        border: none;
+        border-radius: 15px;
+        margin: 40px auto;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    button{
+        margin: 40px;
+        padding: 12px 35px;
+        background-color: purple;
+        color: white;
+        text-transform: capitalize;
+        cursor: pointer;
+        border: none;
+        border-radius: 12px;
+        font-weight: 900;
+    }
+
+    p{
+        text-transform: capitalize;
+        font-weight: 800;
+        
+    }
+</style>
+<body>
+    <div class="container">
+        <button id="btn">Generate a quote</button>
+        <p id="author"></p>
+        <p id="quote"></p>
+
+    </div>
+    <script>
+
+     
+     const button = document.getElementById('btn');
+     const quote = document.getElementById('quote');
+
+     button.addEventListener("click", () => {
+        fetch('https://api.breakingbadquotes.xyz/v1/quotes')
+      .then(response => response.json())
+      .then(json => quote.innerHTML = `${json.map(author => author.author)} <br> <br>
+      ${json.map(quote => quote.quote)}`);
+     })
+  
+
+    </script>
+</body>
+</html>
