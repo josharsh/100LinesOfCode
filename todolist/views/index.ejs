@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs")%>;
+   <div class="box" id="heading">
+      <h1>
+         <%=listTitle %>
+      </h1>
+     
+      </div >
+
+      <div></div>
+  
+
+      <div class="boxlist">
+         <% for (var i = 0; i < ListItem.length; i++) { %>
+           <% if (ListItem[i]) { %>
+         <div class="item">       
+             <input type="checkbox" name="check"><p><%= ListItem[i] %></p>
+             
+      </div>
+           <% } %>
+         <% } %>
+       
+   
+
+
+    <form action="/submit" method="POST">
+<div > <input class="form" type="text" placeholder="New task" name="newItem">
+<!-- <button type="submit" name="listsubmit" value=<%=listTitle %>>+</button>  -->
+
+
+<button height="15" width="15" class="btn btn-primary rounded-circle sub" type="submit" name="listsubmit" value=<%=listTitle %>>+
+ </button></div>
+     </form> </div>
+</main>
+</body>
+</html>

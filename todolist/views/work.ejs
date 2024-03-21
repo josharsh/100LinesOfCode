@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs")%>;
+   <div class="box" id="heading">
+      <h1>
+         <%=listTitle %>
+      </h1>
+     
+      </div >
+
+    
+
+      <form action="/submit" method="POST">
+         <div> <input class="form" type="text" placeholder="New task" name="newItem">
+         <!-- <button type="submit" name="listsubmit" value=<%=listTitle %>>+</button>  -->
+         
+         
+         <button class="btn btn-primary rounded-circle" type="submit" name="listsubmit" value=<%=listTitle %>>+
+          </button></div>
+              </form> </div>
+</main>
+</body>
+</html>
