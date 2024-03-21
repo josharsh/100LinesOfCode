@@ -1,0 +1,19 @@
+{
+  "name": "Guess-the-color",
+  "version": "1.0.0",
+  "description": "by [phuocding](https://github.com/phuocding)",
+  "main": "app.js",
+  "scripts": {
+    "test": " jest --coverage --verbose "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "eslint": "^7.24.0",
+    "jest": "^26.6.3",
+    "mustache": "^4.2.0",
+    "supertest": "^6.1.3"
+  }
+}
