@@ -1,0 +1,82 @@
+   .button {
+       padding: 5px;
+       background-color: rgba(255, 0, 0, 0.733);
+       border-radius: 20px;
+       width: 105px;
+       font-size: 25;
+       align-items: center;
+       position: relative;
+       
+       left: 50%;
+       transform: translate(-50%);
+       box-shadow: 0 6px #999;
+       transition: all 0.5s;
+       /* margin-top:10px ; */
+   }
+   
+   .button span {
+       cursor: pointer;
+       display: inline-block;
+       position: relative;
+       transition: 0.5s;
+   }
+   
+   .button span:after {
+       content: '\00bb';
+       position: absolute;
+       opacity: 0;
+       top: 0;
+       right: -20px;
+       transition: 0.5s;
+   }
+   
+   .button:hover {
+       background-color: green;
+   }
+   
+   body {
+       background-image:url("blackjack.jpg");
+       background-size: cover;
+       background-repeat: no-repeat;
+   }
+   
+   h1 {
+        margin-top: 10%;
+       text-align: center;
+       color: rgb(29, 255, 4);
+       font-weight: 800;
+       font-size: 40;
+       font-style: italic;
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   
+   p {
+       font-size: 30;
+       color: rgb(38, 255, 0);
+       font-weight: bold;
+       text-align: center
+   }
+   
+   #new_card {
+       margin-top: 7px;
+       width: 150px;
+       /* position: relative;
+       left: 43.5%; */
+   }
+   .rules{
+    text-decoration: underline;
+    font-size: x-large;
+   }
+   #reload {
+       margin-top: 7px;
+       width: 150px;
+       /* position: relative;
+       left: 43.5%; */
+   }
+   ol{
+    color: rgb(38, 255, 0);
+    position: relative;
+    top: -25%;
+    font-size: larger;
+    z-index: -100;
+   }

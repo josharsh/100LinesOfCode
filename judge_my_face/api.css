@@ -1,0 +1,42 @@
+.heading{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.heading2{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.nameheading{
+    /* position: relative; */
+    /* top: 20%; */
+    left: 50%;
+    transform: translate(10%);
+}
+#nameid{
+    border: solid red ;
+    height: 30px;
+    text-align: center;
+    padding: 2px;
+    font-size: large;
+}
+img{
+    left: 50%;
+    transform: translate(10%);
+}
+.btn
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 50px;
+    font-size: larger;
+    background-color: aqua;
+}
+.btn:hover{
+    background-color: blue;
+}

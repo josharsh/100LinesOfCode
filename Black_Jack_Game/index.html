@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>
+        Blackjack
+    </title>
+    <link rel="stylesheet" href="blackjack.css">
+
+</head>
+
+<body>
+    <script src="blackjack.js">
+    </script>
+    <h1> Blackjack game</h1>
+    <p id="message1"> Want to play a game</p>
+    <p id="sum1"> Sum:</p>
+    <p id="numbers1"> Cards are:</p>
+    <button class=" button " id="start" ; onclick="game_starting() ">Start</button><br>
+    <button class="button" id="new_card" onclick="new_card()">New card</button><br>
+    <button class="button" id="reload" onclick="window.location.reload();"> Reset</button>
+    <ol>
+        <span class="rules">Rules: </span>
+        <li>Start the game.</li>
+        <li> Take New Card </li>
+        <li>If sum of cards are less than 21 continue picking new cards</li>
+        <li>If sum is 21. Great You win the Game</li>
+        <li> If sum is greater than 21 you lose the game</li>
+    </ol>
+
+</body>
+
+</html>
