@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[7]:
-
-
-# Import libraries
 import numpy as np 
 import pandas as pd 
 import plotly as py
@@ -13,10 +8,6 @@ import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 init_notebook_mode(connected=True)
-
-
-
-
 # Read Data
 df = pd.read_csv("/home/aman/Documents/Covid19 Project/covid_19_data.csv")
 
@@ -52,18 +43,11 @@ fig.update_layout(
     )
 )
 
-
-# In[6]:
-
-
 # Manipulating the original dataframe
 df_countrydate = df[df['Confirmed']>0]
 df_countrydate = df_countrydate.groupby(['Date','Country']).sum().reset_index()
 df_countrydate
 
-
-
-# Creating the visualization
 fig = px.choropleth(df_countrydate, 
                     locations="Country", 
                     locationmode = "country names",
@@ -78,12 +62,4 @@ fig.update_layout(
         showframe = False,
         showcoastlines = False,
     ))
-    
 fig.show()
-
-
-# In[ ]:
-
-
-
-
