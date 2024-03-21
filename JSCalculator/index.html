@@ -1,0 +1,99 @@
+<html>
+	<body>
+		<style>
+			p {
+				height: 20px;
+			}
+			button {
+				width: 50px;
+			}
+		</style>
+		<div>
+			<p></p>
+			<div>
+				<button id="clear">C</button>
+				<button class="operation">/</button>
+				<button class="operation">X</button>
+				<button id="pm">+/-</button>
+			</div>
+			<div>
+				<button class="Number">7</button>
+				<button class="Number">8</button>
+				<button class="Number">9</button>
+				<button class="operation">+</button>
+			</div>
+			<div>
+				<button class="Number">4</button>
+				<button class="Number">5</button>
+				<button class="Number">6</button>
+				<button class="operation">-</button>
+			</div>
+			<div>
+				<button class="Number">1</button>
+				<button class="Number">2</button>
+				<button class="Number">3</button>
+				<button id="equals">=</button>
+			</div>
+			<div>
+				<button id="percentage">%</button>
+				<button class="Number">0</button>
+				<button id="dot">.</button>
+				<button class="operation">^</button>
+			</div>
+		</div>
+		<script>
+			let nums_paragraph = document.getElementsByTagName("p")[0];
+			let operation_char;
+			let equalsElement = document.getElementById("equals");
+			let dotElement = document.getElementById("dot");
+			let clearElement = document.getElementById("clear");
+			let pmElement = document.getElementById("pm");
+			let lastNum = 0;
+			for (operation of document.getElementsByClassName("operation")) {
+				operation.addEventListener("click", (e) => {
+					operation_char = e.currentTarget.innerText;
+					lastNum = Number.parseFloat(nums_paragraph.textContent);
+					nums_paragraph.textContent = "";
+				});
+			}
+			for (num of document.getElementsByClassName("Number")) {
+				num.addEventListener("click", (e) => {
+					nums_paragraph.textContent += e.currentTarget.innerText;
+				});
+			}
+			clearElement.addEventListener("click", (e) => {
+				nums_paragraph.textContent = "";
+				lastNum = 0;
+			});
+			dotElement.addEventListener("click", (e) => {
+				if (nums_paragraph.textContent.indexOf(".") == -1) {
+					nums_paragraph.textContent += ".";
+				}
+			});
+			pm.addEventListener("click", (e) => {
+				let num = Number.parseFloat(nums_paragraph.textContent);
+				nums_paragraph.textContent = num * -1;
+			});
+			equalsElement.addEventListener("click", (e) => {
+				let num = Number.parseFloat(nums_paragraph.textContent);
+				switch (operation_char) {
+					case "+":
+						nums_paragraph.textContent = num + lastNum;
+						break;
+					case "-":
+						nums_paragraph.textContent = lastNum - num;
+						break;
+					case "X":
+						nums_paragraph.textContent = num * lastNum;
+						break;
+					case "/":
+						nums_paragraph.textContent = lastNum / num;
+						break;
+					case "^":
+						nums_paragraph.textContent = Math.pow(lastNum, num);
+						break;
+				}
+			});
+		</script>
+	</body>
+</html>
