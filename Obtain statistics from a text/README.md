@@ -1,4 +1,4 @@
-# Obtain statics from a text
+# Obtain statistics from a text
 
 In this exercise, we will analyze the spanish tale: "No se culpe a nadie - Julio Cortázar".
 
@@ -12,5 +12,7 @@ We must obtain the following statistics of the tale:
 
 4) The word with 8 letters that is most repeated in the story
 
+5) Number of occurances of a specific word
 
+6) Number of syllables
 
