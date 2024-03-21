@@ -32,9 +32,13 @@ For Contributing norms and guidelines, go to CONTRIBUTING.MD
 
 ## Adding Your Code:
 Here are the steps:
+
 1: Develop something in the programming language of your choice for any platform in less than #100LinesOfCode
+
 2: Fork this repository
+
 3: Clone this repository 
+
 ```
 $ git clone "https://www.github.com/{Username}/100LinesOfCode.git"
 ```
