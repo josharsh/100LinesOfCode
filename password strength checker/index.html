@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="main.css" />
+        <title>Password Strength Checker</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Password Strength Checker</h1>
+            <form>
+                <label for="password">Password:</label>
+                <input type="text" id="password" name="password" />
+                <label for="hide">Hide password</label>
+                <input type="checkbox" id="hide-password" name="hide" />
+            </form>
+            <h2>Password Strength</h2>
+            <div>
+                <ul id="password-strength-list"></ul>
+                <h3 id="password-strength-score">Strength: 73/100</h3>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=VT323&display=swap");
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(45deg, #87ff8d 0%, #4bff72 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    font-family: "VT323", monospace;
+}
+
+.container {
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ffffff 0%, #c5c5c5 100%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.very-weak {
+    color: rgb(73, 5, 5);
+}
+
+.weak {
+    color: rgb(255, 0, 0);
+}
+
+.medium {
+    color: rgb(226, 226, 0);
+}
+
+.strong {
+    color: rgb(0, 255, 0);
+}
