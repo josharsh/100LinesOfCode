@@ -12,19 +12,7 @@ This python script first records the user's voice and then convert it to text. A
 Install the following dependencies using pip
 
 ```
-$ pip install speech_recognition
-```
-
-```
-$ pip install langdetect
-```
-
-```
-$ pip install pyttsx3
-```
-
-```
-$ pip install google_trans_new
+$ pip install -r requirements.txt
 ```
 
 #### Running the script
