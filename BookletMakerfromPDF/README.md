@@ -1,4 +1,4 @@
-# Booklet Maker
+# Booklet Maker written by Gabriel Husain
 
 ## Introduction
 
