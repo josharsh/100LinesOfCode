@@ -1,111 +1,60 @@
-// package main
-
-// import (
-// 	"encoding/json"
-// 	"io/ioutil"
-// 	"log"
-// 	"strconv"
-
-// 	"fyne.io/fyne/v2/app"
-// 	"fyne.io/fyne/v2/container"
-// 	"fyne.io/fyne/v2/widget"
-// 	vlc "github.com/adrg/libvlc-go/v3"
-// )
-
-// type Question struct {
-// 	Q       string   `json:"question"`
-// 	Choices []string `json:"choices"`
-// 	Answer  int      `json:"answer"`
-// }
-
-// func main() {
-// 	if err := vlc.Init("--quiet"); err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	defer vlc.Release()
-// 	player, err := libvlc.NewPlayer()
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	defer player.Stop()
-// 	media, err := player.LoadMedia("sample.mp4")
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	defer media.Release()
-
-// 	data, err := ioutil.ReadFile("questions.json")
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	var questions []Question
-// 	if err := json.Unmarshal(data, &questions); err != nil {
-// 		log.Fatal(err)
-// 	}
-
-// 	a := app.New()
-// 	w := a.NewWindow("Video & Exam Dashboard")
-
-// 	playBtn := widget.NewButton("Play", func() { player.Play() })
-// 	pauseBtn := widget.NewButton("Pause", func() { player.SetPause(true) })
-// 	stopBtn := widget.NewButton("Stop", func() { player.Stop() })
-// 	videoTab := container.NewVBox(
-// 		widget.NewLabel("Video Controls:"),
-// 		playBtn, pauseBtn, stopBtn,
-// 		widget.NewLabel("Note: Video output appears in a separate window."),
-// 	)
-
-//		score, idx := 0, 0
-//		qLabel := widget.NewLabel("")
-//		radio := widget.NewRadioGroup([]string{}, nil)
-//		resLabel := widget.NewLabel("")
-//		var loadQuestion func(int)
-//		loadQuestion = func(i int) {
-//			qLabel.SetText(questions[i].Q)
-//			radio.Options = questions[i].Choices
-//			radio.Selected = ""
-//			radio.Refresh()
-//		}
-//		nextBtn := widget.NewButton("Next", func() {
-//			if radio.Selected == questions[idx].Choices[questions[idx].Answer] {
-//				score++
-//			}
-//			idx++
-//			if idx >= len(questions) {
-//				qLabel.SetText("Exam Completed!")
-//				radio.Options = nil
-//				nextBtn.Disable()
-//				resLabel.SetText("Score: " + strconv.Itoa(score) + "/" + strconv.Itoa(len(questions)))
-//				return
-//			}
-//			loadQuestion(idx)
-//		})
-//		loadQuestion(idx)
-//		examTab := container.NewVBox(qLabel, radio, nextBtn, resLabel)
-//		tabs := container.NewAppTabs(
-//			container.NewTabItem("Video", videoTab),
-//			container.NewTabItem("Exam", examTab),
-//		)
-//		w.SetContent(tabs)
-//		w.ShowAndRun()
-//	}
 package main
 
 import (
+	"image"
+	"image/color"
+	"image/draw"
 	"log"
+	"sync"
+	"time"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
 
 	vlc "github.com/adrg/libvlc-go/v3"
 )
 
+// Global variables for the video frame.
+var (
+	frameMutex  sync.Mutex
+	frameBuffer []byte
+	frameWidth  int = 640 // desired width
+	frameHeight int = 360 // desired height
+	videoImg    *canvas.Image
+)
+
+// lockCallback provides a pointer to our frame buffer.
+func lockCallback(userData interface{}, pPixels **byte) {
+	frameMutex.Lock()
+	if frameBuffer == nil {
+		// Allocate buffer for RGBA (4 bytes per pixel).
+		frameBuffer = make([]byte, frameWidth*frameHeight*4)
+	}
+	*pPixels = &frameBuffer[0]
+}
+
+// unlockCallback simply unlocks our frame buffer.
+func unlockCallback(userData interface{}, id int, pPixels *byte) {
+	frameMutex.Unlock()
+}
+
+// displayCallback triggers a UI refresh.
+func displayCallback(userData interface{}, id int) {
+	// Refresh the Fyne image on the main thread.
+	if videoImg != nil {
+		videoImg.Refresh()
+	}
+}
+
 func main() {
-	// Initialize libVLC. Additional command line arguments can be passed in
-	// to libVLC by specifying them in the Init function.
-	if err := vlc.Init("--no-video", "--quiet"); err != nil {
+	// Initialize libVLC without disabling video.
+	if err := vlc.Init("--quiet"); err != nil {
 		log.Fatal(err)
 	}
 	defer vlc.Release()
 
-	// Create a new player.
+	// Create a new libVLC player.
 	player, err := vlc.NewPlayer()
 	if err != nil {
 		log.Fatal(err)
@@ -115,39 +64,66 @@ func main() {
 		player.Release()
 	}()
 
-	// Add a media file from path or from URL.
-	// Set player media from path:
-	// media, err := player.LoadMediaFromPath("localpath/test.mp4")
-	// Set player media from URL:
-	media, err := player.LoadMediaFromURL("http://stream-uk1.radioparadise.com/mp3-32")
+	// Set video callbacks.
+	if err := player.SetVideoCallbacks(lockCallback, unlockCallback, displayCallback, nil); err != nil {
+		log.Fatal(err)
+	}
+
+	// Set the video format to RV32 (RGBA) with our desired dimensions.
+	if err := player.SetVideoFormat("RV32", uint32(frameWidth), uint32(frameHeight), uint32(frameWidth*4)); err != nil {
+		log.Fatal(err)
+	}
+
+	// Create a Fyne application and window.
+	a := app.New()
+	w := a.NewWindow("Embedded Video Player")
+
+	// Create an initial blank RGBA image.
+	img := image.NewRGBA(image.Rect(0, 0, frameWidth, frameHeight))
+	draw.Draw(img, img.Bounds(), &image.Uniform{C: color.Black}, image.Point{}, draw.Src)
+	videoImg = canvas.NewImageFromImage(img)
+	videoImg.FillMode = canvas.ImageFillContain
+
+	w.SetContent(videoImg)
+	w.Resize(fyne.NewSize(float32(frameWidth), float32(frameHeight)))
+	w.Show()
+
+	// Load media from URL.
+	// (Note: Replace this URL with a valid video URL that libVLC can play.)
+	media, err := player.LoadMediaFromURL("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer media.Release()
 
-	// Retrieve player event manager.
-	manager, err := player.EventManager()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// Register the media end reached event with the event manager.
-	quit := make(chan struct{})
-	eventCallback := func(event vlc.Event, userData interface{}) {
-		close(quit)
-	}
-
-	eventID, err := manager.Attach(vlc.MediaPlayerEndReached, eventCallback, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer manager.Detach(eventID)
-
 	// Start playing the media.
-	err = player.Play()
-	if err != nil {
+	if err := player.Play(); err != nil {
 		log.Fatal(err)
 	}
 
-	<-quit
+	// Launch a goroutine to periodically update the Fyne image from our frame buffer.
+	go func() {
+		ticker := time.NewTicker(33 * time.Millisecond) // ~30 FPS
+		defer ticker.Stop()
+		for range ticker.C {
+			frameMutex.Lock()
+			if frameBuffer != nil {
+				// Create an RGBA image using the frame buffer.
+				img := &image.RGBA{
+					Pix:    frameBuffer,
+					Stride: frameWidth * 4,
+					Rect:   image.Rect(0, 0, frameWidth, frameHeight),
+				}
+				videoImg.Image = img
+			}
+			frameMutex.Unlock()
+			videoImg.Refresh()
+		}
+	}()
+
+	// Run the Fyne application.
+	a.Run()
+
+	// Stop the player when the window is closed.
+	player.Stop()
 }
