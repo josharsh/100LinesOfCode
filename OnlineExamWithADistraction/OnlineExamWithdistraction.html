@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exam with Video Distraction</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    #exam { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <iframe id="video" width="640" height="360"
+          src="https://www.youtube.com/embed/ZQAvj5rdgtY?autoplay=1&mute=1&controls=0&modestbranding=1&enablejsapi=1"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="pointer-events: none;">
+  </iframe>
+  <div id="exam">
+    <h2>Exam Questions</h2>
+    <div id="question-container"></div>
+    <button onclick="submitAnswer()">Submit Answer</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    let questions = [];
+    let currentQuestion = 0;
+    let score = 0;
+    function loadQuestions() {
+      fetch('questions.json')
+        .then(response => {
+          if (!response.ok) throw new Error(response.statusText);
+          return response.json();
+        })
+        .then(data => {
+          questions = data;
+          displayQuestion();
+        })
+        .catch(error => {
+          console.error("Error loading questions:", error);
+          document.getElementById('question-container').textContent = "Failed to load questions.";
+        });
+    }
+
+    function displayQuestion() {
+      if (currentQuestion < questions.length) {
+        const q = questions[currentQuestion];
+        let html = `<p>${q.question}</p>`;
+        for (let i = 0; i < q.choices.length; i++) {
+          html += `<label>
+                     <input type="radio" name="q" value="${q.choices[i]}"> ${q.choices[i]}
+                   </label><br>`;
+        }
+        document.getElementById('question-container').innerHTML = html;
+      } else {
+        document.getElementById('question-container').innerHTML = "<p>Exam Completed!</p>";
+      }
+    }
+    function submitAnswer() {
+      const answers = document.getElementsByName('q');
+      let selected;
+      for (let i = 0; i < answers.length; i++) {
+        if (answers[i].checked) {
+          selected = answers[i].value;
+          break;
+        }
+      }
+      if (selected === undefined) {
+        alert("Please select an answer.");
+        return;
+      }
+      if (selected === questions[currentQuestion].answer) score++;
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        displayQuestion();
+      } else {
+        document.getElementById('result').textContent = "Your score: " + score + " out of " + questions.length;
+        document.getElementById('question-container').innerHTML = "";
+      }
+    }
+    window.onload = loadQuestions;
+  </script>
+</body>
+</html>
