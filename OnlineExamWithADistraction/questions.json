@@ -1,13 +1,12 @@
 [
-    {
-      "question": "What is 2+2?",
-      "choices": ["3", "4", "5"],
-      "answer": 1
-    },
-    {
-      "question": "Capital of France?",
-      "choices": ["Paris", "London", "Berlin"],
-      "answer": 0
-    }
-  ]
-  
+  {"question": "What is 2 + 2?", "choices": ["3", "4", "5"], "answer": 1},
+  {"question": "What is the capital of France?", "choices": ["Berlin", "Madrid", "Paris"], "answer": 2},
+  {"question": "Who wrote 'Hamlet'?", "choices": ["Charles Dickens", "William Shakespeare", "Leo Tolstoy"], "answer": 1},
+  {"question": "Which planet is known as the Red Planet?", "choices": ["Earth", "Mars", "Jupiter"], "answer": 1},
+  {"question": "What is the largest ocean on Earth?", "choices": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean"], "answer": 2},
+  {"question": "What is the boiling point of water in Celsius?", "choices": ["90°C", "100°C", "110°C"], "answer": 1},
+  {"question": "Who painted the Mona Lisa?", "choices": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso"], "answer": 0},
+  {"question": "What is the square root of 64?", "choices": ["6", "8", "10"], "answer": 1},
+  {"question": "In which year did World War II end?", "choices": ["1940", "1945", "1950"], "answer": 1},
+  {"question": "What is the chemical symbol for Oxygen?", "choices": ["O", "Gold", "Silver"], "answer": 0}
+]
