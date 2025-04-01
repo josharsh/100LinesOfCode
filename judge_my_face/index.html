@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="api.css" rel="stylesheet">  
+</head>
+<body>
+      <section >
+        <h1 class="heading">What is your name ? We can judge you based on your name!! </h1>
+        <div class="heading2">
+            <h2 class="nameheading">Enter your name</h2>
+            <input type="text" name="" id="nameid"> 
+            <br><br><br>
+            <img class="image1" id="image1" src="api.jpg" height="200" width="200" > 
+            <br><br><br>
+            <button class="btn" type="submit"> Click Me  </button>
+    </div>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.btn').click(function(){
+                    const a= $('#nameid').val();
+                    $('.image1').attr('src',`https://joeschmoe.io/api/v1/${a}`);
+                });
+            });
+
+        </script>
+
+      </section>  
+</body>
+</html>
