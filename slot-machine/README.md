@@ -55,3 +55,5 @@ python slot_machine.py
 - Enter your bet amount when prompted
 - Press Enter to spin the reels
 - Type '0' or 'q' to exit the game
+
+### Enjoy the game!
