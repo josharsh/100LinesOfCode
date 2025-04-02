@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exam with Video Background</title>
+<style>
+  body, html { margin:0; padding:0; height:100%; font-family: sans-serif; }
+  #bgvideo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    border: 0;
+  }
+  #overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+  }
+  button { margin-top: 10px; }
+  .wrong-question { margin-bottom: 1em; padding: 0.5em; border: 1px solid #ccc; }
+</style>
+</head>
+<body>
+  <iframe id="bgvideo" src="https://www.youtube.com/embed/J0YZQNgkf9Y?autoplay=1&mute=1&controls=0&modestbranding=1&loop=1&playlist=J0YZQNgkf9Y" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div id="overlay">
+    <h2>Exam Questions</h2>
+    <div id="question-container"></div>
+    <button onclick="submitAnswer()">Submit Answer</button>
+    <div id="final-feedback"></div>
+  </div>
+  <script>
+    let questions = [], currentQuestion = 0, score = 0, wrongQuestions = [];
+    function loadQuestions(){fetch('questions.json?ts='+new Date().getTime(),{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(r.statusText); return r.json();}).then(data=>{questions=data; displayQuestion();}).catch(e=>{document.getElementById('question-container').textContent="Failed to load questions."});}
+    function displayQuestion(){if(currentQuestion<questions.length){const q=questions[currentQuestion]; let html=`<p>${q.question}</p>`; for(let i=0;i<q.choices.length;i++){html+=`<label><input type="radio" name="q" value="${q.choices[i]}"> ${q.choices[i]}</label><br>`;} document.getElementById('question-container').innerHTML=html;} else {document.getElementById('question-container').innerHTML="<p>Exam Completed!</p>"; let feedbackHtml=`<p>Your score: ${score} out of ${questions.length}</p>`; if(wrongQuestions.length>0){feedbackHtml+="<h3>Review of Incorrect Answers:</h3>"; wrongQuestions.forEach(item=>{feedbackHtml+=`<div class="wrong-question"><p><strong>Question:</strong> ${item.question}</p><p><strong>Your answer:</strong> ${item.selected}</p><p><strong>Correct answer:</strong> ${item.correct}</p></div>`;});} else {feedbackHtml+="<p>All answers were correct!</p>";} document.getElementById('final-feedback').innerHTML=feedbackHtml; document.querySelector('button').style.display="none";}}
+    function submitAnswer(){const answers=document.getElementsByName('q'); let selected=null; for(let i=0;i<answers.length;i++){if(answers[i].checked){selected=answers[i].value; break;}} if(selected===null){alert("Please select an answer."); return;} const correct=questions[currentQuestion].choices[questions[currentQuestion].answer].toString(); if(selected===correct){score++;} else {wrongQuestions.push({question:questions[currentQuestion].question, selected:selected, correct:correct});} currentQuestion++; displayQuestion();}
+    window.onload=loadQuestions;
+  </script>
+</body>
+</html>
