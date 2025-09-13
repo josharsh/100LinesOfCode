@@ -56,7 +56,7 @@
     width: 50%;
     background-color:azure;
     display:grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33.33% 33.33% 33.33%;
     place-items:center;
     box-sizing: border-box;
     border-radius: 10px;
