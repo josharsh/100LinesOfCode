@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Info Explorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container text-center my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 class="mt-2 text-muted">Country Information</h1>
+        <div class="input-group my-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Country"
+            id="countryInput"
+          />
+          <button class="btn btn-primary" type="button" id="searchBtn">
+            Search
+          </button>
+        </div>
+        <h2 id="errorMsg" class="text-danger mt-3"></h2>
+        <div id="resultContainer" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchBtn = document.getElementById("searchBtn");
+    const countryInput = document.getElementById("countryInput");
+    const errorMsg = document.getElementById("errorMsg");
+    const resultContainer = document.getElementById("resultContainer");
+
+    function formatCurrencies(currencies) {
+      if (!currencies) return "N/A";
+      return Object.values(currencies)
+        .map((currency) => `${currency.name} (${currency.symbol || "N/A"})`)
+        .join(", ");
+    }
+
+    function formatLanguages(languages) {
+      if (!languages) return "N/A";
+      return Object.values(languages).join(", ");
+    }
+
+    function fetchCountry() {
+      const search = countryInput.value.trim();
+      if (!search) {
+        errorMsg.textContent = "Please enter a country name.";
+        return;
+      }
+
+      const url = `https://restcountries.com/v3.1/name/${search}`;
+
+      fetch(url, { headers: { Accept: "application/json" } })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Country not found");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          errorMsg.textContent = "";
+          resultContainer.innerHTML = "";
+
+          data.forEach((country) => {
+            const card = document.createElement("div");
+            card.className = "card my-3 shadow";
+
+            card.innerHTML = `
+              <div class="card-body">
+                <h3 class="card-title">${country.name.common}</h3>
+                <p class="card-text">
+                  <strong>Capital:</strong> ${country.capital ? country.capital[0] : "N/A"}<br>
+                  <strong>Region:</strong> ${country.region}<br>
+                  <strong>Population:</strong> ${country.population.toLocaleString()}<br>
+                  <strong>Currency:</strong> ${formatCurrencies(country.currencies)}<br>
+                  <strong>Languages:</strong> ${formatLanguages(country.languages)}
+                </p>
+                ${country.flags ? `<img src="${country.flags.svg}" alt="${country.name.common} flag" class="img-fluid mt-3 flag-img">` : ""}
+              </div>
+            `;
+            resultContainer.appendChild(card);
+          });
+        })
+        .catch((e) => {
+          console.error("Error fetching data:", e);
+          errorMsg.textContent = "Error fetching data. Please try again.";
+          resultContainer.innerHTML = "";
+        });
+    }
+
+    searchBtn.addEventListener("click", fetchCountry);
+
+    countryInput.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        fetchCountry();
+      }
+    });
+  </script>
+</body>
+</html>
