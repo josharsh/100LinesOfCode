@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="picker-container">
+      <h1>Color Picker</h1>
+
+      <input type="color" id="color-input" value="#FFFFFF" />
+
+      <div class="output-container">
+        <div class="color-group">
+          <label>HEX:</label>
+          <input type="text" id="hex-value" value="#FFFFFF" readonly />
+          <button class="copy-btn" data-target="hex-value">Copy</button>
+        </div>
+
+        <div class="color-group">
+          <label>RGB:</label>
+          <input type="text" id="rgb-value" value="rgb(255, 255, 255)" readonly />
+          <button class="copy-btn" data-target="rgb-value">Copy</button>
+        </div>
+
+        <div class="color-group">
+          <label>HSL:</label>
+          <input type="text" id="hsl-value" value="hsl(0, 0%, 100%)" readonly />
+          <button class="copy-btn" data-target="hsl-value">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
