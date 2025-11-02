@@ -1,96 +1,101 @@
-// Get DOM elements
-const colorInput = document.getElementById("color-input");
-const hexValue = document.getElementById("hex-value");
-const rgbValue = document.getElementById("rgb-value");
-const hslValue = document.getElementById("hsl-value");
+// --- 1. Seleção dos Novos Elementos ---
+const textColorInput = document.getElementById('text-color-input');
+const bgColorInput = document.getElementById('bg-color-input');
 
-// Event listener for the color input to update color values
-colorInput.addEventListener("input", () => {
-    const newColorHex = colorInput.value.toUpperCase();
-    hexValue.value = newColorHex;
+// Seletores da área de resultado
+const contrastRatioValue = document.getElementById('contrast-ratio-value');
+const wcagAAStatus = document.getElementById('wcag-aa-status');
+const wcagAAAStatus = document.getElementById('wcag-aaa-status');
 
-    // Convert HEX to RGB and HSL
-    const newColorRGB = hexToRgb(newColorHex);
-    const newColorHSL = rgbToHsl(newColorRGB.r, newColorRGB.g, newColorRGB.b);
+// --- 2. Event Listeners ---
+// Precisamos ouvir mudanças nos DOIS seletores
+textColorInput.addEventListener('input', handleColorChange);
+bgColorInput.addEventListener('input', handleColorChange);
 
-    // Update the input fields with the new color values
-    rgbValue.value = `rgb(${newColorRGB.r}, ${newColorRGB.g}, ${newColorRGB.b})`;
-    hslValue.value = `hsl(${newColorHSL.h}, ${newColorHSL.s}%, ${newColorHSL.l}%)`;
-});
+// --- 3. Função Principal de Orquestração ---
+function handleColorChange() {
+    const textColorHex = textColorInput.value;
+    const bgColorHex = bgColorInput.value;
 
-// Function to convert a HEX color to its RGB equivalent
+    // --- PRÓXIMOS PASSOS (A FAZER) ---
+    // 1. Converter HEX para RGB (já temos a função)
+    const textColorRGB = hexToRgb(textColorHex);
+    const bgColorRGB = hexToRgb(bgColorHex);
+
+    // 2. Calcular a Luminância de cada cor (PRECISAMOS CRIAR)
+    //    Esta é a fórmula que você pesquisou no W3C
+    const textColorLum = getLuminance(textColorRGB.r, textColorRGB.g, textColorRGB.b);
+    const bgColorLum = getLuminance(bgColorRGB.r, bgColorRGB.g, bgColorRGB.b);
+
+    // 3. Calcular a Taxa de Contraste (PRECISAMOS CRIAR)
+    //    Esta é a segunda fórmula que você pesquisou
+    const contrastRatio = calculateContrastRatio(textColorLum, bgColorLum);
+
+    // 4. Atualizar a UI (PRECISAMOS FAZER)
+    contrastRatioValue.innerText = `${contrastRatio.toFixed(2)} : 1`;
+    checkWCAGStandards(contrastRatio);
+}
+
+// --- 4. Funções de Conversão (Reutilizada) ---
+// Esta função veio do nosso MVP anterior
 function hexToRgb(hex) {
-    // Remove '#' if present
     let cleanHex = hex.replace("#", "");
-    // Parse the R, G, and B components
     const r = parseInt(cleanHex.substring(0, 2), 16);
     const g = parseInt(cleanHex.substring(2, 4), 16);
     const b = parseInt(cleanHex.substring(4, 6), 16);
     return { r, g, b };
 }
 
-// Function to convert an RGB color to its HSL equivalent
-function rgbToHsl(r, g, b) {
-    // Normalize RGB values to be between 0 and 1
-    r /= 255;
-    g /= 255;
-    b /= 255;
-    const max = Math.max(r, g, b);
-    const min = Math.min(r, g, b);
-    let h, s, l = (max + min) / 2;
+// --- 5. Funções de Cálculo de Contraste (A FAZER) ---
+// (Aqui vamos adicionar getLuminance, calculateContrastRatio, e checkWCAGStandards)
 
-    if (max === min) {
-        // Achromatic (grayscale)
-        h = s = 0;
-    } else {
-        const d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch (max) {
-            case r:
-                h = (g - b) / d + (g < b ? 6 : 0);
-                break;
-            case g:
-                h = (b - r) / d + 2;
-                break;
-            case b:
-                h = (r - g) / d + 4;
-                break;
-        }
-        h /= 6;
-    }
-
-    // Return HSL values rounded to the nearest integer
-    return {
-        h: Math.round(h * 360),
-        s: Math.round(s * 100),
-        l: Math.round(l * 100),
-    };
+// Esta função implementa a fórmula de Luminância Relativa do W3C
+//
+function getLuminance(r, g, b) {
+    // 1. Normaliza os valores 0-255 para o intervalo 0-1
+    const a = [r, g, b].map((v) => {
+        v /= 255; // Converte para sRGB
+        // Aplica a fórmula de linearização
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    
+    // 2. Aplica os coeficientes da fórmula principal
+    // L = 0.2126 * R + 0.7152 * G + 0.0722 * B
+    //
+    return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
 }
 
-// Get all elements with the class 'copy-btn'
-const copyButtons = document.querySelectorAll(".copy-btn");
+// Esta função implementa a fórmula de Taxa de Contraste do W3C
+//
+function calculateContrastRatio(lum1, lum2) {
+    // Encontra qual luminância é a mais clara (L1) e a mais escura (L2)
+    const L1 = Math.max(lum1, lum2);
+    const L2 = Math.min(lum1, lum2);
 
-// Add a click event listener to each copy button
-copyButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        // Get the target input field from the button's data attribute
-        const targetId = button.dataset.target;
-        const targetInput = document.getElementById(targetId);
-        const textToCopy = targetInput.value;
+    // Aplica a fórmula
+    const ratio = (L1 + 0.05) / (L2 + 0.05);
 
-        // Use the Clipboard API to copy the text
-        navigator.clipboard
-            .writeText(textToCopy)
-            .then(() => {
-                // Provide user feedback on successful copy
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = "Copy";
-                }, 2000);
-            })
-            .catch((err) => {
-                // Log an error if the copy fails
-                console.error("Failed to copy text: ", err);
-            });
-    });
-});
+    return ratio;
+}
+
+// Esta função verifica a taxa contra os padrões WCAG
+// e atualiza a UI.
+function checkWCAGStandards(contrastRatio) {
+    // Verifica o Nível AA (Taxa de 4.5)
+    if (contrastRatio >= 4.5) {
+        wcagAAStatus.innerText = 'PASS';
+        wcagAAStatus.style.color = 'green';
+    } else {
+        wcagAAStatus.innerText = 'FAIL';
+        wcagAAStatus.style.color = 'red';
+    }
+    
+    // Verifica o Nível AAA (Taxa de 7.0)
+    if (contrastRatio >= 7) {
+        wcagAAAStatus.innerText = 'PASS';
+        wcagAAAStatus.style.color = 'green';
+    } else {
+        wcagAAAStatus.innerText = 'FAIL';
+        wcagAAAStatus.style.color = 'red';
+    }
+}

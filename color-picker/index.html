@@ -8,27 +8,31 @@
   </head>
   <body>
     <div class="picker-container">
-      <h1>Color Picker</h1>
+      <h1>WCAG Contrast Checker</h1>
 
-      <input type="color" id="color-input" value="#FFFFFF" />
+      <div class="color-selectors">
+        <div class="selector-group">
+          <label for="text-color-input">Text Color</label>
+          <input type="color" id="text-color-input" value="#000000" />
+        </div>
+        <div class="selector-group">
+          <label for="bg-color-input">Background Color</label>
+          <input type="color" id="bg-color-input" value="#FFFFFF" />
+        </div>
+      </div>
 
-      <div class="output-container">
-        <div class="color-group">
-          <label>HEX:</label>
-          <input type="text" id="hex-value" value="#FFFFFF" readonly />
-          <button class="copy-btn" data-target="hex-value">Copy</button>
+      <div class="results-container">
+        <h3>Contrast Ratio</h3>
+        <div id="contrast-ratio-value">21.00 : 1</div>
+
+        <div class="status-group">
+          <span id="wcag-aa-status">PASS</span>
+          <label>WCAG AA</label>
         </div>
 
-        <div class="color-group">
-          <label>RGB:</label>
-          <input type="text" id="rgb-value" value="rgb(255, 255, 255)" readonly />
-          <button class="copy-btn" data-target="rgb-value">Copy</button>
-        </div>
-
-        <div class="color-group">
-          <label>HSL:</label>
-          <input type="text" id="hsl-value" value="hsl(0, 0%, 100%)" readonly />
-          <button class="copy-btn" data-target="hsl-value">Copy</button>
+        <div class="status-group">
+          <span id="wcag-aaa-status">PASS</span>
+          <label>WCAG AAA</label>
         </div>
       </div>
     </div>
