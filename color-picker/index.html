@@ -14,22 +14,46 @@
         <div class="selector-group">
           <label for="text-color-input">Text Color</label>
           <input type="color" id="text-color-input" value="#000000" />
+
+          <div class="output-group">
+            <input type="text" id="text-hex-value" value="#000000" readonly />
+            <button class="copy-btn" data-target="text-hex-value">Copy</button>
+          </div>
+          <div class="output-group">
+            <input type="text" id="text-rgb-value" value="rgb(0, 0, 0)" readonly />
+            <button class="copy-btn" data-target="text-rgb-value">Copy</button>
+          </div>
         </div>
+
         <div class="selector-group">
           <label for="bg-color-input">Background Color</label>
           <input type="color" id="bg-color-input" value="#FFFFFF" />
+
+          <div class="output-group">
+            <input type="text" id="bg-hex-value" value="#FFFFFF" readonly />
+            <button class="copy-btn" data-target="bg-hex-value">Copy</button>
+          </div>
+          <div class="output-group">
+            <input type="text" id="bg-rgb-value" value="rgb(255, 255, 255)" readonly />
+            <button class="copy-btn" data-target="bg-rgb-value">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-container">
+        <div id="preview-box">
+          <p>This is how your text will look.</p>
+          <p><strong>This is bold text.</strong></p>
         </div>
       </div>
 
       <div class="results-container">
         <h3>Contrast Ratio</h3>
         <div id="contrast-ratio-value">21.00 : 1</div>
-
         <div class="status-group">
           <span id="wcag-aa-status">PASS</span>
           <label>WCAG AA</label>
         </div>
-
         <div class="status-group">
           <span id="wcag-aaa-status">PASS</span>
           <label>WCAG AAA</label>

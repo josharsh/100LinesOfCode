@@ -19,53 +19,111 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; /* Um pouco mais largo para os resultados */
-    text-align: center;
+    max-width: 500px; /* Aumentamos a largura máxima */
 }
 
 h1 {
     margin-top: 0;
     color: #222;
     font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-/* --- (NOVO) Grupo de Seletores de Cor --- */
+/* --- Grupo de Seletores de Cor --- */
 .color-selectors {
     display: flex;
-    justify-content: space-around; /* Coloca um de cada lado */
-    align-items: center;
+    justify-content: space-between; /* Coloca os dois grupos lado a lado */
+    gap: 1.5rem;
     margin-bottom: 2rem;
-    gap: 1rem;
 }
 
 .selector-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    width: 48%; /* Cada grupo ocupa metade do espaço */
 }
 
-.selector-group label {
+.selector-group label[for*="color-input"] {
     font-weight: 500;
     color: #555;
+    font-size: 1.1rem;
 }
 
-/* --- Estilo dos Inputs de Cor --- */
 input[type="color"] {
-    width: 80px;
+    width: 100%; /* Ocupa 100% do .selector-group */
     height: 80px;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 0;
     cursor: pointer;
+    margin-bottom: 0.5rem;
 }
 
-/* --- (NOVO) Container de Resultados --- */
+/* --- (NOVO) Grupo de Output de Cor (HEX/RGB) --- */
+.output-group {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.output-group input[type="text"] {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: #fafafa;
+}
+
+/* --- (NOVO) Botões de Copiar --- */
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.copy-btn:active, 
+.copy-btn[disabled] {
+    background-color: #28a745; /* Verde sucesso */
+}
+
+/* --- Caixa de Preview --- */
+.preview-container {
+    margin-bottom: 2rem;
+}
+
+#preview-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #FFFFFF;
+    color: #000000;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#preview-box p { margin: 0 0 1rem 0; }
+#preview-box p:last-child { margin-bottom: 0; }
+
+/* --- Container de Resultados (Contraste) --- */
 .results-container {
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .results-container h3 {
@@ -76,15 +134,13 @@ input[type="color"] {
     padding-bottom: 0.75rem;
 }
 
-/* Valor da Taxa de Contraste */
 #contrast-ratio-value {
-    font-size: 2.5rem; /* Bem grande para destaque */
+    font-size: 2.5rem;
     font-weight: 700;
     color: #333;
     margin-bottom: 1.5rem;
 }
 
-/* (NOVO) Grupos de Status (PASS/FAIL) */
 .status-group {
     display: flex;
     justify-content: space-between;
@@ -107,15 +163,4 @@ input[type="color"] {
     font-weight: 700;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
-}
-
-/* Estilos de PASS/FAIL (aplicados via JS) */
-#wcag-aa-status[style*="color: green;"],
-#wcag-aaa-status[style*="color: green;"] {
-    background-color: rgba(40, 167, 69, 0.1);
-}
-
-#wcag-aa-status[style*="color: red;"],
-#wcag-aaa-status[style*="color: red;"] {
-    background-color: rgba(220, 53, 69, 0.1);
 }
