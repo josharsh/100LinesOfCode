@@ -3,64 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Picker</title>
+    <title>WCAG Contrast Checker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="picker-container">
       <h1>WCAG Contrast Checker</h1>
 
-      <div class="color-selectors">
-        <div class="selector-group">
-          <label for="text-color-input">Text Color</label>
-          <input type="color" id="text-color-input" value="#000000" />
+      <div class="main-content-wrapper">
+        <div class="column-left">
+          <div class="card-section">
+            <h2>Choose Colors</h2>
+            <div class="color-selectors">
+              <div class="selector-group">
+                <label for="text-color-input">Text Color</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="text-color-input" value="#000000" />
+                </div>
+                <div class="output-group">
+                  <input type="text" id="text-hex-value" value="#000000" readonly />
+                  <button class="copy-btn" data-target="text-hex-value">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="output-group">
+                  <input type="text" id="text-rgb-value" value="rgb(0, 0, 0)" readonly />
+                  <button class="copy-btn" data-target="text-rgb-value">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="selector-group">
+                <label for="bg-color-input">Background Color</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="bg-color-input" value="#FFFFFF" />
+                </div>
+                <div class="output-group">
+                  <input type="text" id="bg-hex-value" value="#FFFFFF" readonly />
+                  <button class="copy-btn" data-target="bg-hex-value">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="output-group">
+                  <input type="text" id="bg-rgb-value" value="rgb(255, 255, 255)" readonly />
+                  <button class="copy-btn" data-target="bg-rgb-value">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
 
-          <div class="output-group">
-            <input type="text" id="text-hex-value" value="#000000" readonly />
-            <button class="copy-btn" data-target="text-hex-value">Copy</button>
-          </div>
-          <div class="output-group">
-            <input type="text" id="text-rgb-value" value="rgb(0, 0, 0)" readonly />
-            <button class="copy-btn" data-target="text-rgb-value">Copy</button>
+            <h2 class="section-divider">Preview</h2>
+            <div class="preview-container">
+              <div id="preview-box">
+                <p>This is how your text will look.</p>
+                <p><strong>This is bold text.</strong></p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="selector-group">
-          <label for="bg-color-input">Background Color</label>
-          <input type="color" id="bg-color-input" value="#FFFFFF" />
+        <div class="column-right">
+          <div class="card-section">
+            <h2>Contrast Score</h2>
+            <div class="results-container">
+              <h3>Contrast Ratio</h3>
+              <div id="contrast-ratio-value">21.00 : 1</div>
+              <div class="status-group">
+                <span id="wcag-aa-status">PASS</span>
+                <label>WCAG AA</label>
+              </div>
+              <div class="status-group">
+                <span id="wcag-aaa-status">PASS</span>
+                <label>WCAG AAA</label>
+              </div>
+            </div>
 
-          <div class="output-group">
-            <input type="text" id="bg-hex-value" value="#FFFFFF" readonly />
-            <button class="copy-btn" data-target="bg-hex-value">Copy</button>
+            <h2 class="section-divider info-title">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              About WCAG
+            </h2>
+            <div class="info-container">
+              <p>
+                This tool measures the contrast ratio based on the
+                <strong>WCAG (Web Content Accessibility Guidelines)</strong>, the global standard for ensuring web
+                content is accessible to people with visual impairments.
+              </p>
+              <ul>
+                <li>
+                  <strong>Level AA (Passes at 4.5:1):</strong>
+                  This is the accepted minimum standard for most web content.
+                </li>
+                <li>
+                  <strong>Level AAA (Passes at 7:1):</strong>
+                  This is the enhanced standard for the highest level of accessibility.
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="output-group">
-            <input type="text" id="bg-rgb-value" value="rgb(255, 255, 255)" readonly />
-            <button class="copy-btn" data-target="bg-rgb-value">Copy</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="preview-container">
-        <div id="preview-box">
-          <p>This is how your text will look.</p>
-          <p><strong>This is bold text.</strong></p>
-        </div>
-      </div>
-
-      <div class="results-container">
-        <h3>Contrast Ratio</h3>
-        <div id="contrast-ratio-value">21.00 : 1</div>
-        <div class="status-group">
-          <span id="wcag-aa-status">PASS</span>
-          <label>WCAG AA</label>
-        </div>
-        <div class="status-group">
-          <span id="wcag-aaa-status">PASS</span>
-          <label>WCAG AAA</label>
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,41 +1,93 @@
-/* --- Reset Básico e Fontes --- */
+/* Font Import and Base Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 1rem;
+    padding: 2rem;
     box-sizing: border-box;
 }
 
-/* --- Container Principal --- */
+/* Main Container */
 .picker-container {
     background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     width: 100%;
-    max-width: 500px; /* Aumentamos a largura máxima */
+    max-width: 900px;
 }
 
 h1 {
     margin-top: 0;
-    color: #222;
+    color: #1a202c;
     font-size: 1.75rem;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
-/* --- Grupo de Seletores de Cor --- */
+/* Two Column Layout */
+.main-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.column-left,
+.column-right {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Card Sections */
+.card-section {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.card-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1a202c;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.info-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.info-title svg {
+    stroke: #1a202c;
+}
+
+.section-divider {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+/* Color Selectors */
 .color-selectors {
     display: flex;
-    justify-content: space-between; /* Coloca os dois grupos lado a lado */
+    justify-content: space-between;
     gap: 1.5rem;
-    margin-bottom: 2rem;
 }
 
 .selector-group {
@@ -43,26 +95,34 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    width: 48%; /* Cada grupo ocupa metade do espaço */
+    width: 48%;
 }
 
 .selector-group label[for*="color-input"] {
-    font-weight: 500;
-    color: #555;
+    font-weight: 600;
+    color: #2d3748;
     font-size: 1.1rem;
 }
 
-input[type="color"] {
-    width: 100%; /* Ocupa 100% do .selector-group */
-    height: 80px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
+.color-input-wrapper {
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
     margin-bottom: 0.5rem;
 }
 
-/* --- (NOVO) Grupo de Output de Cor (HEX/RGB) --- */
+input[type="color"] {
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: none;
+    padding: 0;
+    transform: translate(-5px, -5px);
+    cursor: pointer;
+}
+
+/* Output Groups */
 .output-group {
     display: flex;
     width: 100%;
@@ -71,73 +131,89 @@ input[type="color"] {
 
 .output-group input[type="text"] {
     flex-grow: 1;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
-    background-color: #fafafa;
+    font-family: "Inter", sans-serif;
+    background-color: #f7fafc;
+    color: #4a5568;
+    min-width: 0;
 }
 
-/* --- (NOVO) Botões de Copiar --- */
+/* Copy Buttons */
 .copy-btn {
-    background-color: #007bff;
+    background-color: #3b82f6;
     color: white;
     border: none;
-    border-radius: 6px;
-    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 500;
-    transition: background-color 0.2s ease;
+    font-family: "Inter", sans-serif;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
 }
 
 .copy-btn:hover {
-    background-color: #0056b3;
+    background-color: #2563eb;
 }
 
-.copy-btn:active, 
-.copy-btn[disabled] {
-    background-color: #28a745; /* Verde sucesso */
+.copy-btn:disabled {
+    background-color: #16a34a;
 }
 
-/* --- Caixa de Preview --- */
-.preview-container {
-    margin-bottom: 2rem;
+.copy-btn:active {
+    transform: scale(0.98);
 }
 
+.copy-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+}
+
+/* Preview Box */
 #preview-box {
-    border: 1px solid #ddd;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 1.5rem;
     font-size: 1rem;
     line-height: 1.5;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #000000;
     transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: center;
+    min-height: 100px;
 }
 
-#preview-box p { margin: 0 0 1rem 0; }
-#preview-box p:last-child { margin-bottom: 0; }
+#preview-box p {
+    margin: 0 0 1rem 0;
+}
 
-/* --- Container de Resultados (Contraste) --- */
+#preview-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contrast Results */
 .results-container {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 1.5rem;
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .results-container h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #444;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.75rem;
+    display: none;
 }
 
 #contrast-ratio-value {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: #1a202c;
     margin-bottom: 1.5rem;
 }
 
@@ -149,18 +225,51 @@ input[type="color"] {
 }
 
 .status-group:first-of-type {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .status-group label {
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1rem;
+    color: #4a5568;
     font-weight: 500;
 }
 
 .status-group span {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
+}
+
+.status-group span[style*="color: green;"] {
+    background-color: rgba(22, 163, 74, 0.1);
+    color: rgb(21, 128, 61) !important;
+}
+
+.status-group span[style*="color: red;"] {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: rgb(185, 28, 28) !important;
+}
+
+/* Info Container */
+.info-container h3 {
+    display: none;
+}
+
+.info-container p,
+.info-container li {
+    font-size: 0.875rem;
+    color: #718096;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.info-container ul {
+    padding-left: 20px;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.info-container li {
+    margin-bottom: 0.5rem;
 }
