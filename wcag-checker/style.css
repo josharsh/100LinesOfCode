@@ -1,27 +1,25 @@
 /* Font Import and Base Styles */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
 body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: #f7fafc;
-    color: #2d3748;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    /* Tamanho fixo para o popup da extensão */
+    width: 400px;
+    height: auto;
     margin: 0;
-    padding: 2rem;
+    padding: 1rem;
     box-sizing: border-box;
+    /* Removemos o flex de centralização da tela inteira */
+    display: block; 
 }
 
 /* Main Container */
 .picker-container {
-    background-color: #ffffff;
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    width: 100%;
-    max-width: 900px;
+    padding: 0;
+    max-width: 100%;
 }
 
 h1 {
@@ -36,24 +34,20 @@ h1 {
 /* Two Column Layout */
 .main-content-wrapper {
     display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
+    flex-direction: column; /* <-- MUDANÇA CRÍTICA */
+    gap: 1.5rem;
 }
 
 .column-left,
 .column-right {
-    flex: 1 1 0;
     display: flex;
     flex-direction: column;
-    min-width: 0;
 }
 
 /* Card Sections */
 .card-section {
-    background-color: #f9fafb;
-    border-radius: 12px;
-    padding: 1.5rem;
-    height: 100%;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
 }
 
 .card-section h2 {
@@ -136,9 +130,21 @@ input[type="color"] {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
     font-family: "Inter", sans-serif;
-    background-color: #f7fafc;
+    background-color: #ffffff;
     color: #4a5568;
     min-width: 0;
+    cursor: text;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.output-group input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #f0f9ff;
+}
+
+.output-group input[type="text"]:hover {
+    border-color: #94a3b8;
 }
 
 /* Copy Buttons */
@@ -172,12 +178,6 @@ input[type="color"] {
     transform: scale(0.98);
 }
 
-.copy-btn svg {
-    width: 16px;
-    height: 16px;
-    stroke: white;
-}
-
 /* Preview Box */
 #preview-box {
     border: 1px solid #e2e8f0;
@@ -204,10 +204,6 @@ input[type="color"] {
 .results-container {
     text-align: center;
     margin-bottom: 1.5rem;
-}
-
-.results-container h3 {
-    display: none;
 }
 
 #contrast-ratio-value {
@@ -252,10 +248,6 @@ input[type="color"] {
 }
 
 /* Info Container */
-.info-container h3 {
-    display: none;
-}
-
 .info-container p,
 .info-container li {
     font-size: 0.875rem;
@@ -272,4 +264,36 @@ input[type="color"] {
 
 .info-container li {
     margin-bottom: 0.5rem;
+}
+
+/* --- Estilo do Botão Conta-Gotas --- */
+.dropper-btn-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    background-color: #1a202c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropper-btn-small:hover {
+    background-color: #2d3748;
+}
+
+.dropper-btn-small:active {
+    transform: scale(0.98);
+}
+
+.dropper-btn-small svg {
+    stroke: white;
 }

@@ -1,7 +1,8 @@
-// Constantes dos ícones SVG para evitar repetição
+// SVG Icons
 const iconCopy = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 const iconCheck = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
 
+// DOM Elements
 const textColorInput = document.getElementById("text-color-input");
 const bgColorInput = document.getElementById("bg-color-input");
 const previewBox = document.getElementById("preview-box");
@@ -13,39 +14,26 @@ const contrastRatioValue = document.getElementById("contrast-ratio-value");
 const wcagAAStatus = document.getElementById("wcag-aa-status");
 const wcagAAAStatus = document.getElementById("wcag-aaa-status");
 
-textColorInput.addEventListener("input", handleColorChange);
-bgColorInput.addEventListener("input", handleColorChange);
+// Event Listeners
+[textColorInput, bgColorInput].forEach(el => el.addEventListener("input", handleColorChange));
 
 function handleColorChange() {
-    const textColorHex = textColorInput.value.toUpperCase();
-    const bgColorHex = bgColorInput.value.toUpperCase();
-
-    previewBox.style.color = textColorHex;
-    previewBox.style.backgroundColor = bgColorHex;
-
-    const textColorRGB = hexToRgb(textColorHex);
-    const bgColorRGB = hexToRgb(bgColorHex);
-
-    const textColorLum = getLuminance(textColorRGB.r, textColorRGB.g, textColorRGB.b);
-    const bgColorLum = getLuminance(bgColorRGB.r, bgColorRGB.g, bgColorRGB.b);
-
-    const contrastRatio = calculateContrastRatio(textColorLum, bgColorLum);
-
-    contrastRatioValue.innerText = `${contrastRatio.toFixed(2)} : 1`;
-    checkWCAGStandards(contrastRatio);
-
-    textHexValue.value = textColorHex;
-    textRgbValue.value = `rgb(${textColorRGB.r}, ${textColorRGB.g}, ${textColorRGB.b})`;
-    bgHexValue.value = bgColorHex;
-    bgRgbValue.value = `rgb(${bgColorRGB.r}, ${bgColorRGB.g}, ${bgColorRGB.b})`;
+    const textHex = textColorInput.value.toUpperCase(), bgHex = bgColorInput.value.toUpperCase();
+    const textRGB = hexToRgb(textHex), bgRGB = hexToRgb(bgHex);
+    previewBox.style.color = textHex;
+    previewBox.style.backgroundColor = bgHex;
+    const ratio = calculateContrastRatio(getLuminance(textRGB.r, textRGB.g, textRGB.b), getLuminance(bgRGB.r, bgRGB.g, bgRGB.b));
+    contrastRatioValue.innerText = `${ratio.toFixed(2)} : 1`;
+    checkWCAGStandards(ratio);
+    textHexValue.value = textHex;
+    textRgbValue.value = `rgb(${textRGB.r}, ${textRGB.g}, ${textRGB.b})`;
+    bgHexValue.value = bgHex;
+    bgRgbValue.value = `rgb(${bgRGB.r}, ${bgRGB.g}, ${bgRGB.b})`;
 }
 
 function hexToRgb(hex) {
-    let cleanHex = hex.replace("#", "");
-    const r = parseInt(cleanHex.substring(0, 2), 16);
-    const g = parseInt(cleanHex.substring(2, 4), 16);
-    const b = parseInt(cleanHex.substring(4, 6), 16);
-    return { r, g, b };
+    const h = hex.replace("#", "");
+    return { r: parseInt(h.substring(0, 2), 16), g: parseInt(h.substring(2, 4), 16), b: parseInt(h.substring(4, 6), 16) };
 }
 
 function getLuminance(r, g, b) {
@@ -62,33 +50,48 @@ function calculateContrastRatio(lum1, lum2) {
     return (L1 + 0.05) / (L2 + 0.05);
 }
 
-// Helper function to avoid repetition
-function updateStatus(element, passes) {
-    element.innerText = passes ? "PASS" : "FAIL";
-    element.style.color = passes ? "green" : "red";
-}
-
 function checkWCAGStandards(contrastRatio) {
-    updateStatus(wcagAAStatus, contrastRatio >= 4.5); //
-    updateStatus(wcagAAAStatus, contrastRatio >= 7); //
+    const updateStatus = (el, passes) => { el.innerText = passes ? "PASS" : "FAIL"; el.style.color = passes ? "green" : "red"; };
+    updateStatus(wcagAAStatus, contrastRatio >= 4.5);
+    updateStatus(wcagAAAStatus, contrastRatio >= 7);
 }
 
-const copyButtons = document.querySelectorAll(".copy-btn");
-copyButtons.forEach((button) => {
-    // Using async/await for cleaner code
-    button.addEventListener("click", async () => {
-        const targetId = button.dataset.target;
-        const targetInput = document.getElementById(targetId);
+// Copy buttons functionality
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+        const target = document.getElementById(btn.dataset.target);
         try {
-            await navigator.clipboard.writeText(targetInput.value);
-            button.innerHTML = iconCheck;
-            button.disabled = true;
-            setTimeout(() => {
-                button.innerHTML = iconCopy;
-                button.disabled = false;
-            }, 2000);
-        } catch (err) {
-            console.error("Failed to copy text: ", err);
-        }
+            await navigator.clipboard.writeText(target.value);
+            btn.innerHTML = iconCheck; btn.disabled = true;
+            setTimeout(() => { btn.innerHTML = iconCopy; btn.disabled = false; }, 2000);
+        } catch (err) { console.error("Failed to copy: ", err); }
     });
 });
+
+// EyeDropper functionality
+async function pickColor(target) {
+    if (!window.EyeDropper) { alert('Your browser does not support EyeDropper API.'); return; }
+    try {
+        const result = await new EyeDropper().open();
+        target.value = result.sRGBHex.toUpperCase();
+        handleColorChange();
+    } catch (e) { console.log('Color selection cancelled'); }
+}
+
+// Manual input handlers
+function rgbToHex(r, g, b) { return "#" + [r, g, b].map(x => { const h = x.toString(16); return h.length === 1 ? "0" + h : h; }).join(""); }
+function handleManualInput(input, colorInput) {
+    const v = input.value.trim().toUpperCase();
+    if (v.startsWith("#") && /^#[0-9A-F]{6}$/i.test(v)) { colorInput.value = v; handleColorChange(); }
+    else if (v.startsWith("RGB")) {
+        const m = v.match(/RGB\((\d+),\s*(\d+),\s*(\d+)\)/);
+        if (m) { const [, r, g, b] = m.map(Number); if (r <= 255 && g <= 255 && b <= 255) { colorInput.value = rgbToHex(r, g, b); handleColorChange(); } }
+    }
+}
+[textHexValue, textRgbValue].forEach(el => el.addEventListener('blur', () => handleManualInput(el, textColorInput)));
+[bgHexValue, bgRgbValue].forEach(el => el.addEventListener('blur', () => handleManualInput(el, bgColorInput)));
+
+// Attach EyeDropper to buttons
+document.getElementById('text-eye-dropper-btn')?.addEventListener('click', () => pickColor(textColorInput));
+document.getElementById('bg-eye-dropper-btn')?.addEventListener('click', () => pickColor(bgColorInput));
+document.getElementById('bg-eye-dropper-btn')?.addEventListener('click', () => pickColor(bgColorInput));
