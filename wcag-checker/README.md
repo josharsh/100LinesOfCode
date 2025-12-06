@@ -1,57 +1,69 @@
-# WCAG Contrast Checker
+# WCAG Contrast Checker - Chrome Extension
 
-> A simple, lightweight WCAG contrast checker built as part of the [100LinesOfCode](https://github.com/josharsh/100LinesOfCode) project.
+> A lightweight Chrome extension for checking WCAG color contrast compliance, built as part of the [100LinesOfCode](https://github.com/josharsh/100LinesOfCode) project.
 
-This tool provides an interactive way for developers and designers to check color contrast ratios and ensure their designs meet WCAG accessibility standards.
+This browser extension provides an interactive way for developers and designers to check color contrast ratios and ensure their designs meet WCAG accessibility standards - right from their browser toolbar.
 
 ## Features
 
-* **Dual Color Selection:** Choose text and background colors using interactive color pickers
+* **Triple Color Selection Methods:**
+  - 🎨 Interactive color pickers
+  - 💧 EyeDropper tool to pick colors directly from any webpage
+  - ⌨️ Manual input (HEX or RGB format)
 * **Real-time Contrast Calculation:** Instantly see the contrast ratio between your selected colors
 * **WCAG Compliance Check:** Automatic validation against WCAG AA (4.5:1) and AAA (7:1) standards
-* **Multiple Format Support:** Get color values in both HEX and RGB formats
+* **Multiple Format Support:** Get and input color values in both HEX and RGB formats
 * **Live Preview:** See exactly how your text will look with the selected color combination
 * **Copy to Clipboard:** One-click copy functionality for all color values
+* **Compact Design:** Optimized popup interface (400px width) perfect for quick checks
 * **Accessible Design:** Built with accessibility in mind, following best practices
 
 ## Project Structure
 
 ```
 wcag-checker/
-├── index.html          # Main HTML structure
-├── style.css           # Styling (organized with clear comments)
-├── script.js           # JavaScript logic (under 100 lines)
+├── index.html          # Main popup HTML structure
+├── style.css           # Optimized styling with clean organization
+├── script.js           # JavaScript logic (under 100 lines!)
+├── manifest.json       # Chrome extension manifest v3
 └── README.md           # Project documentation
 ```
 
-## How to Run
+## Installation
 
-### Option 1: Direct File Opening
+### Option 1: Install from Source (Developer Mode)
 1. Clone or download this repository
-2. Navigate to the `wcag-checker` folder
-3. Open `index.html` in your web browser
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" (toggle in top-right corner)
+4. Click "Load unpacked"
+5. Select the `wcag-checker` folder
+6. The extension icon will appear in your toolbar!
 
-### Option 2: Using a Local Server
+### Option 2: Test Locally (Without Installing)
 ```bash
-# Using Python 3
+# Navigate to the project folder
+cd wcag-checker
+
+# Start a local server
 python -m http.server 8000
-
-# Using Node.js (with http-server)
+# or
 npx http-server
-
-# Using PHP
-php -S localhost:8000
 ```
 
 Then open your browser and navigate to `http://localhost:8000`
 
-## How It Works
+## How to Use
 
-1. **Select Colors:** Use the color pickers to choose your text and background colors
-2. **View Results:** The tool automatically calculates the contrast ratio using the WCAG formula
-3. **Check Compliance:** See if your color combination passes WCAG AA and AAA standards
-4. **Preview:** View a live preview of how your text will look
-5. **Copy Values:** Click the copy buttons to get HEX or RGB values for use in your projects
+1. **Click the extension icon** in your Chrome toolbar
+2. **Choose your colors** using one of three methods:
+   - Click the color picker boxes
+   - Click "Pick from Page" to use the EyeDropper on any visible color
+   - Type directly in the HEX (`#FF5733`) or RGB (`rgb(255, 87, 51)`) fields
+3. **View instant results:**
+   - Contrast ratio displayed prominently
+   - PASS/FAIL status for WCAG AA and AAA standards
+   - Live preview of text appearance
+4. **Copy values** with one click for use in your projects
 
 ## WCAG Standards
 
@@ -60,74 +72,92 @@ Then open your browser and navigate to `http://localhost:8000`
 
 ## Tech Stack
 
-* **HTML5:** Semantic structure with accessibility in mind
-* **CSS3:** Modern styling with Flexbox layout and custom properties
-* **Vanilla JavaScript:** All logic implemented in under 100 lines
+* **HTML5:** Semantic structure (145 lines, optimized)
+* **CSS3:** Modern styling with Flexbox layout
+* **Vanilla JavaScript:** All logic in under 100 lines (96 lines)
+* **Chrome Extension APIs:** Manifest V3, EyeDropper API
 * **Web APIs:** Clipboard API for copy functionality
 
 ## Browser Support
 
-Works on all modern browsers that support:
-- `<input type="color">`
-- Clipboard API
+Requires:
+- Chrome 95+ (for EyeDropper API)
+- Clipboard API support
 - ES6+ JavaScript features
+
+## Permissions
+
+- `activeTab`: Required for EyeDropper functionality to pick colors from the current page
+- `scripting`: Required for extension popup interaction
 
 ---
 
-# WCAG Contrast Checker
+# WCAG Contrast Checker - Extensão Chrome
 
-> Uma ferramenta simples e leve para verificação de contraste WCAG, construída como parte do projeto [100LinesOfCode](https://github.com/josharsh/100LinesOfCode).
+> Uma extensão leve para Chrome que verifica a conformidade de contraste de cores WCAG, construída como parte do projeto [100LinesOfCode](https://github.com/josharsh/100LinesOfCode).
 
-Esta ferramenta oferece uma forma interativa para desenvolvedores e designers verificarem a taxa de contraste de cores e garantir que seus designs atendem aos padrões de acessibilidade WCAG.
+Esta extensão oferece uma forma interativa para desenvolvedores e designers verificarem taxas de contraste de cores e garantir que seus designs atendem aos padrões de acessibilidade WCAG - direto da barra de ferramentas do navegador.
 
 ## Funcionalidades
 
-* **Seleção Dupla de Cores:** Escolha cores de texto e fundo usando seletores de cores interativos
-* **Cálculo de Contraste em Tempo Real:** Veja instantaneamente a taxa de contraste entre suas cores selecionadas
-* **Verificação de Conformidade WCAG:** Validação automática contra os padrões WCAG AA (4.5:1) e AAA (7:1)
-* **Suporte a Múltiplos Formatos:** Obtenha valores de cores nos formatos HEX e RGB
-* **Visualização ao Vivo:** Veja exatamente como seu texto ficará com a combinação de cores selecionada
-* **Copiar para Área de Transferência:** Funcionalidade de cópia com um clique para todos os valores de cores
-* **Design Acessível:** Construído pensando em acessibilidade, seguindo as melhores práticas
+* **Três Métodos de Seleção de Cores:**
+  - 🎨 Seletores de cores interativos
+  - 💧 Ferramenta conta-gotas para pegar cores diretamente de qualquer página
+  - ⌨️ Entrada manual (formato HEX ou RGB)
+* **Cálculo de Contraste em Tempo Real:** Veja instantaneamente a taxa de contraste entre suas cores
+* **Verificação de Conformidade WCAG:** Validação automática contra padrões WCAG AA (4.5:1) e AAA (7:1)
+* **Suporte a Múltiplos Formatos:** Obtenha e insira valores de cores em formatos HEX e RGB
+* **Visualização ao Vivo:** Veja exatamente como seu texto ficará com a combinação de cores
+* **Copiar para Área de Transferência:** Funcionalidade de cópia com um clique
+* **Design Compacto:** Interface otimizada (400px de largura) perfeita para verificações rápidas
+* **Design Acessível:** Construído pensando em acessibilidade
 
 ## Estrutura do Projeto
 
 ```
 wcag-checker/
-├── index.html          # Estrutura HTML principal
-├── style.css           # Estilos (organizados com comentários claros)
-├── script.js           # Lógica JavaScript (menos de 100 linhas)
+├── index.html          # Estrutura HTML do popup principal
+├── style.css           # Estilos otimizados com organização limpa
+├── script.js           # Lógica JavaScript (menos de 100 linhas!)
+├── manifest.json       # Manifest da extensão Chrome v3
 └── README.md           # Documentação do projeto
 ```
 
-## Como Executar
+## Instalação
 
-### Opção 1: Abertura Direta do Arquivo
+### Opção 1: Instalar do Código Fonte (Modo Desenvolvedor)
 1. Clone ou baixe este repositório
-2. Navegue até a pasta `wcag-checker`
-3. Abra o arquivo `index.html` no seu navegador
+2. Abra o Chrome e navegue até `chrome://extensions/`
+3. Ative o "Modo do desenvolvedor" (toggle no canto superior direito)
+4. Clique em "Carregar sem compactação"
+5. Selecione a pasta `wcag-checker`
+6. O ícone da extensão aparecerá na sua barra de ferramentas!
 
-### Opção 2: Usando um Servidor Local
+### Opção 2: Testar Localmente (Sem Instalar)
 ```bash
-# Usando Python 3
+# Navegue até a pasta do projeto
+cd wcag-checker
+
+# Inicie um servidor local
 python -m http.server 8000
-
-# Usando Node.js (com http-server)
+# ou
 npx http-server
-
-# Usando PHP
-php -S localhost:8000
 ```
 
 Em seguida, abra seu navegador e navegue até `http://localhost:8000`
 
-## Como Funciona
+## Como Usar
 
-1. **Selecione as Cores:** Use os seletores de cores para escolher suas cores de texto e fundo
-2. **Visualize os Resultados:** A ferramenta calcula automaticamente a taxa de contraste usando a fórmula WCAG
-3. **Verifique a Conformidade:** Veja se sua combinação de cores passa nos padrões WCAG AA e AAA
-4. **Pré-visualize:** Veja uma prévia ao vivo de como seu texto ficará
-5. **Copie os Valores:** Clique nos botões de copiar para obter valores HEX ou RGB para usar em seus projetos
+1. **Clique no ícone da extensão** na barra de ferramentas do Chrome
+2. **Escolha suas cores** usando um dos três métodos:
+   - Clique nas caixas de seleção de cor
+   - Clique em "Pick from Page" para usar o conta-gotas em qualquer cor visível
+   - Digite diretamente nos campos HEX (`#FF5733`) ou RGB (`rgb(255, 87, 51)`)
+3. **Veja os resultados instantâneos:**
+   - Taxa de contraste exibida de forma proeminente
+   - Status PASS/FAIL para padrões WCAG AA e AAA
+   - Pré-visualização ao vivo da aparência do texto
+4. **Copie valores** com um clique para usar em seus projetos
 
 ## Padrões WCAG
 
@@ -136,14 +166,20 @@ Em seguida, abra seu navegador e navegue até `http://localhost:8000`
 
 ## Stack Tecnológica
 
-* **HTML5:** Estrutura semântica pensando em acessibilidade
-* **CSS3:** Estilização moderna com layout Flexbox e propriedades customizadas
-* **JavaScript Vanilla:** Toda a lógica implementada em menos de 100 linhas
+* **HTML5:** Estrutura semântica (145 linhas, otimizado)
+* **CSS3:** Estilização moderna com layout Flexbox
+* **JavaScript Vanilla:** Toda a lógica em menos de 100 linhas (96 linhas)
+* **APIs de Extensão Chrome:** Manifest V3, EyeDropper API
 * **Web APIs:** API Clipboard para funcionalidade de cópia
 
 ## Suporte de Navegadores
 
-Funciona em todos os navegadores modernos que suportam:
-- `<input type="color">`
-- API Clipboard
+Requer:
+- Chrome 95+ (para EyeDropper API)
+- Suporte à API Clipboard
 - Recursos JavaScript ES6+
+
+## Permissões
+
+- `activeTab`: Necessária para a funcionalidade do conta-gotas pegar cores da página atual
+- `scripting`: Necessária para interação do popup da extensão
