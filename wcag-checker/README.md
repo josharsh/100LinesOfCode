@@ -72,7 +72,7 @@ Then open your browser and navigate to `http://localhost:8000`
 
 ## Tech Stack
 
-* **HTML5:** Semantic structure (145 lines, optimized)
+* **HTML5:** Semantic structure
 * **CSS3:** Modern styling with Flexbox layout
 * **Vanilla JavaScript:** All logic in under 100 lines (96 lines)
 * **Chrome Extension APIs:** Manifest V3, EyeDropper API
@@ -166,7 +166,7 @@ Em seguida, abra seu navegador e navegue até `http://localhost:8000`
 
 ## Stack Tecnológica
 
-* **HTML5:** Estrutura semântica (145 linhas, otimizado)
+* **HTML5:** Estrutura semântica
 * **CSS3:** Estilização moderna com layout Flexbox
 * **JavaScript Vanilla:** Toda a lógica em menos de 100 linhas (96 linhas)
 * **APIs de Extensão Chrome:** Manifest V3, EyeDropper API

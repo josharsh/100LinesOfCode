@@ -6,13 +6,11 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 body {
     font-family: "Inter", sans-serif;
     background-color: #f7fafc;
-    /* Tamanho fixo para o popup da extensão */
     width: 400px;
     height: auto;
     margin: 0;
     padding: 1rem;
     box-sizing: border-box;
-    /* Removemos o flex de centralização da tela inteira */
     display: block; 
 }
 
@@ -34,7 +32,7 @@ h1 {
 /* Two Column Layout */
 .main-content-wrapper {
     display: flex;
-    flex-direction: column; /* <-- MUDANÇA CRÍTICA */
+    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -266,7 +264,7 @@ input[type="color"] {
     margin-bottom: 0.5rem;
 }
 
-/* --- Estilo do Botão Conta-Gotas --- */
+/* Eye Dropper Button */
 .dropper-btn-small {
     display: flex;
     align-items: center;

@@ -94,4 +94,3 @@ function handleManualInput(input, colorInput) {
 // Attach EyeDropper to buttons
 document.getElementById('text-eye-dropper-btn')?.addEventListener('click', () => pickColor(textColorInput));
 document.getElementById('bg-eye-dropper-btn')?.addEventListener('click', () => pickColor(bgColorInput));
-document.getElementById('bg-eye-dropper-btn')?.addEventListener('click', () => pickColor(bgColorInput));
