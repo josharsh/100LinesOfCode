@@ -13,7 +13,7 @@
 
 **Build something productive in less than 100 lines of code!**
 
-A curated collection of small, powerful, and educational code projects perfect for beginners and experienced developers alike.
+A curated collection of small, powerful, and educational code projects, perfect for beginners and experienced developers alike.
 
 [Explore Projects](#-projects) • [Contributing](#-contributing) • [Getting Started](#-getting-started) • [Community](#-community)
 
