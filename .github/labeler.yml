@@ -1,0 +1,47 @@
+# Label PRs based on changed files
+
+documentation:
+  - '**/*.md'
+  - 'docs/**/*'
+
+python:
+  - '**/*.py'
+
+javascript:
+  - '**/*.js'
+  - '**/*.jsx'
+
+typescript:
+  - '**/*.ts'
+  - '**/*.tsx'
+
+java:
+  - '**/*.java'
+
+cpp:
+  - '**/*.cpp'
+  - '**/*.cc'
+  - '**/*.cxx'
+  - '**/*.h'
+  - '**/*.hpp'
+
+c:
+  - '**/*.c'
+
+go:
+  - '**/*.go'
+
+rust:
+  - '**/*.rs'
+
+web:
+  - '**/*.html'
+  - '**/*.css'
+
+bash:
+  - '**/*.sh'
+  - '**/*.bash'
+
+github-actions:
+  - '.github/workflows/**/*'
+  - '.github/**/*'

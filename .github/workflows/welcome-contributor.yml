@@ -1,0 +1,68 @@
+name: Welcome New Contributors
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if first-time contributor
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const creator = context.payload.pull_request.user.login;
+
+            // Get all PRs from this contributor
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              creator: creator
+            });
+
+            // If this is their first PR (including this one)
+            if (prs.length === 1) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `## 🎉 Welcome to 100 Lines of Code, @${creator}! 🎉
+
+Thank you for your first contribution to our repository! We're thrilled to have you join our community of developers.
+
+### What's Next?
+
+1. **Review Process**: A maintainer will review your PR soon. Don't worry if changes are requested - it's a normal part of the process!
+
+2. **Join the Community**:
+   - ⭐ Star this repository to show your support
+   - 💬 Join our [Discussions](https://github.com/josharsh/100LinesOfCode/discussions)
+   - 🐦 Share your contribution on social media (tag us!)
+
+3. **Keep Contributing**:
+   - Check out [good first issues](https://github.com/josharsh/100LinesOfCode/labels/good-first-issue)
+   - Help other newcomers in discussions
+   - Suggest new project ideas
+
+### Resources for New Contributors
+
+- 📖 [Contributing Guidelines](https://github.com/josharsh/100LinesOfCode/blob/master/CONTRIBUTING.md)
+- 🌱 [First Timers Only](http://www.firsttimersonly.com/)
+- 💡 [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
+
+---
+
+**Thank you for making open source better!** Your contribution, no matter how small, makes a difference. 💖
+
+We can't wait to see more from you! 🚀
+
+*- The 100LinesOfCode Team*`
+              });
+            }

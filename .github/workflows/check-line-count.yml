@@ -1,0 +1,102 @@
+name: Check Line Count
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  check-lines:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check line counts
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { execSync } = require('child_process');
+            const fs = require('fs');
+            const path = require('path');
+
+            // Get changed files
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+
+            const newProjects = [];
+            const projectDirs = new Set();
+
+            // Identify new project directories
+            for (const file of files) {
+              if (file.status === 'added') {
+                const parts = file.filename.split('/');
+                if (parts.length > 1) {
+                  projectDirs.add(parts[0]);
+                }
+              }
+            }
+
+            const warnings = [];
+            const codeExtensions = ['.py', '.js', '.java', '.cpp', '.c', '.go', '.rs', '.rb', '.php', '.ts', '.tsx', '.jsx'];
+
+            for (const dir of projectDirs) {
+              if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
+                const files = fs.readdirSync(dir);
+
+                for (const file of files) {
+                  const ext = path.extname(file);
+                  if (codeExtensions.includes(ext)) {
+                    const filePath = path.join(dir, file);
+                    try {
+                      const content = fs.readFileSync(filePath, 'utf8');
+                      const lines = content.split('\n');
+
+                      // Count non-empty, non-comment lines (basic check)
+                      let codeLines = 0;
+                      for (const line of lines) {
+                        const trimmed = line.trim();
+                        if (trimmed &&
+                            !trimmed.startsWith('//') &&
+                            !trimmed.startsWith('#') &&
+                            !trimmed.startsWith('/*') &&
+                            !trimmed.startsWith('*') &&
+                            !trimmed === '*/') {
+                          codeLines++;
+                        }
+                      }
+
+                      if (codeLines > 100) {
+                        warnings.push(`⚠️ **${filePath}** has ${codeLines} lines of code (excluding basic comments). This may exceed the 100-line limit.`);
+                      }
+                    } catch (e) {
+                      console.log(`Could not read ${filePath}: ${e.message}`);
+                    }
+                  }
+                }
+              }
+            }
+
+            if (warnings.length > 0) {
+              const body = `## Line Count Check ⚠️\n\n` +
+                `This PR may contain files exceeding 100 lines of code:\n\n` +
+                warnings.join('\n') +
+                `\n\n**Note:** This is a basic automated check. Please manually verify your line count excludes:\n` +
+                `- Blank lines\n` +
+                `- Comments\n` +
+                `- Import statements (if applicable)\n\n` +
+                `If your code is legitimately under 100 lines, you can ignore this message.`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
