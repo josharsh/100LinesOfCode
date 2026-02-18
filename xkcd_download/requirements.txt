@@ -1,0 +1,8 @@
+beautifulsoup4==4.9.3
+certifi==2024.7.4
+chardet==3.0.4
+idna==3.7
+lxml==4.5.2
+requests==2.32.4
+soupsieve==2.0.1
+urllib3==2.6.3

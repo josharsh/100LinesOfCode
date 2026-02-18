@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Tip Calculator !</title>
+</head>
+<body>
+
+<section id="calculator">
+    <title>Tip Calculator</title>
+    <p><h1>Calculate how much you should tip!</h1></p>
+    <p id="placeholdertext">Total bill</p>
+
+    <div class="input-group w-50 mx-auto"><input type="text" placeholder="How much is the bill?" id="bill">
+        <div class="input-group-append">
+            <span class="input-group-text">$</span>
+        </div>
+    </div>
+    
+<p id="placeholdertext">How much do you want to tip? (in percent)</p>
+    <div class="input-group w-50 mx-auto"><input type="text" placeholder="What percent are you tipping?" id="tip">
+        <div class="input-group-append">
+            <span class="input-group-text">%</span>
+        </div>
+    </div>
+
+    <p></p>
+    <p id="output">What's the tip gonna be!?</p>
+</section> 
+
+</body>
+<script src="tipCalculatorLogic.js"></script>
+</html>

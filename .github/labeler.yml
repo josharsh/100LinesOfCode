@@ -1,0 +1,49 @@
+# Label PRs based on changed files
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.md', 'docs/**/*']
+
+python:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.py']
+
+javascript:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.js', '**/*.jsx']
+
+typescript:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.ts', '**/*.tsx']
+
+java:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.java']
+
+cpp:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.cpp', '**/*.cc', '**/*.cxx', '**/*.h', '**/*.hpp']
+
+c:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.c']
+
+go:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.go']
+
+rust:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.rs']
+
+web:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.html', '**/*.css']
+
+bash:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.sh', '**/*.bash']
+
+github-actions:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/**/*', '.github/**/*']

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "WCAG Contrast Checker",
+  "version": "1.0",
+  "description": "Check color contrast and accessibility (WCAG) compliance for any website.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ]
+}
