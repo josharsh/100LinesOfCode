@@ -71,6 +71,5 @@ if __name__ == "__main__":
     get_verse_button = tk.Button(root, text="Get Daily Verse",
                                 font=("Arial", 12), command=daily_verse.daily_bible_verse)
     get_verse_button.pack(pady=10)
-
-    print(daily_verse.daily_bible_verse())
+    daily_verse.daily_bible_verse()
     root.mainloop()
