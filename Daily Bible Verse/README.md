@@ -8,4 +8,4 @@ To run the program, make sure you have the `requests` library installed. You can
 pip install requests
 ```
 
-Then, you can run the `main.py` file to see the daily Bible verse displayed in the GUI. Click the "Get Daily Verse" button to fetch a new verse (may not be obvious since the verse is the same for the day).
+Then, you can run the `main.py` file to see the daily Bible verse displayed in the GUI. Click the "Get Daily Verse" button to fetch a new verse (change may not be obvious since the verse is the same for the day).
