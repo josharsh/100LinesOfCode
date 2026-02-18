@@ -1,1 +1,0 @@
-Simple way to recursively copy all files from a directory tree into one folder. Naming schema is ORIGINATINGFOLDER_FILENAME
