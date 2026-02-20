@@ -11,7 +11,7 @@ jieba3k==0.35.1
 joblib==1.2.0
 lxml==4.6.3
 newspaper3k==0.2.8
-nltk==3.6.6
+nltk==3.9.2
 Pillow==7.2.0
 pytesseract==0.3.5
 python-dateutil==2.8.1
