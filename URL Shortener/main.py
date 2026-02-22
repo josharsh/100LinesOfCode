@@ -1,9 +1,9 @@
 """A simple URL shortener service using Flask. This application maps short
 URLs to their corresponding long URLs and redirects users accordingly."""
-import threading
 import random
 import json
 from flask import Flask, redirect, send_file
+import aiofiles
 
 app = Flask(__name__)
 
@@ -35,7 +35,7 @@ def redirect_to_url(short_url):
         return "Short URL not found", 404
 
 @app.route('/shorten/<path:long_url>')
-def shorten_url(long_url):
+async def shorten_url(long_url):
     """Generates a short URL for the given long URL and stores the mapping."""
     sue = True
     # Short Url Exists
@@ -46,22 +46,14 @@ def shorten_url(long_url):
             sue = False
     short_to_long[short_url] = long_url
     print(f"Generated short URL: {short_url} for long URL: {long_url}")
-    save_mappings()
+    await save_mappings()
     return f"Short URL: {short_url}"
 
-# @app.route('/save')
-def save_mappings():
-    """Saves the current short-to-long URL mappings to a file."""
-    with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(short_to_long, f)
+async def save_mappings():
+    """Saves the current short-to-long URL mappings to a JSON file."""
+    async with aiofiles.open('data.json', 'w', encoding='utf-8') as f:
+        await f.write(json.dumps(short_to_long))
     return "Mappings saved successfully"
 
-def threaded_run():
-    """Runs the Flask application in a separate thread to allow for concurrent execution."""
-    def _run_threaded():
-        app.run(debug=True, port=5000, host='0.0.0.0', use_reloader=False)
-    return _run_threaded
-
 if __name__ == '__main__':
-    run_thread = threading.Thread(target=threaded_run())
-    run_thread.start()
+    app.run(debug=True, port=5000, host='0.0.0.0')
