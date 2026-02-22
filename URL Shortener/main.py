@@ -29,11 +29,16 @@ def redirect_to_url(short_url):
     else:
         return "Short URL not found", 404
 
-@app.route('/shorten/<long_url>')
+@app.route('/shorten/<path:long_url>')
 def shorten_url(long_url):
     """Generates a short URL for the given long URL and stores the mapping."""
-    short_url = ''.join(random.choices
-            ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=6))
+    sue = True
+    # Short Url Exists
+    while sue:
+        short_url = ''.join(random.choices
+                ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=6))
+        if short_url not in short_to_long:
+            sue = False
     short_to_long[short_url] = long_url
     print(f"Generated short URL: {short_url} for long URL: {long_url}")
     save_mappings()

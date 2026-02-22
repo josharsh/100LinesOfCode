@@ -37,9 +37,9 @@ A simple URL shortener service using Flask. This application maps short URLs to 
 
 ## Usage
 
-- To create a short URL, access /shorten/long_url where `long_url` is the URL you want to shorten. **OMIT THE PROTOCOL (http:// or https://) FROM THE URL.** For example:
+- To create a short URL, access /shorten/long_url where `long_url` is the URL you want to shorten. For example:
 
-  ```http://localhost:5000/shorten/www.example.com```
+   ```http://localhost:5000/shorten/www.example.com```
 
 To expand a short URL, access /short_url where `short_url` is the short URL you want to expand. For example:
 
