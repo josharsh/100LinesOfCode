@@ -11,8 +11,8 @@ try:
     with open('data.json', 'r', encoding='utf-8') as json_file:
         short_to_long = json.load(json_file)
         print("Found existing data.json. Loaded short-to-long URL mappings.")
-except FileNotFoundError:
-    print("data.json not found. Starting with an empty mapping.")
+except (FileNotFoundError, json.JSONDecodeError):
+    print("data.json not found or invalid. Starting with an empty mapping.")
     short_to_long = {}
 
 @app.route('/<short_url>')
@@ -36,14 +36,15 @@ def shorten_url(long_url):
             ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=6))
     short_to_long[short_url] = long_url
     print(f"Generated short URL: {short_url} for long URL: {long_url}")
+    save_mappings()
     return f"Short URL: {short_url}"
 
 # @app.route('/save')
-# def save_mappings():
-#     """Saves the current short-to-long URL mappings to a file."""
-#     with open('data.json', 'w', encoding='utf-8') as f:
-#         json.dump(short_to_long, f)
-#     return "Mappings saved successfully"
+def save_mappings():
+    """Saves the current short-to-long URL mappings to a file."""
+    with open('data.json', 'w', encoding='utf-8') as f:
+        json.dump(short_to_long, f)
+    return "Mappings saved successfully"
 
 def threaded_run():
     """Runs the Flask application in a separate thread to allow for concurrent execution."""
