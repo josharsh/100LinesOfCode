@@ -3,7 +3,7 @@ URLs to their corresponding long URLs and redirects users accordingly."""
 import threading
 import random
 import json
-from flask import Flask, redirect
+from flask import Flask, redirect, send_file
 
 app = Flask(__name__)
 
@@ -14,6 +14,11 @@ try:
 except (FileNotFoundError, json.JSONDecodeError):
     print("data.json not found or invalid. Starting with an empty mapping.")
     short_to_long = {}
+
+@app.route('/')
+def home():
+    """Home route that provides a welcome message and instructions."""
+    return send_file('README.html')
 
 @app.route('/<short_url>')
 def redirect_to_url(short_url):

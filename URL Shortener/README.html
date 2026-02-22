@@ -1,0 +1,47 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<h1 id="url-shortener" class="headings">URL Shortener</h1>
+<p>A simple URL shortener service using Flask. This application maps
+short URLs to their corresponding long URLs and redirects users
+accordingly.</p>
+<h2 id="features" class="headings">Features</h2>
+<ul>
+<li>Create short URLs for long URLs</li>
+<li>Redirect users from short URLs to long URLs</li>
+</ul>
+<h2 id="running-the-application" class="headings">Running the Application</h2>
+<ol type="1">
+<li><p>Clone the repository:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/josharsh/100LinesOfCode.git</span></code></pre></div></li>
+<li><p>Navigate to the project directory:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> 100LinesOfCode/URL\ Shortener</span></code></pre></div></li>
+<li><p>Install the required dependencies:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div></li>
+<li><p>Run the application:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py</span></code></pre></div></li>
+<li><p>Open your web browser and go to
+<code>http://localhost:5000</code> to use the URL shortener.</p></li>
+</ol>
+<h2 id="usage" class="headings">Usage</h2>
+<ul>
+<li><p>To create a short URL, access /shorten/long_url where
+<code>long_url</code> is the URL you want to shorten. For example:</p>
+<p><code>http://localhost:5000/shorten/www.example.com</code></p></li>
+</ul>
+<p>To expand a short URL, access /short_url where <code>short_url</code>
+is the short URL you want to expand. For example:</p>
+<p><code>http://localhost:5000/abc123</code></p>
+<h2 id="notes" class="headings">Notes</h2>
+<p>The software saves the short-to-long URL mappings in a file named
+<code>data.json</code>. If the file exists when the application starts,
+it will load the existing mappings. If the file does not exist, it will
+start with an empty mapping. Saving is automatic.</p>
