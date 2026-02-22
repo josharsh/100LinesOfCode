@@ -2,11 +2,18 @@
 URLs to their corresponding long URLs and redirects users accordingly."""
 import threading
 import random
+import json
 from flask import Flask, redirect
 
 app = Flask(__name__)
 
-short_to_long = {}
+try:
+    with open('data.json', 'r', encoding='utf-8') as json_file:
+        short_to_long = json.load(json_file)
+        print("Found existing data.json. Loaded short-to-long URL mappings.")
+except FileNotFoundError:
+    print("data.json not found. Starting with an empty mapping.")
+    short_to_long = {}
 
 @app.route('/<short_url>')
 def redirect_to_url(short_url):
@@ -30,6 +37,13 @@ def shorten_url(long_url):
     short_to_long[short_url] = long_url
     print(f"Generated short URL: {short_url} for long URL: {long_url}")
     return f"Short URL: {short_url}"
+
+# @app.route('/save')
+# def save_mappings():
+#     """Saves the current short-to-long URL mappings to a file."""
+#     with open('data.json', 'w', encoding='utf-8') as f:
+#         json.dump(short_to_long, f)
+#     return "Mappings saved successfully"
 
 def threaded_run():
     """Runs the Flask application in a separate thread to allow for concurrent execution."""
