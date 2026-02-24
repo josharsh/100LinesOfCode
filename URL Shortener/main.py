@@ -1,11 +1,14 @@
 """A simple URL shortener service using Flask. This application maps short
 URLs to their corresponding long URLs and redirects users accordingly."""
+import asyncio
 import random
+import os
 import json
 from flask import Flask, redirect, send_file
 import aiofiles
 
 app = Flask(__name__)
+save_lock = asyncio.Lock()
 
 try:
     with open('data.json', 'r', encoding='utf-8') as json_file:
@@ -50,9 +53,12 @@ async def shorten_url(long_url):
     return f"Short URL: {short_url}"
 
 async def save_mappings():
-    """Saves the current short-to-long URL mappings to a JSON file."""
-    async with aiofiles.open('data.json', 'w', encoding='utf-8') as f:
-        await f.write(json.dumps(short_to_long))
+    """Saves the current short-to-long URL mappings to a JSON file asynchronously."""
+    async with save_lock:
+        tmp_path = 'data.json.tmp'
+        async with aiofiles.open(tmp_path, 'w', encoding='utf-8') as f:
+            await f.write(json.dumps(short_to_long))
+        os.replace(tmp_path, 'data.json')
     return "Mappings saved successfully"
 
 if __name__ == '__main__':
