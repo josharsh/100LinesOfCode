@@ -49,41 +49,41 @@ class MasterMind():
         global ccol, cro
         ccol,cro = 2,19
     def guess(self, root, choice,obj):
-            global ccol
-            global cro
-            f=True  # boolean flag
-            if cro != 1:
-                self.user_choice.append(Button(root, bg=choice, height=1, width=5, relief=RAISED))
-                if len(self.user_choice) < 4:
-                    self.user_choice[-1].grid(row=cro, column=ccol)
-                    self.code.append(self.user_choice[-1]['bg'])
-                    ccol += 1
-                elif len(self.user_choice) == 4:
-                    self.user_choice[-1].grid(row=cro, column=ccol)
-                    self.code.append(self.user_choice[-1]['bg'])
-                    ccol += 1
-                    ccol = 2
-                    cro = cro-1
-                    obj.user(self.code) # send the user's choice
-                    self.key=obj.compare(self.code,self.gen) #get the hints
-                    if self.key==['red','red','red','red']:
-                        f=False
-                        self.hint(root, self.key)
-                        l=Label(root,text="CONGRATULATIONS!!!")
-                        l.grid(row=0,columnspan=8)
-                    else:
-                        self.hint(root, self.key)
-                        self.code = []
-                        self.user_choice = []
-            else:
-                if f:
-                    l=Label(root,text="You are a LOSER!!!!        ANSWER:")
-                    l.grid(row=0,columnspan=4)
-                    c=5
-                    for i in self.gen:                        
-                        b=Button(root,bg=i,height=1, width=5, relief=SUNKEN)
-                        b.grid(row=0,column=c)
-                        c+=1
+        global ccol
+        global cro
+        f=True  # boolean flag
+        if cro != 1:
+            self.user_choice.append(Button(root, bg=choice, height=1, width=5, relief=RAISED))
+            if len(self.user_choice) < 4:
+                self.user_choice[-1].grid(row=cro, column=ccol)
+                self.code.append(self.user_choice[-1]['bg'])
+                ccol += 1
+            elif len(self.user_choice) == 4:
+                self.user_choice[-1].grid(row=cro, column=ccol)
+                self.code.append(self.user_choice[-1]['bg'])
+                ccol += 1
+                ccol = 2
+                cro = cro-1
+                obj.user(self.code) # send the user's choice
+                self.key=obj.compare(self.code,self.gen) #get the hints
+                if self.key==['red','red','red','red']:
+                    f=False
+                    self.hint(root, self.key)
+                    l=Label(root,text="CONGRATULATIONS!!!")
+                    l.grid(row=0,columnspan=8)
+                else:
+                    self.hint(root, self.key)
+                    self.code = []
+                    self.user_choice = []
+        else:
+            if f:
+                l=Label(root,text="You are a LOSER!!!!        ANSWER:")
+                l.grid(row=0,columnspan=4)
+                c=5
+                for i in self.gen:                        
+                    b=Button(root,bg=i,height=1, width=5, relief=SUNKEN)
+                    b.grid(row=0,column=c)
+                    c+=1
     global hcol, hro
     hcol,hro = 8,19
     def hint(self, root, key):

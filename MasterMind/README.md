@@ -1,7 +1,8 @@
-#100LinesOfCode
+# 100LinesOfCode
+
 -----------------------------
 
-**MASTERMIND GAME**
+## MASTERMIND GAME
 
 The Python program uses tkinter interface to create a GUI-based simulation of the MasterMind game.
 
@@ -13,4 +14,3 @@ System Specifications: python3.8, Ubuntu 20.04
 Dependencies: tkinter (*$ sudo apt-get install python3-tk*)  
 
 ![Mastermind](https://user-images.githubusercontent.com/48058736/130399281-0d43b5d3-82b7-4ad1-97d9-3dd71e60aa7c.png)
-
