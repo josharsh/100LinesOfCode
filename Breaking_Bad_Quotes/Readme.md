@@ -1,4 +1,5 @@
-### Breaking bad quotes
-#### a simple application made by html & css & js to make a randome quotes from breaking bad
+# Breaking Bad Quotes
 
-#### Api Link <a href="https://breakingbadquotes.xyz" target="_blank">Click Here</a>
+## A simple application made with HTML, CSS, and JavaScript to generate random quotes from Breaking Bad
+
+## API Link [Breaking Bad Quotes API](https://breakingbadquotes.xyz)
