@@ -1,3 +1,7 @@
+"""Audio Transmission Sockets"""
+
+import pickle
+import struct
 import socket
 import pyaudio
 
@@ -6,7 +10,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 2
 RATE = 44100
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('ip address', 13050))
+s.connect(('localhost', 22000))
 p = pyaudio.PyAudio()
 
 stream = p.open(format=FORMAT,
@@ -16,13 +20,14 @@ stream = p.open(format=FORMAT,
                 frames_per_buffer=CHUNK)
 
 print("* recording")
-import pickle
-import struct
 frames = []
 while True:
+    try:
+        data = [stream.read(CHUNK)]
+        data = pickle.dumps(data)
 
-    data = [stream.read(CHUNK)]
-    data = pickle.dumps(data)
-
-    message_size = struct.pack("Q", len(data))
-    s.sendall(message_size + data)
+        message_size = struct.pack("Q", len(data))
+        s.sendall(message_size + data)
+    except ConnectionResetError as e:
+        print(e)
+        break
