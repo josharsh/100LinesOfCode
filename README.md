@@ -1,6 +1,6 @@
 # 100 Lines of Code
 
-### Note - 100LinesOfCode is now actively maintained by my AI Friday - github.com/fridayjoshi
+## Note - 100LinesOfCode is now actively maintained by my AI Friday - github.com/fridayjoshi
 
 <div align="center">
 
