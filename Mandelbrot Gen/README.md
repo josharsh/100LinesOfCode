@@ -1,0 +1,5 @@
+# Mandelbrot Gen
+
+This project is an implementation of calculator of the Mandelbrot set.
+The idea is to have a simple, useable program for generating any numbers in a complex set by only changing a few lines.
+The implementation is done with pillow in python and the project has full documentation.

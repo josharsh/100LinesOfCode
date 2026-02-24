@@ -32,7 +32,6 @@ def get_product_details(product_link):
         all_data.append(data)
     return all_data
 
-    
 
 #write the product details to a json file
 def write_to_json(product_details):

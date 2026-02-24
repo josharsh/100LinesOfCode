@@ -3,13 +3,15 @@
 This program renders a low-resolution ASCII visualization of the Mandelbrot Set directly in the terminal.
 It adapts to the terminal windows dimensions.
 
-### How to Run
+## How to Run
+
 ```bash
 gcc mandelbrot.c -o mandelbrot
 ./mandelbrot
 ```
 
 ### Example Output
+
 ```txt
 
 

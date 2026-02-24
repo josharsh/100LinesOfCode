@@ -1,4 +1,6 @@
-Judge my face is a api based project. 
+# Judge my face
+
+Judge my face is a api based project.
 It ask for your name and generate a random picture/ image from your name.
 This random image always get changed when the name is different.
 For same name it always genereate the same image which increase the fun.
