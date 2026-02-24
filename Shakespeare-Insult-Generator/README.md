@@ -18,7 +18,7 @@ All of the insults are split between a _verb_, _adjective_ and _noun_ and these 
 
 Navigate your command line interface of preference to the folder of this project, then run the following command:
 
-```
+```bash
 node app.js
 ```
 

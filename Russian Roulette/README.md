@@ -1,6 +1,7 @@
 # Russian Roulette
 
 ## How to play
+
 * Open the index.html in your browser.
 * Click the button until you lose.
 

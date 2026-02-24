@@ -1,3 +1,5 @@
+# Calculator
+
 The user gives two numbers as limits (lower and upper).
 The program asks for the lower and upper number, and makes sure that the lower limit is less than or equal to the upper limit.
 The program selects two random numbers within the interval specified by the user.

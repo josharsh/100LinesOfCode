@@ -1,6 +1,8 @@
 # Slot Machine Game
+
 ---------------------------
-# Author - Aliasgar Sogiawala
+
+## Author - Aliasgar Sogiawala
 
 ## Overview
 
@@ -44,16 +46,20 @@ This is a simple text-based slot machine game built in Python. The game simulate
 1. Clone or download this repository to your local machine
 2. Navigate to the game directory in your terminal
 
-```bash
-cd /Users/Asus/Desktop/100LinesOfCode/slot-machine
-```
+    ```bash
+    cd /Users/Asus/Desktop/100LinesOfCode/slot-machine
+    ```
+
 3. Run the game using Python
+
 ```bash
 python slot_machine.py
 ```
+
 ### Game Controls
+
 - Enter your bet amount when prompted
 - Press Enter to spin the reels
 - Type '0' or 'q' to exit the game
 
-### Enjoy the game!
+### Enjoy the game

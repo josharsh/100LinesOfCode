@@ -18,7 +18,7 @@ Perfect for rapid prototyping where a production sentiment model will be integra
 
 ## 📁 Project Structure
 
-```
+```txt
 sentiment-analyzer/
 ├── sentiment_analyzer.py    # Main analyzer & CLI
 └── README.md                 # Documentation
@@ -51,19 +51,21 @@ Uses only standard library modules (`re`, `collections`)
 ### Quick Start
 
 1. **Download** the script:
+
    ```bash
    wget https://your-repo.com/sentiment_analyzer.py
    # or save the file manually
    ```
 
 2. **Run** the analyzer:
+
    ```bash
    python sentiment_analyzer.py
    ```
 
 ### Example Session
 
-```
+```txt
 $ python sentiment_analyzer.py
 
 TEXT SENTIMENT ANALYZER
@@ -185,7 +187,7 @@ def analyze_sentiment(self, text):
 ## ⚠️ Limitations
 
 | Aspect | Current State | For Production |
-|--------|---------------|----------------|
+|--------|---------------|----------------||
 | **Method** | Rule-based word lists | Use trained ML models |
 | **Tokenization** | Basic split | Handle contractions, phrases |
 | **Language** | English only | Multi-language support |
@@ -213,7 +215,7 @@ Contributions welcome! Focus areas:
 
 **MIT License** — use and modify freely.
 
-```
+```txt
 Copyright (c) 2025
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -230,10 +232,6 @@ of this software and associated documentation files...
 
 ---
 
-<div align="center">
-
-**Built with ❤️ for rapid prototyping**
+### Built with ❤️ for rapid prototyping
 
 ⭐ Star this project if you find it useful!
-
-</div>
