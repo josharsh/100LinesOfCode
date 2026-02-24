@@ -1,6 +1,6 @@
 # IS MY PASWORD SAFE
 
-### What is it
+## What is it
 
 Return how many times a password has been leaked. It uses haveibeenpwned API.
 
@@ -8,16 +8,19 @@ Return how many times a password has been leaked. It uses haveibeenpwned API.
 
 Send a HTTP Post to the below AWS Lambda
 
-API link: https://1lt61j4agg.execute-api.sa-east-1.amazonaws.com/prod/check-password
+API link: [https://1lt61j4agg.execute-api.sa-east-1.amazonaws.com/prod/check-password](https://1lt61j4agg.execute-api.sa-east-1.amazonaws.com/prod/check-password)
 
 #### Input
-```
+
+```json
 {
     "password": "Password1"
 }
 ```
+
 #### Output
-```
+
+```json
 {
     "password": "Password1",
     "occurrences": "118930",

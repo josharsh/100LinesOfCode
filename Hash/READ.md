@@ -8,7 +8,7 @@ Hello, guys! Today, we'll be building a hash generator tool in Python. This tool
 
 Hashing allows us to create a unique fingerprint (hash) for a file. This fingerprint is like a digital signature, and any change in the file content results in a completely different hash. We use this property to verify the integrity of files, especially when downloading important files like operating systems.
 
-## Supported Hash Algorithms: md5, sha1, sha256, sha512.
+## Supported Hash Algorithms: md5, sha1, sha256, sha512
 
 ## How It Works
 

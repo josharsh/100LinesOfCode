@@ -1,14 +1,16 @@
 # Go Forex Exchange API
 
-### Requirements
+## Requirements
+
 - Go
-- https://exchangeratesapi.io/documentation/ Subscription (free)
+- [https://exchangeratesapi.io/documentation/](https://exchangeratesapi.io/documentation/) Subscription (free)
 - dotenv file with API_KEY variable set.
 
 ### Running
+
 ```sh
-$ cd goForEx
-$ go run main.go
+cd goForEx
+go run main.go
 ```
 
 ### Contributor
