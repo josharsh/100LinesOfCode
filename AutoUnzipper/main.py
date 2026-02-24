@@ -62,7 +62,6 @@ class MyEventHandler(FileSystemEventHandler):
         src = event.src_path
         print(f"File created: {src}")
 
-        # Example action: if a .zip is created, extract it to a folder next to the zip
         if src.lower().endswith(".zip"):
             # Wait for file write to finish (size stable) before extracting
             stable = wait_for_stable_file(src, stable_seconds=1.0, timeout=30.0, poll_interval=0.5)
