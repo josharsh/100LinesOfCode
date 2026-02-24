@@ -13,20 +13,24 @@ This Python script provides a simple file organizer that categorizes files based
 ## Usage
 
 1. **Clone the repository:**
-```bash
-git clone https://github.com/josharsh/100LinesOfCode.git
-```
+
+    ```bash
+    git clone https://github.com/josharsh/100LinesOfCode.git
+    ```
 
 2. **Navigate to the project directory:**
-```bash
-cd python-file-organizer
-```
+
+    ```bash
+    cd python-file-organizer
+    ```
 
 3. **Run the script:**
-```bash
-python organizer.py
-```
-The script will automatically categorize files in the current directory and move them into the appropriate folders.
+
+    ```bash
+    python organizer.py
+    ```
+
+    The script will automatically categorize files in the current directory and move them into the appropriate folders.
 
 4. **Check the console output for information about the organization process.**
 
@@ -42,7 +46,11 @@ self.file_types = {
  "Other": []
 }
 ```
+
 ## Requirements
+
 Python3.x
+
 ## Issue and Contributions
+
 Feel free to report any issues or suggest improvements by creating a new issue or submitting a pull request.

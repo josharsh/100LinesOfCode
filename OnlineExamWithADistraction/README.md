@@ -24,6 +24,7 @@ This is a single-page HTML application that presents a quiz over a full-screen Y
 - **questions.json:**  
   A JSON file containing the exam questions, choices, and the index of the correct answer.  
   *Example content:*
+  
   ```json
   [
     {

@@ -1,4 +1,4 @@
-PII Data Detector
+# PII Data Detector
 
 Overview
 
@@ -10,7 +10,7 @@ The main purpose of this program is to help users easily scan through text files
 
 Ensuring that documents do not contain sensitive information before sharing.
 
-Auditing data files for compliance with data protection regulations 
+Auditing data files for compliance with data protection regulations
 Assisting in data anonymization processes.
 
 Technologies Used
@@ -21,7 +21,7 @@ Python Standard Library:
 
 The script is built using Python's built-in libraries, primarily re for regular expressions, which allows pattern matching in text.
 
-Regular Expressions (Regex): 
+Regular Expressions (Regex):
 
 Regex patterns are used to identify PII elements such as emails, phone numbers, and SSNs in the text file.
 
