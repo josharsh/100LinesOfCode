@@ -1,6 +1,6 @@
 # Game Of Life
 
-### Description
+## Description
 
 A less than 100 line of code simulation of the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) described by John Conway.  
 The initial parameters are random, thus, you get different views each time you simulate the environment.

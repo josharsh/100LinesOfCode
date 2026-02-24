@@ -1,4 +1,4 @@
-File Organizer
+# File Organizer
 
 Overview
 
@@ -24,7 +24,7 @@ Run the script by entering the following command:
 
 python file_ord.py
 
-Enter the Directory Path: When prompted, provide the path to the directory you want to organize. 
+Enter the Directory Path: When prompted, provide the path to the directory you want to organize.
 
 Enter the directory path you want to organize
 

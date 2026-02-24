@@ -1,6 +1,7 @@
 # Github Follower Bot
 
 ## Setup instructions
+
 - Have Python 3 installed
 - pip install selenium
 - Download webdriver for your respective browsers
@@ -9,8 +10,9 @@
 - To configure how many pages you want to traverse, edit the range(1, your_desired_number)
 - Finally, fire up the console in root directory of this repo and key in `python main.py` then press enter.
 
-## Witness the webdriver come to live!
+## Witness the webdriver come to life
 
 ### NOTE
-* Please do not abuse this bot, you might be forced to unfollow everyone. 
-* In this case, simply change in @arial-label parameter, replace Follow with Unfollow.
+
+- Please do not abuse this bot, you might be forced to unfollow everyone.
+- In this case, simply change in @arial-label parameter, replace Follow with Unfollow.

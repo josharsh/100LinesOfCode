@@ -1,4 +1,5 @@
 # File server through HTTP
+
 ---
 
 Share files through HTTP with this simple file server.
@@ -11,11 +12,10 @@ Only works on **linux** though because of the C libraries that were used
 
 There is **no dependencies** (just `gcc 10` or newer)
 
-```
+```bash
 g++ -o fshare --std=c++20 -lpthread src/main.cpp
 ```
 
 ### Author
 
 [João Fukuda](https://github.com/JoaoFukuda)
-
