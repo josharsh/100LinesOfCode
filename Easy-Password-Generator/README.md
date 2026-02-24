@@ -16,14 +16,14 @@ In order to edit the password parameters, open App.js and change the lines 5 to 
 
 To run the script, clone the repository and open this folder. Then run the following command to install the dependencies:
 
-```
-$ npm install
+```bash
+npm install
 ```
 
 Then run the following command to generate one password, and rerun it until you get one that you like:
 
-```
-$ node app.js
+```bash
+node app.js
 ```
 
 ## Credits
@@ -32,4 +32,4 @@ Programmed by: [SoraSpades](https://github.com/SoraSpades)
 
 Idea by: [Kemystra](https://github.com/Kemystra)
 
-You can also refer the git issue for the origin of this idea: https://github.com/josharsh/100LinesOfCode/issues/169
+You can also refer the git issue for the origin of this idea: [https://github.com/josharsh/100LinesOfCode/issues/169](https://github.com/josharsh/100LinesOfCode/issues/169)
