@@ -11,22 +11,23 @@ This python script first records the user's voice and then convert it to text. A
 
 Install the following dependencies using pip
 
-```
-$ pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
 ```
 
-#### Running the script
+### Running the script
 
 Simply run the script using python in any IDE
 
-```
-$ python ./detect_translate.py
+```bash
+#!/usr/bin/env python3
+python ./detect_translate.py
 ```
 
 Note: google_trans_new may cause some error like "JSONDecodeError: Extra data", to fix it go to the location where all the python packages are installed and change line 151 in google_trans_new/google_trans_new.py which is: "response = (decoded_line + ']')" to "response = decoded_line"
 
-You can also refer the git issue for more reference on this topic: https://github.com/lushan88a/google_trans_new/issues/36
+You can also refer the git issue for more reference on this topic: [https://github.com/lushan88a/google_trans_new/issues/36](https://github.com/lushan88a/google_trans_new/issues/36)
 
 Author: Tejaswi Kumar
 
-LinkedIn: https://www.linkedin.com/in/tejaswi24/
+LinkedIn: [https://www.linkedin.com/in/tejaswi24/](https://www.linkedin.com/in/tejaswi24/)

@@ -3,6 +3,7 @@
 **Out of ideas for your next D&D Hero? Use this randomized generator and throw caution to the wind!**
 
 Available Classes:
+
 - Artificer
 - Barbarian
 - Bard
@@ -13,11 +14,12 @@ Available Classes:
 - Paladin
 - Ranger
 - Rogue
-- Sorceror
+- Sorcerer
 - Warlock
 - Wizard
 
 Available Races:
+
 - Bugbear
 - Dragonborn
 - Dwarf
@@ -34,6 +36,7 @@ Available Races:
 
 Randomized Ability Scores:
 *Generated between 8 - 18*
+
 - Charisma
 - Constitution
 - Dexterity
@@ -41,8 +44,6 @@ Randomized Ability Scores:
 - Strength
 - Wisdom
 
-## To Generate Your Character:
+## To Generate Your Character
 
 Clone down this repository, change directory into 'D&D_character_generator', and run `node app.js`
-
-

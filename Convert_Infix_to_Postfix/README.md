@@ -1,9 +1,8 @@
-### README.md for Infix to Postfix Converter in C
+# README.md for Infix to Postfix Converter in C
 
-# Infix to Postfix Converter
+## Infix to Postfix Converter
 
 This project implements a simple Infix to Postfix Converter in C. It takes an infix expression (e.g., `A + B * C`) as input and converts it to its postfix equivalent (e.g., `A B C * +`) using a stack-based algorithm.
-
 
 ## Features
 
@@ -12,17 +11,16 @@ This project implements a simple Infix to Postfix Converter in C. It takes an in
 - Ensures operator precedence and associativity are maintained.
 - Uses a stack to manage operators and parentheses during the conversion.
 
-
 ## Example Input/Output
 
 ### Input
-```
-Enter an infix expression: A + B * (C - D)
+
+```Enter an infix expression: A + B * (C - D)
 ```
 
 ### Output
-```
-Postfix expression: A B C D - * +
+
+```Postfix expression: A B C D - * +
 ```
 
 ---
@@ -53,13 +51,8 @@ Postfix expression: A B C D - * +
 
 ---
 
-
-
 ---
 
 ## Author
 
 Dhineshkumar [Visit my GitHub](https://github.com/Dhineshkumarprakasam)
-
-
-```
