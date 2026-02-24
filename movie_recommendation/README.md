@@ -1,11 +1,13 @@
 # Movie Recommendation
+
 ---
-This is a simple movie recommedation using `cosine_similarity` and `CountVectorizer`.
+This is a simple movie recommendation using `cosine_similarity` and `CountVectorizer`.
 
-You can use the google colab to run the program if you dont have jupyter notebook installed.
+You can use the Google Colab to run the program if you don't have Jupyter Notebook installed.
 
-### Also if you are using juypter notebook make sure you have installed:
+## Also if you are using Jupyter Notebook make sure you have installed
+
 - `pandas`
 - `numpy`
-- `rake_ntlk`
+- `rake_nltk`
 - `scikit-learn`

@@ -1,4 +1,4 @@
-#GUI for encrypting and decrypting MOrse Code using python
+# GUI for encrypting and decrypting Morse Code using python
 
 ## How to Use
 
@@ -12,6 +12,6 @@ python morse.py
 
 > Linux
 
-```shell
-$ python3 morse.py
+```bash
+python3 morse.py
 ```

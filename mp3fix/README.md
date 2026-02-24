@@ -1,7 +1,10 @@
-### Author 
-Riccardo Tasso 
+# mp3fix
 
-#### Description
+## Author
+
+Riccardo Tasso
+
+### Description
 
 mp3fix iterates through all files with the .mp3 extension within the current directory.
 
@@ -9,6 +12,6 @@ If the file name begins with a one-digit number that is not preceded by zero, re
 
 #### How to use
 
-```
+```bash
 python2 mp3fix.py mp3folder/
 ```

@@ -15,4 +15,3 @@ We must obtain the following statistics of the tale:
 5) Number of occurances of a specific word
 
 6) Number of syllables
-

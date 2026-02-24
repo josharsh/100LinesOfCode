@@ -10,9 +10,10 @@ The machine then picks a random number and adds to the 1 or 2 that the user chos
 
 To run this program, you only need Python 3 installed. To run it, you need only to run the following command:
 
-```
+```bash
 python3 oddsEvens.py
 ```
 
 ## Author
+
 Igor Nunes Ferro

@@ -1,4 +1,5 @@
 # Morse Code Translator
+
 ---
 This is a simple Morse Code Translator that can convert english text to morse code and vice versa.
 
@@ -8,9 +9,9 @@ To run the program type the following in a terminal:
 
 This presents three choices:
 -Encrypt
--Decrypt 
+-Decrypt
 -Exit
 
 Encrypt is used to convert english to morse
-Decrypt is used to convert morse to english 
+Decrypt is used to convert morse to english
 Exit lets to exit the program.
