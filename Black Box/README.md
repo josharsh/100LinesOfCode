@@ -1,3 +1,5 @@
+# Black Box
+
 This Program seeks to implement the  [Black Box](https://www.youtube.com/watch?v=aF9OU1_Bi4g) with the following changes:
 
 + The game is now a single player game: experimenter vs a computer challenger

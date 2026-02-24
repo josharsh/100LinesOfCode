@@ -8,7 +8,7 @@ This was made because PDF readers like acrobat are expensive and Preview has no 
 
 ## How it Works
 
-This will see if your PDF is of a length of a multiple of 4, then reorders the pages in the proper format so you can print on a double sided page with 4 pages per sheet. Perfect for academic papers printed at home to save paper and ink. 
+This will see if your PDF is of a length of a multiple of 4, then reorders the pages in the proper format so you can print on a double sided page with 4 pages per sheet. Perfect for academic papers printed at home to save paper and ink.
 
 ### Why 4?
 
@@ -35,34 +35,40 @@ Sheet 3 side 2: pg 6 pg 7`[ 6 `| 7 `] `( Center fold `)
 
 1. Make sure you have Python installed on your system. This script requires Python 3.6 or higher.
 
->[!TIP]
-> If you are using Mac, you can easily start it off by just running setup.sh which will set up a new venv for you and install PyPDF2 and make the file executable
+   >[!TIP]
+   > If you are using Mac, you can easily start it off by just running setup.sh which will set up a new venv for you and install PyPDF2 and make the file executable
 
 2. Install the required dependency by running the following command:
-   ```
+
+   ```/bin/python3
    pip install PyPDF2
    ```
 
 3. Save the `bookl3t.py` script to your desired location.
 
 4. Open a terminal or command prompt and navigate to the directory where you saved the script.
+
 ### Running the script
 
-5. Run the script using the following command:
-   ```
+1. Run the script using the following command:
+
+   ```/bin/python3
    python bookl3t.py input.pdf output.pdf
    ```
+
    Replace `input.pdf` with the path to your input PDF file, and `output.pdf` with the desired path and filename for the output booklet PDF.
 
    For example:
-   ```
+
+   ```/bin/python3
    python bookl3t.py /path/to/input.pdf /path/to/output.pdf
    ```
 
-6. The script will process the input PDF and generate a new PDF in booklet format. The output PDF will be saved at the specified output path.
+2. The script will process the input PDF and generate a new PDF in booklet format. The output PDF will be saved at the specified output path.
 
-7. If the script runs successfully, you will see a message printed in the terminal:
-   ```
+3. If the script runs successfully, you will see a message printed in the terminal:
+
+   ```/bin/python3
    Booklet created successfully!
    ```
 
@@ -72,11 +78,11 @@ Sheet 3 side 2: pg 6 pg 7`[ 6 `| 7 `] `( Center fold `)
 
 By default, the script prints debug information to the console, including page counts, padding pages needed, and the page arrangement for each sheet. If you don't want to see this information, you can modify the `create_booklet` function call in the script and set the `debug` parameter to `False`:
 
-```python
+```/bin/python3
 create_booklet(input_path, output_path, debug=False)
 ```
 
-## To Print:
+## To Print
 
 To print your new file, make sure you've selected double sided (! Short Edges !), collate pages, 2 pages per sheet:
 ![[Pasted image 20241210173200.png]]
@@ -91,7 +97,7 @@ Make sure to have the necessary dependencies installed before running the script
 
 ## Contact & License
 
-Created by Gabriel Husain - gabe.husain [at] gmail [dot] com  
+Created by Gabriel Husain - gabe.husain [at] gmail [dot] com
 GitHub: [gabe-husain](https://github.com/gabe-husain)
 
 This project is licensed under MIT.
