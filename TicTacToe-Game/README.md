@@ -1,4 +1,5 @@
-## Tic-Tac-Toe Game
+# Tic-Tac-Toe Game
+
 A simple tic-tac-toe game written in Python3.
 
 Make sure you have open-cv library installed in python:

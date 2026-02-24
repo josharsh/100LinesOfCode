@@ -1,4 +1,5 @@
 # About
+
 turtle is a pre-installed Python library that enables users to create pictures and shapes by providing them with a virtual canvas.
 
 The turtle module provides turtle graphics primitives, in both object-oriented and procedure-oriented ways.
@@ -14,6 +15,3 @@ The programs have used different shapes for the pen.
 -Turtle
 
 -Classic
-
-
-

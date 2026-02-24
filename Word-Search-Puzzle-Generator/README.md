@@ -1,16 +1,20 @@
 # Word Search Puzzle Generator
+
 ## by KenesuEXE
 
-A word search puzzle generator in Python   
+A word search puzzle generator in Python
 
 ## Usage
-Run the `word_search_puzzle.py` script to generate a random word search puzzle. Input anything to reveal the answer.
+
+Run the ```word_search_puzzle.py``` script to generate a random word search puzzle. Input anything to reveal the answer.
 
 ## Note
-This is a shorter version with less than 100 lines of code. For a more customizable puzzle and word choice, check the original repo [here](https://github.com/KenesuEXE/word-search-puzzle).
+
+This is a shorter version with less than 100 lines of code. For a more customizable puzzle and word choice, check the original [repo](https://github.com/KenesuEXE/word-search-puzzle).
 
 ## Sample Output
-```
+
+```txt
 B N V S U P E R G E N E R O U S W I A D
 E S T I M A T E D R E N E T R A E H D M
 T Y A Q G T R L I T Q Y U G O T Q K N S
