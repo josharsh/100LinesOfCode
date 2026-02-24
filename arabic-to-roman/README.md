@@ -5,4 +5,3 @@
 ## Usage
 
 input a number as an argument.
-

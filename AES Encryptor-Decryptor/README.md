@@ -1,12 +1,15 @@
 # AES Encryption/Decryption Tool built in NodeJS
 
-### Requirements
+## Requirements
+
 - NodeJS
 - NPM
-### Running
-```sh
-$ cd AES\ Encryptor-Decryptor/
-$ npm start
+
+## Running
+
+```bash
+cd AES\ Encryptor-Decryptor/
+npm start
 ```
 
 ### Contributor

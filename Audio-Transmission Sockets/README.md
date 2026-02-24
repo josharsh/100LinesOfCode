@@ -16,7 +16,3 @@ Start audio_client.py
 
 Start audio.py (recives data)
 `python3 audio.py`
-
-
-
-

@@ -1,7 +1,7 @@
 # Automate Repo Creation
 
+## Steps to run project
 
-### Steps to run project
 - Make sure you have python installed along with pip
 - Then `cd automate_repo_creation`
 - Create credentials.yaml `touch credentials.yaml` and fill neccessary data with the help of credentials.yaml.example file
@@ -10,11 +10,14 @@
 
 ### Note: If you don't have VS code you can comment the last line of `script.sh`
 
-### Things needed to run:
+### Things needed to run
+
 - `PyYaml`
 - `requests`
 - `Github Personal Access Token`
 
-### Create github personal access:
-- Go to Github Setting -> Developer Setting -> Personal Access Token -> Generate new token or simply go to this [link](https://github.com/settings/tokens/new)
+### Create github personal access
+
+- Go to Github Setting -> Developer Setting -> Personal Access Token -> Generate new token or simply go to this [link to generate a new token](https://github.com/settings/tokens/new)
+
 - Make sure to select `repo` in scope while generating token

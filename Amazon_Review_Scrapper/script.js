@@ -5,7 +5,7 @@ const readline = require('readline').createInterface({
     output: process.stdout
 });
 
-readline.question('Provide the URL of the Amazon Prdouct you want to scrape. \n', url => {
+readline.question('Provide the URL of the Amazon Product you want to scrape. \n', url => {
     got(url).then(response => {
         const $ = cheerio.load(response.body);
         // Load the reviews
