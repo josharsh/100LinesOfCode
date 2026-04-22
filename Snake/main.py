@@ -44,8 +44,7 @@ class Apple:
             self.y = random.randint(0, MAP_Y_SIZE-1)
 
 class Renderer:
-    def __init__(self, x_size, y_size):
-        self.x_size, self.y_size = x_size, y_size
+    def __init__(self):
         self.score = 0
     
     def render(self):
@@ -58,28 +57,29 @@ class Renderer:
         os.system('clear' if os.name == 'posix' else 'cls')
 
         print('╔' + '═'*(MAP_X_SIZE*2) + '╗')
-        print('║' + f' Score: {self.score}' + ' '*((MAP_X_SIZE*2) - 8 - len(str(self.score))) + '║')
-        print('╠' + '═'*(MAP_X_SIZE*2) + '╣')
 
-        for y in range(self.y_size):
+        for y in range(MAP_Y_SIZE):
             row = ''
             row += '║'
 
-            for x in range(self.x_size):
+            for x in range(MAP_X_SIZE):
                 if (x,y) in snake.length: row += Color.green + '[]' + Color.normal
-                elif (x == apple.x) and (y == apple.y): row += Color.red + '[]' + Color.normal
+                elif (x == apple.x) and (y == apple.y): row += Color.red + '()' + Color.normal
                 else: row += ' .'
 
             row += '║'
             print(row)
         
         print('╚' + '═'*MAP_X_SIZE*2 + '╝')
+        print(f'Score: {self.score}')
 
-MAP_X_SIZE = MAP_Y_SIZE = 10
+        if self.score >= ((MAP_X_SIZE * MAP_Y_SIZE) - 1): print('You Win!'), exit()
+
+MAP_X_SIZE = MAP_Y_SIZE = 6
 
 snake = Snake(random.randint(0, MAP_X_SIZE-1), random.randint(0, MAP_Y_SIZE-1))
 apple = Apple(random.randint(0, MAP_X_SIZE-1), random.randint(0, MAP_Y_SIZE-1))
-map = Renderer(MAP_X_SIZE, MAP_Y_SIZE)
+map = Renderer()
 
 def keyboard_handler():
     while True:
