@@ -75,7 +75,7 @@ class Renderer:
 
         if self.score >= ((MAP_X_SIZE * MAP_Y_SIZE) - 1): print('You Win!'), exit()
 
-MAP_X_SIZE = MAP_Y_SIZE = 6
+MAP_X_SIZE = MAP_Y_SIZE = 10
 
 snake = Snake(random.randint(0, MAP_X_SIZE-1), random.randint(0, MAP_Y_SIZE-1))
 apple = Apple(random.randint(0, MAP_X_SIZE-1), random.randint(0, MAP_Y_SIZE-1))
