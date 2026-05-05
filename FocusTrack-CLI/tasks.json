@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "title": "Complete Python assignment",
+        "priority": "high",
+        "completed": false,
+        "created_at": "2026-04-10 09:30:00"
+    },
+    {
+        "id": 2,
+        "title": "Push project to GitHub",
+        "priority": "medium",
+        "completed": true,
+        "created_at": "2026-04-09 18:00:00"
+    },
+    {
+        "id": 3,
+        "title": "Study Data Mining concepts",
+        "priority": "high",
+        "completed": false,
+        "created_at": "2026-04-08 20:15:00"
+    },
+    {
+        "id": 4,
+        "title": "Workout for 30 minutes",
+        "priority": "low",
+        "completed": false,
+        "created_at": "2026-04-07 07:00:00"
+    },
+    {
+        "id": 5,
+        "title": "Read about Open Source contribution",
+        "priority": "medium",
+        "completed": true,
+        "created_at": "2026-04-06 21:45:00"
+    },
+    {
+        "id": 6,
+        "title": "Build Flask version of project",
+        "priority": "high",
+        "completed": false,
+        "created_at": "2026-04-10 11:00:00"
+    },
+    {
+        "id": 7,
+        "title": "Revise Networking module",
+        "priority": "medium",
+        "completed": false,
+        "created_at": "2026-04-05 16:20:00"
+    }
+]
