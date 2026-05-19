@@ -6,7 +6,7 @@ cssselect==1.1.0
 feedfinder2==0.0.4
 feedparser==5.2.1
 google-search==1.0.2
-idna==2.10
+idna==3.15
 jieba3k==0.35.1
 joblib==1.2.0
 lxml==6.1.0
