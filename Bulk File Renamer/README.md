@@ -13,3 +13,9 @@ A simple Python script that allows you to rename multiple files in a directory b
    ```
 
 4. Follow the onscreen prompts.
+
+## Example
+
+If the selected folder contains `image.jpg` and you enter `holiday` as the base file name,
+the script renames it to `holiday_image.jpg`. When a target file already exists, a numeric
+suffix is added, such as `holiday_image_1.jpg`, so existing files are not overwritten.
