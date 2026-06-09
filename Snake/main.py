@@ -27,12 +27,10 @@ class Snake:
         self.x, self.y = self.length[-1]
         self.length.pop(0)
 
+        WALL_COLLISION = (self.x < 0) or (self.x > MAP_X_SIZE-1) or (self.y < 0) or (self.y > MAP_Y_SIZE-1)
+        SNAKE_COLLISION = self.length[-1] in self.length[:-1]
 
-        if self.length[-1] in self.length[:-1]:
-            print('Game Over!')
-            exit()
-
-        if (self.x < 0) or (self.x > MAP_X_SIZE-1) or (self.y < 0) or (self.y > MAP_Y_SIZE-1):
+        if WALL_COLLISION or SNAKE_COLLISION:
             print('Game Over!')
             exit()
 
