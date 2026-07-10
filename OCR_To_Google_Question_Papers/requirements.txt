@@ -20,7 +20,7 @@ regex==2020.7.14
 requests==2.33.0
 requests-file==1.5.1
 six==1.15.0
-soupsieve==2.0.1
+soupsieve==2.8.4
 tinysegmenter==0.3
 tldextract==2.2.3
 tqdm==4.48.2
