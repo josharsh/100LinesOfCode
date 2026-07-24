@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import re
 import csv
 import os
+import subprocess
 
 
 sess = requests.Session()
@@ -19,4 +20,5 @@ for url in URLS:
     link = soup.find_all(class_="plugin-download")[0].attrs["href"]
     filename = link.split("/")[-1]
     print(link)
-    os.system("axel -a -n 16 %s && unzip %s" % (link, filename))
+    subprocess.run(["axel", "-a", "-n", "16", link], check=True)
+    subprocess.run(["unzip", filename], check=True)
