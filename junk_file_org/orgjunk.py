@@ -51,7 +51,8 @@ def organize_junk():
         for dir in os.scandir():
             try:
                 os.rmdir(dir)
-            except:
+            except OSError:
+                # Directory is not empty (or not a directory); leave it in place.
                 pass
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import WebDriverException
 from config import GITHUB_USER, GITHUB_PASS
 import time
 import sys
@@ -45,8 +46,8 @@ for name in name_list:
         try:
             for i in follow_user:
                 i.submit()
-        except:
-            pass
+        except WebDriverException as e:
+            print(f"Skipping '{name}' page {page}: {e}", file=sys.stderr)
         time.sleep(1)
 
 driver.close()

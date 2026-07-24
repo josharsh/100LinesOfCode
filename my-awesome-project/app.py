@@ -22,7 +22,7 @@ def calculator():
         try:
             a = float(input("Enter first number: "))
             b = float(input("Enter second number: "))
-        except:
+        except ValueError:
             print("Invalid input! Enter numbers only.")
             continue
 

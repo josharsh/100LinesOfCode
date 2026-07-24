@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.filedialog import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import tkinter.scrolledtext as tkscroll
 import os
 
@@ -21,12 +21,14 @@ def save():
 	title_text = title_var.get()
 	content = body.get(1.0,END)
 	save_file =	asksaveasfilename(initialfile=f'{title_text}.txt', defaultextension=".txt", filetypes=[("All Files","*.*"), ("Text Documents","*.txt")])
+	if not save_file:
+		# Save dialog was cancelled.
+		return
 	try:
-		file = open(save_file,"w+") 
-		file.writelines(content)
-		file.close()
-	except:
-		pass
+		with open(save_file, "w+") as file:
+			file.writelines(content)
+	except OSError as e:
+		messagebox.showerror("Save failed", f"Could not save '{save_file}':\n{e}")
 
 def show():
 	global action

@@ -53,7 +53,7 @@ def complete_task():
         data["tasks"][index]["done"] = True
         save(data)
         print("🎉 Task completed!")
-    except:
+    except (ValueError, IndexError):
         print("Invalid input")
 
 # Delete task
@@ -65,7 +65,7 @@ def delete_task():
         removed = data["tasks"].pop(index)
         save(data)
         print(f"🗑 Deleted: {removed['title']}")
-    except:
+    except (ValueError, IndexError):
         print("Invalid input")
 
 # Add note

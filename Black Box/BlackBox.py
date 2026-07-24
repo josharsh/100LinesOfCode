@@ -27,7 +27,7 @@ class QLabelGridSquare(QLabel):
         if self.num_label:
             try:
                 self.probe.emit(int(self.text()))
-            except:
+            except ValueError:
                 pass
         else:
             row, col = self.position
@@ -114,7 +114,7 @@ class MyWindow(QWidget):
                     self.grid_layout.itemAtPosition(initial_position[0], initial_position[1]).widget().setText(self.grid_layout.itemAtPosition(initial_position[0], initial_position[1]).widget().text() + " - *")
                     self.label.setText("That Ray Got Absorbed")
                     break
-            except:
+            except IndexError:
                 pass
 
             initial_direction = direction.copy()
@@ -126,7 +126,7 @@ class MyWindow(QWidget):
                         break
                     else:
                         direction = [direction[0] - (initial_direction[0] if initial_direction[0] != 0 else 1), direction[1] - (initial_direction[1] if initial_direction[1] != 0 else 1)]
-            except:
+            except IndexError:
                 pass
 
             try:
@@ -137,7 +137,7 @@ class MyWindow(QWidget):
                         break
                     else:
                         direction = [direction[0] - (initial_direction[0] if initial_direction[0] != 0 else -1), direction[1] - (initial_direction[1] if initial_direction[1] != 0 else -1)]
-            except:
+            except IndexError:
                 pass
 
             position = [position[0] + direction[0], position[1] + direction[1]]

@@ -11,15 +11,16 @@ def findgrad(x : float, f, step : float):
 
 def cleanfunc(func : str):
     x = sympy.Symbol("x")
+    parse_errors = (sympy.SympifyError, SyntaxError, TypeError)
     try:
         f = sympy.sympify(func)
         return sympy.lambdify(x, f)
-    except:
+    except parse_errors:
         try:
             func = func.replace("^", "**")
             f = sympy.sympify(func)
             return sympy.lambdify(x, f)
-        except:
+        except parse_errors:
             pass
     inds = []
     func = list(func)

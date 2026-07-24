@@ -47,16 +47,16 @@ def execute(action, value):
         try:
             print(f"🌐 Opening {value}...")
             webbrowser.open(f"https://{value}.com")
-        except:
-            print("❌ Failed to open.")
+        except webbrowser.Error as e:
+            print(f"❌ Failed to open. ({e})")
 
     elif action == "create":
         try:
             with open(value, "w") as f:
                 f.write("Created by AI Terminal Assistant\n")
             print(f"📄 File '{value}' created.")
-        except:
-            print("❌ Error creating file.")
+        except OSError as e:
+            print(f"❌ Error creating file. ({e})")
 
     elif action == "delete":
         if os.path.exists(value):
@@ -73,8 +73,8 @@ def execute(action, value):
         try:
             result = eval(value)
             print(f"🧮 Result: {result}")
-        except:
-            print("❌ Invalid calculation.")
+        except (SyntaxError, NameError, ValueError, TypeError, ZeroDivisionError) as e:
+            print(f"❌ Invalid calculation. ({e})")
 
     elif action == "help":
         print("""

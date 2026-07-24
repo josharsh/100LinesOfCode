@@ -40,8 +40,8 @@ def tweet_for_fun():
 			cnn_tweets = list(api.user_timeline("@cnnbrk", tweet_mode = "extended"))
 		else:
 			cnn_tweets = list(api.user_timeline("@cnnbrk", since_id, tweet_mode = "extended"))	
-	except tweepy.error.TweepError:
-		pass
+	except tweepy.error.TweepError as exc:
+		print(f"Failed to retrieve tweets: {exc}")
 	else:
 		for tweet in reversed(cnn_tweets):
 			write_last_seen_id(NEWS_FILE_NAME, tweet.id)
@@ -76,8 +76,8 @@ def reply_to_tweets():
 			mentions = api.mentions_timeline(tweet_mode='extended')
 		else:	
 			mentions = api.mentions_timeline(last_seen_id,tweet_mode='extended')
-	except:
-		pass
+	except tweepy.error.TweepError as exc:
+		print(f"Failed to retrieve mentions: {exc}")
 	else:
 		for mention in reversed(mentions):
 			# print(mention)

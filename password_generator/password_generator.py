@@ -21,25 +21,23 @@ class PasswordGenerator:
         :return:
         """
 
-        try:
-            string_size = random.randint(min_length, max_length)
-            combination = ''
-            if lowercase: combination += string.ascii_lowercase
-            if uppercase: combination += string.ascii_uppercase
-            if digits: combination += string.digits
-            if special_characters: combination += string.punctuation
+        string_size = random.randint(min_length, max_length)
+        combination = ''
+        if lowercase: combination += string.ascii_lowercase
+        if uppercase: combination += string.ascii_uppercase
+        if digits: combination += string.digits
+        if special_characters: combination += string.punctuation
 
-            # print(combination)
+        if not combination:
+            raise ValueError(
+                "No character sets selected: enable at least one of "
+                "lowercase, uppercase, digits or special_characters."
+            )
 
-            # using random.choices()
-            # generating random strings
-            password = ''.join(random.choices(combination, k=string_size))
-
-            return password
-
-        except:
-            return "Error: No options selected"
+        # using random.choices() to generate a random string
+        return ''.join(random.choices(combination, k=string_size))
 
 
 if __name__ == "__main__":
-    print(PasswordGenerator().generate_random_password())
+    print(PasswordGenerator().generate_random_password(
+        lowercase=True, uppercase=True, digits=True, special_characters=True))

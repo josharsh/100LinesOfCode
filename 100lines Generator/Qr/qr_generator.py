@@ -16,7 +16,7 @@ import os
 import sys
 from datetime import datetime
 try:
-    import qrcode:
+    import qrcode
 except ImportError:
     print("Module 'qrcode' not found. Please install it with: pip install qrcode[pil]")
     sys.exit(1)
@@ -42,7 +42,8 @@ def get_downloads_folder():
             downloads = os.path.join(os.environ['USERPROFILE'], 'Downloads')
             if os.path.exists(downloads):
                 return downloads
-        except Exception:
+        except (KeyError, OSError):
+            # USERPROFILE missing or path not accessible; fall back below.
             pass
         # fallback
         return os.path.join(os.path.expanduser('~'), 'Downloads')

@@ -21,7 +21,7 @@ while (game):
   while (choice <= 0 or choice > 7):
     try:
       choice = int(input("Enter a column to put your chip (1-7) (Player " + player + "): "))
-    except:
+    except ValueError:
       print("Enter a valid number")
   if (board[0][choice - 1] != ' '):
     print("\nRow is full. Try again.\n")
