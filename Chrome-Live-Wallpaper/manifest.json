@@ -1,0 +1,14 @@
+{
+    "manifest_version":3,
+    "name": "Live Wallpaper",
+    "version": "1.0.0",
+    "description": "Use your own videos and GIFs as ur new tab wallpaper",
+    
+    "chrome_url_overrides": {
+        "newtab": "newtab.html" 
+    },
+    "permissions": [
+        "storage",
+        "unlimitedStorage"
+    ]
+}

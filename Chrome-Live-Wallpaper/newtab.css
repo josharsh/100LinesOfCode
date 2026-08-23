@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; font-family: Arial, sans-serif; }
+#wallpaper { position: fixed; inset: 0; width: 100%; height: 100%; background: center/cover no-repeat; z-index: 0; }
+#wallpaper img, #wallpaper video { width: 100%; height: 100%; object-fit: cover; }
+.overlay { position: fixed; inset: 0; background: rgb(0 0 0 / 35%); z-index: 1; }
+main { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 2; text-shadow: 0 2px 8px rgba(0,0,0,.7); opacity: .15; transition: opacity .3s; }
+main:hover, body:has(#wallpaper:empty) main { opacity: 1; }
+input { margin-top: 15px; }
