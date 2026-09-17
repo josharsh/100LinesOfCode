@@ -4,5 +4,5 @@ chardet==3.0.4
 idna==3.15
 lxml==6.1.0
 requests==2.33.0
-soupsieve==2.0.1
+soupsieve==2.9
 urllib3==2.7.0
