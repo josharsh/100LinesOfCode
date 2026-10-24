@@ -1,5 +1,5 @@
 anyio==3.6.2
-Brotli==1.2.0
+Brotli==1.2.1
 certifi==2023.5.7
 h11==0.14.0
 httpcore==0.16.3
