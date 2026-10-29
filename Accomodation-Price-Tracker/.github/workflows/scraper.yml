@@ -1,0 +1,16 @@
+name: Scraper
+on:
+  schedule: [{cron: '0 8,16 * * *'}]
+  workflow_dispatch:
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -r requirements.txt && python main.py
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      - run: git config user.email "bot@github.com" && git config user.name "bot" && git add prices.db && git diff-index --quiet HEAD || (git commit -m "db update [skip ci]" && git push)
